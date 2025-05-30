@@ -8,7 +8,7 @@
 
 section {
   align-content: start !important;
-  background-image: url("../header.svg");
+  background-image: url("../../themes/header.svg");
   background-repeat: no-repeat;
 }
 h2 {

@@ -10,6 +10,8 @@ headingDivider: 2
 Dimitri van Hees
 <d.vanhees@geonovum.nl>
 
+<!-- This is presenter note. You can write down notes through HTML comment. -->
+
 ## Organisatie
 
 ![organisatie](./organisatie.png)
