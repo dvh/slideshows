@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "rimraf public && npm run -s deck",
-    "deck": "marp --no-stdin -I ./ -o public && ncp assets public/assets",
+    "deck": "marp --no-stdin -I ./shows -o public && ncp ./shows public",
     "start": "marp -ps .",
     "vercel-build": "yum install nss mesa-libgbm -y && MARP_USER=root CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build"
   },
