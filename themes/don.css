@@ -1,0 +1,53 @@
+/*!
+  @theme don
+*/
+
+/* @import 'uncover'; */
+
+@import "default";
+
+section {
+  align-content: start !important;
+  background-image: url("./assets/header.svg");
+  background-repeat: no-repeat;
+}
+h2 {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  color: #017bc6;
+}
+ol,
+ul {
+  padding-left: 1em !important;
+}
+li::marker {
+  color: #017bc6;
+}
+section.title {
+  background-color: #017bc6 !important;
+  color: #ffffff !important;
+}
+section.title a {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+section h1, section.title h2 {
+  padding-top: 180px;
+  color: #ffffff !important;
+  text-align: center;
+  font-size: 2em;
+}
+section img {
+  max-height: 500px;
+}
+section.image h2 {
+  display: none;
+}
+section.image {
+  background-image: none;
+  padding: 0 !important;
+  text-align: center;
+}
+section.image img {
+  max-height: 720px;
+}
