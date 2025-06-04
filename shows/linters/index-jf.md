@@ -12,6 +12,19 @@ Joost Farla - <j.farla@geonovum.nl>
 
 Dimitri van Hees - <d.vanhees@geonovum.nl>
 
+## Additionele Spectral functions
+
+- Remote (JSON-)schema
+
+  - Of een functie die dynamisch een schema teruggeeft
+
+- Schema compatibility check
+
+  - Dekt een schema minimaal een bepaald basis-schema af?
+  - Rekening houdend met de flexibiliteit van JSON schema (o.a. combined schemas)
+
+- Request parameter validatie
+
 ## OGC API: Ruleset discovery
 
 - OGC API standaard bestaat uit (sub-)modules
@@ -88,11 +101,3 @@ Bron (PDOK): https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/conformance
   }
 }
 ```
-
-## Added features van de basislinter
-
-- schema compatibility check
-
-## custom functions
-
-- spec of responses checken
