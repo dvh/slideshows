@@ -146,7 +146,7 @@ Dimitri van Hees
 
 ## ADR Scores
 
-- Op basis van linter
+- Op basis van generieke OAS checker
 - Hulp bij afwijkingen
 - Representatiever want alleen REST
 - Meta gegevens laten vallen - geen standaard
@@ -239,8 +239,6 @@ Dimitri van Hees
 
 ![vervolg](vervolg.png)
 
-<!-- Mogelijk ook (RSS) abonnees of via Discourse gebruikers informeren over wijziging. Ook mogelijk DIFF laten zien in de toekomst. -->
-
 ## Wijziging forceren
 
 ```json
@@ -309,7 +307,7 @@ OpenAPI Specification 3.0.3 (<https://spec.openapis.org/oas/v3.0.3.html#info-obj
 |-|-|-|
 |version|`string`|_**REQUIRED**_. The version of the OpenAPI document (**which is distinct from** the OpenAPI Specification version or **the API implementation version**).|
 
-## Voorstel
+## Geen standaard, wél API register extensie
 
 ```yaml
 openapi: 3.0.3
@@ -321,9 +319,73 @@ info:
 
 <https://github.com/Geonovum/KP-APIs/issues/649>
 
-## Extra features
+## Pilot met Gemeente Amsterdam
+<!-- _class: title -->
 
-- Embedded Discourse comments in eigen tab
-- Mocking data, SDK’s, Bruno collections, etc.
-- Views beschikbaar als webcomponents
-- WCAG compatible "ReDoc"?
+## Extra features
+<!-- _class: title -->
+
+## Koppeling discourse forum
+
+- Topic per API
+- API wijzigingen
+- Downtime/gepland onderhoud
+- Vragen/opmerkingen
+
+## Abonneren op API
+
+- Op de hoogte blijven van (lifecycle) wijzigingen
+- Via RSS of Discourse
+- Of "Ik gebruik deze API" via e-mail
+- Ook voor providers fijn
+
+## Mocking functionaliteit
+
+- Example(s vanaf OAS 3.1) gebruiken om mocking data/services te genereren
+
+## Software Development Kits (SDK's)
+
+- Clients
+- Servers
+- Eigen generator met ADR implementatie
+  - Mogelijk kant-en-klaar project klaarzetten in een - eigen - Git omgeving?
+  - `code.developer.overheid.nl`? (sssttt...)
+
+## Verbeterde docs
+
+- WCAG compatible playground ("ReDoc")
+- Functionele documentatie
+- Samenhang met andere versies
+- Samenhang met andere API's (Arazzo?)
+
+## Frontend beschikbaar als (web)components
+
+- Herbruikbaar voor OAS presentatie
+- Whitelabel eigen API register
+- WCAG compatible
+
+## OAS 3.1 support
+
+- Automatisch omzetten van OAS 3.0.x naar 3.1.0
+- JSON Schema's extraheren
+- Typescript types, Java classes etc. genereren
+
+## Overig
+
+- Groeperen van API's in een "dossier"
+- Diffs tussen versies/historie
+- Bruno collections, Swagger UI, etc.
+- Automatische koppeling centraal register apis.developer.overheid.nl
+
+## Vragen?
+<!-- _class: title -->
+
+```yaml
+openapi: 3.0.3
+info:
+  version: 1.2.3
+  x-deprecated: 2025-10-10 # toekomst of verleden
+  x-sunset: 2027-11-11     # altijd in de toekomst
+```
+
+<https://github.com/Geonovum/KP-APIs/issues/649>
