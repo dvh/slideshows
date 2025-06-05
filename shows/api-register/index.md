@@ -57,6 +57,19 @@ Dimitri van Hees
 ## Geo API's
 
 - **REST (144)**
+- **WFS (3)**
+- **WMS (1)**
+- GraphQL (1)
+- CKAN (1)
+- Atom (1)
+- Socrata (1)
+
+## OGC API
+<!-- _class: title -->
+
+## Geo API's worden REST
+
+- **REST (144)**
 - **WFS (3)** ➔ OGC API = REST
 - **WMS (1)** ➔ OGC API = REST
 - GraphQL (1)
@@ -80,19 +93,34 @@ Dimitri van Hees
 - OpenAPI Specification (OAS)
 - REST API Design Rules (ADR)
 
+## Velden huidige API register
+
+- Naam
+- Omschrijving
+- Organisatie
+- Type
+- Authenticatie
+- Productie/acceptatie/demo omgeving
+- Contact (email, telefoon, url)
+- Referentie-implementatie
+- Gebruiksvoorwaarden
+
 ## Uit te drukken in OAS
 
-- Contactinformatie (`info.contact` vanaf ADR 2.1)
-- Security schemes (`mTLS` vanaf OAS 3.1)
+- Naam
+- Omschrijving
+- Authenticatie (`securitySchemes` - `mTLS` vanaf OAS 3.1)
+- Omgevingen (`servers`-array, nog niet in ADR)
+- Contact (`info.contact` vanaf ADR 2.1 - geen telefoonnummer, maarja...)
 - Example(s vanaf OAS 3.1) voor mocking en code generatie
-- Environments (`servers`-array, nog niet in ADR)
 
 ## Niet in OAS
 
-- SLA info
+- Organisatie (gaan we anders doen)
+- Type (maar alles is REST)
+- Referentie-implementatie (is nooit ingevuld)
+- Gebruikersvoorwaarden (is nooit ingevuld, aanhaken KPA werkgroep)
 - Thema's
-- Organisatie
-- Code repository
 - API lifecycle info
 
 ## Organisatie - oude situatie
@@ -100,7 +128,7 @@ Dimitri van Hees
 - Hard gekoppeld aan Register van Overheidsorganisaties (ROO)
 - Via eigen API die content dupliceert
 - Gouden API winnaar "SURF" staat niet in ROO; API kan niet naar register
-- Iedereen kan API's toevoegen namens een organisatie
+- Iedereen kan API's toevoegen namens een organisatie via GitLab
 
 ## Organisatie - nieuwe situatie
 
@@ -116,10 +144,17 @@ Dimitri van Hees
 - Adressen: <https://api.standaarden.overheid.nl/v1/overheidsorganisaties/https%3A%2F%2Fidentifier.overheid.nl%2Ftooi%2Fid%2Fgemeente%2Fgm0344/adressen>
 - Caching versus "Data bij de Bron"...
 
-## ADR Validator
+## ADR Scores
+
+- Op basis van linter
+- Hulp bij afwijkingen
+- Representatiever want alleen REST
+- Meta gegevens laten vallen - geen standaard
+- Alleen aftrappen bij wijziging of toevoeging OAS
 
 ## API-first
 <!-- _class: title -->
+
 ## Aanleverprocedure
 
 ![aanleverprocedure](aanlevering.png)
@@ -172,7 +207,7 @@ Dimitri van Hees
 {
   "oasUri": "https://api.standaarden.overheid.nl/v1/openapi.json",
   "contact": {
-    "name": "TOOI API Team",
+    "name": "DON API Team",
     "email": "developer.overheid@geonovum.nl",
     "url": "https://github.com/developer-overheid-nl/issues"
   }
@@ -189,10 +224,10 @@ Dimitri van Hees
 {
   "id": "12345",
   "oasUri": "https://api.standaarden.overheid.nl/v1/openapi.json",
-  "title": "TOOI API",
-  "description": "Dit is de TOOI API",
+  "title": "DON API",
+  "description": "Dit is de DON API",
   "contact": {
-    "name": "TOOI API Team",
+    "name": "DON API Team",
     "email": "developer.overheid@geonovum.nl",
     "url": "https://github.com/developer-overheid-nl/issues"
   }
@@ -203,6 +238,8 @@ Dimitri van Hees
 ## Vervolgstappen
 
 ![vervolg](vervolg.png)
+
+<!-- Mogelijk ook (RSS) abonnees of via Discourse gebruikers informeren over wijziging. Ook mogelijk DIFF laten zien in de toekomst. -->
 
 ## Wijziging forceren
 
@@ -220,7 +257,7 @@ Dimitri van Hees
 - `oasUri` bevat het endpoint inclusief major version (ADR `/core/publish-openapi`)
 - `oasUri` wijzigen: nieuwe API toevoegen en oude API verwijderen
 
-## Vers van de (ADR) pers!
+## Uit de wandelgangen
 
 - Veel problemen met publiek toegankelijk maken `/openapi.json`
 - Alternatief: `servers` verplicht stellen:
@@ -240,6 +277,9 @@ info:
 
 - Contact opnemen om API te laten verwijderen
 - Dit omdat een API niet zomaar "verwijderd" kan worden; dit is een lifecycle wijziging
+
+## API Lifecycle
+<!-- _class: title -->
 
 ## API Lifecycle "End-of-Life" phase
 
@@ -280,14 +320,6 @@ info:
 ```
 
 <https://github.com/Geonovum/KP-APIs/issues/649>
-
-## Servers
-
-## API scores
-
-- Meta gegevens laten vallen
-- TLS -> tonen bij ADR, dus nog maar één score
-- Validator draaien bij wijziging of toevoeging OAS
 
 ## Extra features
 

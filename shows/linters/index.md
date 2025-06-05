@@ -243,9 +243,22 @@ Bron (PDOK): https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/conformance
 - APIficeren
 - Monaco editor
 - Dockerizen voor gebruik CI/CD
-- LSP
 - Formatter
 - YAML support
+- LSP
+
+## Language Server Protocol
+
+![lsp](lsp.png)
 
 ## Vragen?
 <!-- _class: title -->
+Links:
+
+<https://github.com/geonovum-labs/ogc-checker>
+
+<https://github.com/developer-overheid-nl/oas-checker>
+
+<https://github.com/developer-overheid-nl/oas-generator>
+
+<https://github.com/developer-overheid-nl/publiccode-checker>
