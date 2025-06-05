@@ -11,11 +11,10 @@ Joost Farla - <j.farla@geonovum.nl>
 Dimitri van Hees - <d.vanhees@geonovum.nl>
 
 ## Wat is een linter?
-
+<!-- _class: image -->
 ![lint](lint.png)
-<!-- Lint is Engels voor pluisje -->
 
-## Spellingscontrole voor code
+## "Spellingscontrole voor code"
 
 ![clippy](clippy.png)
 
@@ -31,8 +30,12 @@ Dimitri van Hees - <d.vanhees@geonovum.nl>
 
 - Een validator controleert of een stuk code of document voldoet aan een bepaalde standaard of specificatie. Het bekijkt doorgaans de syntaxis, structuur en semantiek van de code of het document om te verzekeren dat het voldoet aan vooraf gedefinieerde criteria.
 - Een linter is een tool die broncode analyseert om mogelijke fouten, bugs, stilistische inconsistenties of verdachte constructies op te sporen. In tegenstelling tot validators, richten linters zich vaak meer op de kwaliteit van de code, leesbaarheid en onderhoudbaarheid dan op strikte naleving van een standaard.
+- Kort samengevat, hoewel zowel validators als linters worden gebruikt om de kwaliteit van de code te verbeteren, zorgen validators voor naleving van standaarden, terwijl linters zich richten op codekwaliteit, stijl en potentiële problemen binnen de codebase.
 
-Kort samengevat, hoewel zowel validators als linters worden gebruikt om de kwaliteit van de code te verbeteren, zorgen validators voor naleving van standaarden, terwijl linters zich richten op codekwaliteit, stijl en potentiële problemen binnen de codebase.
+## Google results
+<!-- _class: image -->
+
+![google](google.png)
 
 ## Linter of validator?
 
@@ -124,7 +127,14 @@ spectral-lint:
 ## Waarom een eigen checker?
 <!-- _class: title -->
 
-## Additionele Spectral functions @TODO: Custom functions?
+## Eigen checker
+
+- UI voor developers
+- Managen van meerdere rulesets
+- Dynamisch selecteren
+- Custom functions
+
+## Additionele Spectral functions
 
 - Remote (JSON-)schema
 
@@ -139,10 +149,11 @@ spectral-lint:
 
 ## Spectral test alleen spec
 
-- Wat als we requests moeten doen?
+- Wat als we requests willen doen?
 
 ## OGC API
 <!-- _class: title -->
+<!-- demo! -->
 
 ## Ruleset discovery
 
@@ -173,8 +184,9 @@ spectral-lint:
 }
 ```
 
-@TODO: ADR?
 Bron (PDOK): https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/
+
+<!-- Benoemen ADR discussie -->
 
 ## Conformance
 
@@ -229,9 +241,11 @@ Bron (PDOK): https://api.pdok.nl/kadaster/3d-basisvoorziening/ogc/v1/conformance
 
 - Lostrekken in aparte NPM package
 - APIficeren
-- Andere editor
+- Monaco editor
+- Dockerizen voor gebruik CI/CD
 - LSP
-- Formatter!
+- Formatter
+- YAML support
 
 ## Vragen?
 <!-- _class: title -->
