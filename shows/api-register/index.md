@@ -116,11 +116,10 @@ Dimitri van Hees
 - Adressen: <https://api.standaarden.overheid.nl/v1/overheidsorganisaties/https%3A%2F%2Fidentifier.overheid.nl%2Ftooi%2Fid%2Fgemeente%2Fgm0344/adressen>
 - Caching versus "Data bij de Bron"...
 
-
-
 ## ADR Validator
 
-
+## API-first
+<!-- _class: title -->
 ## Aanleverprocedure
 
 ![aanleverprocedure](aanlevering.png)
@@ -128,7 +127,7 @@ Dimitri van Hees
 ## API toevoegen
 
 ```json
-// POST https://api.developer.overheid.nl/apis HTTP/1.1
+// POST https://api.developer.overheid.nl/api-register/v1/apis HTTP/1.1
 // Content-Type: application/json
 
 {
@@ -167,7 +166,7 @@ Dimitri van Hees
 ## API toevoegen, poging 2
 
 ```json
-// POST https://api.developer.overheid.nl/apis HTTP/1.1
+// POST https://api.developer.overheid.nl/api-register/v1/apis HTTP/1.1
 // Content-Type: application/json
 
 {
@@ -220,43 +219,69 @@ Dimitri van Hees
 
 - `oasUri` bevat het endpoint inclusief major version (ADR `/core/publish-openapi`)
 - `oasUri` wijzigen: nieuwe API toevoegen en oude API verwijderen
-- API verwijderen: contact opnemen om oude te laten verwijderen
+
+## Vers van de (ADR) pers!
+
+- Veel problemen met publiek toegankelijk maken `/openapi.json`
+- Alternatief: `servers` verplicht stellen:
+
+```yaml
+openapi: 3.0.3
+info:
+  servers:
+    - title: "Productie"
+      url: "https://api.developer.overheid.nl/api-register/apis/v1"
+      default: true
+    - title: "Testomgeving"
+      url: "https://test.api.developer.overheid.nl/api-register/apis/v1"
+```
+
+## API verwijderen
+
+- Contact opnemen om API te laten verwijderen
 - Dit omdat een API niet zomaar "verwijderd" kan worden; dit is een lifecycle wijziging
 
-## API Lifecycle
+## API Lifecycle "End-of-Life" phase
 
-1. Active
-1. Deprecated (wordt uitgefaseerd, geen ondersteuning)
-1. Sunset (uitgefaseerd, offline)
+![end-of-life](end-of-life.png)
 
 ## RFC9745: The Deprecation HTTP Response Header Field
 
 ```http
-Deprecation: @1688169599
-Sunset: Sun, 30 Jun 2024 23:59:59 UTC
-Link: <https://developer.example.com/deprecation>;
-     rel="deprecation"; type="text/html"
+Deprecation: @1688169599                                 # UNIX timestamp
+Sunset:      Sun, 30 Jun 2024 23:59:59 UTC               # HTTP-date timestamp
+Link:        <https://developer.example.com/deprecation>;
+             rel="deprecation"; type="text/html"
 ```
 
 <https://datatracker.ietf.org/doc/html/rfc9745>
 
+## Misbruik `info.version` in ADR
+
+ADR `/core/semver`:
+
+> **How to test**
+> Parse the `info.version` field in the OpenAPI Description to confirm it adheres to the Semantic Versioning format.
+
+OpenAPI Specification 3.0.3 (<https://spec.openapis.org/oas/v3.0.3.html#info-object>):
+
+|Field|Type|Description|
+|-|-|-|
+|version|`string`|_**REQUIRED**_. The version of the OpenAPI document (**which is distinct from** the OpenAPI Specification version or **the API implementation version**).|
+
 ## Voorstel
 
 ```yaml
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   version: 1.2.3
   x-deprecated: 2025-10-10 # toekomst of verleden
-  x-sunset: 2027-11-11 # altijd in de toekomst
+  x-sunset: 2027-11-11     # altijd in de toekomst
 ```
 
 <https://github.com/Geonovum/KP-APIs/issues/649>
 
 ## Servers
-
-## OpenAPI Overlays
-
-## OpenAPI 3.1
 
 ## API scores
 
