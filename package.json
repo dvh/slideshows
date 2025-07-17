@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf public && npm run -s deck",
     "deck": "marp --no-stdin -I ./shows -o public && ncp ./shows public && cpx \"./themes/!(*.keep|*.css)\" public/themes",
-    "start": "marp -s ."
+    "start": "marp -s --html ."
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.1.2",
