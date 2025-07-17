@@ -1,1 +1,6 @@
 # README
+
+## Install
+```
+pnpm install
+```
