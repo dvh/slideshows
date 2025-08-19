@@ -6,6 +6,11 @@
 
 @import "default";
 
+:root{
+  --font-size-xs: .675rem;
+  --don-lichtblauw-200: #cce7f4;
+}
+
 section {
   align-content: start !important;
   background-image: url("https://dvh.github.io/slideshows/themes/header.svg");
@@ -31,6 +36,12 @@ section.title a {
   color: #ffffff !important;
   text-decoration: underline;
 }
+section.title h1 {
+  color: var(--don-lichtblauw-200) !important;
+}
+section.title h1 code {
+  color: white;
+}
 section h1, section.title h2 {
   padding-top: 180px;
   color: #ffffff !important;
@@ -50,4 +61,32 @@ section.image {
 }
 section.image img {
   max-height: 720px;
+}
+
+.horizontal-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: var(--font-size-xs);
+}
+
+.horizontal-list li {
+  /* background-color: red; */
+  margin-top: 0;
+  padding: 0 1.7rem 0 1rem;
+  color: var(--don-lichtblauw-200) !important;
+}
+
+.horizontal-list li::marker {
+  color: white;
+}
+
+.horizontal-list li:first-child::marker {
+  display: none !important;
+  content: "";
+}
+
+.horizontal-list li::after&last-child{
+  /* content: ""; */
 }

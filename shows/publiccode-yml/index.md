@@ -3,14 +3,33 @@ marp: true
 theme: don
 headingDivider: 2
 ---
-# developer.overheid.nl
+# Why further development on `publiccode.yml` is necessary to improve European cooperation
+
 <!-- _class: title -->
 
-**whoami**
+<ul class="horizontal-list" style="margin-top: 3rem;">
+  <li>Tom Ootes</li>
+  <li>🐘 <a href="https://hostux.social/@tomootes">@tomootes</a></li>
+  <li>Open Source Summit Europe</li>
+  <li>27 August 2025</li>
+</ul>
 
-Tom Ootes
-<tom@ootes.io>
-🧰 Developer Advocate
+<!--
+- So I know you guys have been in this situation:
+- your product owner or manager comes up to you and your team and asks you to build a new solution
+- These kind of situations always make me think
+- We can save a lot money, and build better stuff!
+- A new project arises within you organization and people start thinking about the UX, and so forth
+- Or in a worst-case scenario, a manager starts talking about buying an off-the-shelf SAAS solution
+- This kind of situations has always 
+-->
+
+# **whoami**
+
+**Tom Ootes**
+📩 <a href="mailto:tom@ootes.io">tom@ootes.io</a>
+
+🧰 (Freelance) Developer Advocate @ **developer.overheid.nl**
 
 🎸 Making music
 🌳 Love biology
@@ -18,7 +37,9 @@ Tom Ootes
 
 <!--
 - Im am Tom Ootes
-- Working for the Dutch Government 
+- I work as a freelancer in IT, as a developer
+- Ive done a lot of projects for the Dutch Government as a freelancer
+- During my work 
 - As a developer advocate
 - Besides this i have a band with which i like to play together
 - I also really enjoy reading about biology, and i am a big fan of Alexander von Humboldt, the naturalist and explorer.
@@ -27,26 +48,14 @@ Tom Ootes
 ## **About developer.overheid.nl**
 
 
-
 - Developer portal
 - OSS Catalogue
 - API Catalogue
 - Knowledge base
 
 
-
 > I help developers within the Dutch government building quality applications
 
-
-<!--
-- We are a team that is building a developer portal for the whole Dutch government
-- We do so by working on a couple of products
-- OSS Catalogue > has been around for five years now. 
-  - This presentation is about how we want to refactor this catalogue, based on publiccode.yml
-- API Catalogue > gov orgs can add their API here
-- Knowledgebase with articles on for example how to become Double-U-Cee-A-Gee compliant
--- We also have tutorials en tools, for example on how to install and use the Dutch gov Design System.
--->
 
 ## **How did i get here?**
 
@@ -61,6 +70,17 @@ Tom Ootes
 
 ## Very little documentation!
 <!-- _class: title -->
+
+<!--
+- We are a team that is building a developer portal for the whole Dutch government
+- We do so by working on a couple of products
+- OSS Catalogue > has been around for five years now. 
+  - This presentation is about how we want to refactor this catalogue, based on publiccode.yml
+- API Catalogue > gov orgs can add their API here
+- Knowledgebase with articles on for example how to become Double-U-Cee-A-Gee compliant
+-- We also have tutorials en tools, for example on how to install and use the Dutch gov Design System.
+-->
+
 
 <p style="text-align: center; font-size: 3rem;">👹</p>
 
