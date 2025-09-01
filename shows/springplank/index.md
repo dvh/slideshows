@@ -68,13 +68,6 @@ https://www.opslevel.com/resources/developer-portals-what-are-they-and-why-do-yo
 
 ![implementatieondersteuning](./implementatieondersteuning.png)
 
-## Nieuwe ADR validator
-
-- Compatible met nieuwe versie API Design Rules
-- Valideert tegen OAS
-- Accepteert afwijkende OAS locatie
-- Betere resultaten in API dashboard
-
 ## Integratie communities
 
 - Kennisplatform API’s
@@ -100,6 +93,12 @@ https://www.opslevel.com/resources/developer-portals-what-are-they-and-why-do-yo
 - Security (mTLS vanaf 3.1)
 - Example(s) tbv mocking services en SDK’s
 - JSON schemas (vanaf 3.1)
+
+## ADR Scores
+
+- Op basis van generieke OAS checker ipv validator
+- Hulp bij afwijkingen
+- Representatiever want alleen REST
 
 ## Organisatie - oude situatie
 
@@ -278,7 +277,9 @@ info:
 - Pull requests
 - Feature requests
 - Ideeën
-- Spread the word!
+
+## Spread the word!
+<!-- _class: title -->
 
 ## Op naar één centrale plek voor software development bij de overheid!
 <!-- _class: title -->
