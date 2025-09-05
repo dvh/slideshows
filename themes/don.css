@@ -73,6 +73,15 @@ section.image img {
   max-height: 720px;
 }
 
+section.page-image-only {
+  background-color: #017bc6 !important;
+  padding-bottom: 0;
+}
+
+section.page-image-only h2{
+  display: none;
+}
+
 .horizontal-list{
   display: flex;
   align-items: center;
@@ -131,7 +140,7 @@ section.image img {
 .flex-center{
   display: flex; justify-content: center; width: 100%;
   /* font-size: 40px; */
-}
+  }
 
 .lotr-ring{
   display: flex; flex-direction: row; justify-content: center; width: 100%;
@@ -139,4 +148,15 @@ section.image img {
 
 .lotr-ring p {
   text-align: center; font-size: 3rem; position: absolute; left: 50%; top: 50%; margin-left: -30px;
+}
+
+.one-third{
+  display: flex; flex-direction: row; align-items: flex-end; width: 100%;
+  .right{
+    margin-left: 1rem;
+  }
+}
+
+.card-border{
+  border: solid #CBD5E1 2px;
 }

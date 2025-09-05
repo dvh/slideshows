@@ -220,10 +220,14 @@ header: "Header"
   <div>
     <ul>
       <li>Created in 2018, in Italy</li>
+      <li>Describe your OS project</li>
+      <li>Git platform agnostic</li>
+      <li>Functions as a flag</li>
+      <li>Make it explorable</li>
     </ul>
   </div>
   <div style="margin-left: 4rem;">
-    <img src="./img/pc-yml.png" alt="pc.yml" width="700">
+    <img src="./img/pc-yml.png" alt="pc.yml" width="650">
   </div>
 </div>
 
@@ -256,7 +260,7 @@ header: "Header"
 
 ## Would you kindly? 👇🏻
 
-- Do you want to make your OS project explorable? Add a publiccode.yml!
+- Do you want to make your OS project explorable? [Add a publiccode.yml](https://developer.overheid.nl/kennisbank/open-source/standaarden/publiccode-yml)!
 - Encourage your organization to start using it
 - Give us feedback based on your experience
 - File [issues](https://github.com/publiccodeyml/publiccode.yml/issues) for ideas
@@ -272,7 +276,7 @@ header: "Header"
 
 ### Let's stay in touch
 <p class="mb-0">📩 tom@ootes.io</p>
-<p class="mb-0">🐘 hostux.social/@tomootes</p>
+<p class="mb-0">🐘 <a href="https://hostux.social/@tomootes">hostux.social/@tomootes</a></p>
 <!-- _class: title -->
 <!-- Hopefully see you again, on the internet? -->
 

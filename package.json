@@ -8,13 +8,13 @@
     "build": "rimraf public && npm run -s deck",
     "deck": "marp --no-stdin -I ./shows -o public && ncp ./shows public && cpx \"./themes/!(*.keep|*.css)\" public/themes",
     "start": "marp -s --html .",
-    "pdf": "marp --pdf --browser-path chromium index.md --allow-local-files --theme ../../themes/don.css"
+    "pdf": "marp --pdf --browser-path chromium ./index.md --allow-local-files --theme ../../themes/don.css"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.1.2",
     "cpx": "^1.5.0",
     "ncp": "^2.0.0",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1"  
   },
   "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
