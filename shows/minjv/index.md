@@ -29,16 +29,17 @@ Dimitri van Hees
 
 ## NL API Design Rules (ADR)
 
-- Standaard conventies voor API's
+- Standaard conventies voor (RESTful) API's
 - Op de **pas-toe-of-leg-uit lijst** van Forum Standaardisatie
 - In beheer bij Logius
+- Modulaire opzet
 
 ## Federatieve Service Connectivity (FSC)
 
 - Standaard voor veilige en uniforme gegevensuitwisseling tussen organisaties
 - Wederzijdse verificatie via digitale contracten
 - Toegangsbeheer en delegatie
-- Uniforme logging rondom verzoeken aan een API
+- Uniforme logging
 - Onderdeel van Digikoppeling REST API profiel
 
 ## Federatieve Toegangsverlening (FTV)
