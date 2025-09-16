@@ -45,7 +45,7 @@ Dimitri van Hees
 ## Federatieve Toegangsverlening (FTV)
 
 - Externalized Authorization Management (EAM)
-- Scheiding tussen techniel en beleid (toegangsregels)
+- Scheiding tussen techniek en beleid (toegangsregels)
 - Uniforme logging van toegangsbeslissingen
 - NL profiel voor AuthZEN
 
