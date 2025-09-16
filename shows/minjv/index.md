@@ -48,6 +48,12 @@ Dimitri van Hees
 - Uniforme logging van toegangsbeslissingen
 - NL profiel voor AuthZEN
 
+## Gemeenschappelijke Bronontsluiting
+
+- Samenhang tussen API's, OOTS, EUDI wallet, etc.
+- Standaardisatie voor (burger-)consent
+- Oplossing voor scraping
+
 ## Implementatieondersteuning
 
 - Ondersteuning bij casussen en architectuurvraagstukken
@@ -60,7 +66,9 @@ Dimitri van Hees
 - Martin van der Plas (architect)
 - Frank Terpstra (expert standaarden)
 
-## Techradar
+Contact? Mail naar api@geonovum.nl
+
+## developer.overheid.nl
 
 <!-- _class: title -->
 
