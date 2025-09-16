@@ -6,11 +6,26 @@
 
 @import "default";
 
-section {
-  align-content: start !important;
-  background-image: url("https://dvh.github.io/slideshows/themes/header.svg");
-  background-repeat: no-repeat;
+:root{
+  --font-size-xs: .675rem;
+  --don-lichtblauw-200: #cce7f4;
 }
+
+section header {
+  align-content: start !important;
+  background-image: url("./img/header.svg");
+  width: 100%;
+  padding: 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 90px;
+  content: "";
+  color: white;
+}
+
+
 h2 {
   padding-top: 10px;
   padding-bottom: 0px;
@@ -20,9 +35,9 @@ ol,
 ul {
   padding-left: 1em !important;
 }
-li::marker {
+/* li::marker {
   color: #017bc6;
-}
+} */
 section.title {
   background-color: #017bc6 !important;
   color: #ffffff !important;
@@ -31,8 +46,14 @@ section.title a {
   color: #ffffff !important;
   text-decoration: underline;
 }
+section.title h1 {
+  color: var(--don-lichtblauw-200) !important;
+}
+section.title h1 code {
+  color: white;
+}
 section h1, section.title h2 {
-  padding-top: 180px;
+  padding-top: 80px;
   color: #ffffff !important;
   text-align: center;
   font-size: 2em;
@@ -50,4 +71,92 @@ section.image {
 }
 section.image img {
   max-height: 720px;
+}
+
+section.page-image-only {
+  background-color: #017bc6 !important;
+  padding-bottom: 0;
+}
+
+section.page-image-only h2{
+  display: none;
+}
+
+.horizontal-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: var(--font-size-xs);
+}
+
+.horizontal-list li {
+  /* background-color: red; */
+  margin-top: 0;
+  padding: 0 1.7rem 0 1rem;
+  color: var(--don-lichtblauw-200) !important;
+}
+
+.horizontal-list li::marker {
+  color: white;
+}
+
+.horizontal-list li:first-child::marker {
+  display: none !important;
+  content: "";
+}
+
+.horizontal-list li::after&last-child{
+  /* content: ""; */
+}
+
+.grid-four-columns{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* background-color: red; */
+  grid-gap: 1rem;
+}
+
+.whoami{
+  display: flex; flex-direction: row; align-items: flex-end; width: 100%;
+}
+
+.whoami img {
+  margin-left: 4rem;
+}
+
+#how-did-i-get-here{
+  margin-top: 1rem;
+}
+
+.mb-0{
+  margin-bottom: 0 !important;
+}
+
+.pt-0{
+  padding-top: 0 !important;
+}
+
+.flex-center{
+  display: flex; justify-content: center; width: 100%;
+  /* font-size: 40px; */
+  }
+
+.lotr-ring{
+  display: flex; flex-direction: row; justify-content: center; width: 100%;
+}
+
+.lotr-ring p {
+  text-align: center; font-size: 3rem; position: absolute; left: 50%; top: 50%; margin-left: -30px;
+}
+
+.one-third{
+  display: flex; flex-direction: row; align-items: flex-end; width: 100%;
+  .right{
+    margin-left: 1rem;
+  }
+}
+
+.card-border{
+  border: solid #CBD5E1 2px;
 }
