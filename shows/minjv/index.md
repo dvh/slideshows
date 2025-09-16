@@ -63,9 +63,9 @@ Dimitri van Hees
 
 Wat we kunnen bieden:
 
-- Ondersteuning bij casussen en architectuurvraagstukken
-- Begeleiding bij de implementatie van standaarden
 - Toepassing van federatieve architectuurprincipes
+- Begeleiding bij de implementatie van standaarden
+- Ondersteuning bij casussen en architectuurvraagstukken
 
 ## Implementatie-ondersteuning
 
