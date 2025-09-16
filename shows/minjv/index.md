@@ -35,11 +35,18 @@ Dimitri van Hees
 
 ## Federatieve Service Connectivity (FSC)
 
-- TODO
+- Standaard voor veilige en uniforme gegevensuitwisseling tussen organisaties
+- Wederzijdse verificatie via digitale contracten
+- Toegangsbeheer en delegatie
+- Uniforme logging rondom verzoeken aan een API
+- Onderdeel van Digikoppeling REST API profiel
 
 ## Federatieve Toegangsverlening (FTV)
 
-- TODO
+- Externalized Authorization Management (EAM)
+- Scheiding tussen techniel en beleid (toegangsregels)
+- Uniforme logging van toegangsbeslissingen
+- NL profiel voor AuthZEN
 
 ## Implementatieondersteuning
 
