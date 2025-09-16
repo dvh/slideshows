@@ -55,11 +55,26 @@ Dimitri van Hees
 - Standaardisatie voor (burger-)consent
 - Oplossing voor scraping
 
-## Implementatieondersteuning
+## Implementatie ondersteuning
+
+<!-- _class: title -->
+
+## Implementatie ondersteuning
+
+Wat we kunnen bieden:
 
 - Ondersteuning bij casussen en architectuurvraagstukken
 - Begeleiding bij de implementatie van standaarden
 - Toepassing van federatieve architectuurprincipes
+
+## Implementatie ondersteuning
+
+Wat we willen bereiken:
+
+- Het gebruik van standaarden vergemakkelijken
+- Duidelijke richtlijnen bieden voor het implementeren van standaarden
+- Knelpunten in standaarden identificeren en adresseren
+- Kennis borgen
 
 ## Implementatieondersteuning (team)
 
