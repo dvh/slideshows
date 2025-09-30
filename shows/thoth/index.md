@@ -7,7 +7,7 @@ headingDivider: 2
 # Publicatie per doelgroep obv Thoth
 <!-- _class: title -->
 
-Eric van Nieuwland
+Eric Nieuwland
 <eric.nieuwland@ictu.nl>
 
 Dimitri van Hees
