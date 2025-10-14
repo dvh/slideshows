@@ -3,6 +3,6 @@
 {
   "markdown.marp.themes": ["./themes/don.css"],
   "files.associations": {
-    "*.md": "html",
+    "*.md": "markdown"
   }
 }
