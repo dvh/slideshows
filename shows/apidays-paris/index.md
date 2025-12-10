@@ -37,7 +37,11 @@ December 11, 2025
 
 ![2018](./2018.png)
 <!-- _class: image -->
-<!-- Last time I spoke here; tomorrow exactly 7 years ago -->
+<!--
+- Last time I spoke here; tomorrow exactly 7 years ago 
+- 2020: COVID: done with gov
+- 2023: Back to bring developer portal to next level
+-->
 
 ## developer.overheid.nl<br/>(dev.gov.nl)
 <!-- _class: title -->
@@ -46,26 +50,25 @@ December 11, 2025
 <!-- _class: image -->
 ![homepage](./homepage.png)
 
-## Data from the source
-<!-- _class: title -->
-<!--
-- Major incidents (e.g. with tax agency)
-- Eliminate local copies
-- And another factor:
--->
+## IT acceleration in The Netherlands
+
+- Serious incidents with local copies
+- "Data at the source" principle
+- Prevent local copies
 
 ## Trump
 <!-- _class: image -->
 ![trump](./trump.webp)
 
-## EU: Digital Autonomy
-<!-- _class: title -->
-<!--
-- Top priority in EU
-- Dutch National Digital Strategy launched last july
--->
+## IT acceleration in The Netherlands (and Europe!)
 
-## API Register
+- Serious incidents with local copies
+- "Data at the source" principle
+- Prevent local copies
+- Digital Autonomy top priority in EU
+- Dutch National Digital Strategy launched last july
+
+## The new API Register
 <!-- _class: title -->
 
 ## OpenAPI-first
@@ -95,7 +98,7 @@ December 11, 2025
 1. Convert YAML to JSON and vice versa
 1. Generate cool stuff (SDKs, Bruno, Postman, etc.)
 1. Validate API Design Rules to calculate score
-1. Poll for changes. If change detected: start at step 2
+1. Poll for changes. If change detected: return to step 4
 
 ## API Design Rules (ADR)
 <!-- _class: title -->
@@ -157,7 +160,7 @@ rules:
 
 ## Howtofix.png
 <!-- _class: image -->
-![howtofix](howtofix.png)
+![howtofix](./howtofix.png)
 
 ## Impact analyses for new rules
 <!-- _class: title -->
@@ -184,22 +187,26 @@ rules:
 - 12% (80% of 50% of 30%) doesn't return `errors` property
 - 97% will fail this new API Design Rule
 
-## ADR adaptation dashboard
+## Compliance monitor
+<!-- Again, numbers are not actual -->
+- 80% succeeds `/core/version-uri` now (growth of 10% since last month)
+- 60% succeeds `/core/openapi-location now (decrease of 5% since last week)
+- Yearly report for Netherlands Standardisation Forum
 
-## API Lifecycle
+## API Lifecycle: end-of-life
+<!-- _class: title -->
+
+## End-of-life phase
 
 ![end-of-life](./end-of-life.png)
 
-## API Lifecycle: end-of-life
+## Versioning and statuses
+<!-- DX low when you have to parse runtime headers; what about closed apis? Perhaps we'll do it both, but urge to fix this in openapi, along with the version! -->
 
-Api lifecycle: rfc, extension, date format, terminology, related versions
-Versioning
-Exploit info.version (weird decision)
-Extensions x-deprecated, x-sunset
-Not following rfc; again weird decision about date format
-More important: DX low when you have to parse runtime headers; what about closed apis? Perhaps we'll do it both, but urge to fix this in openapi, along with the version!
-Impossible to DELETE -> versioning
-Github-style badges
+- Exploit `info.version` for current semver of the API
+- RFC 9745 not suitable; solution at runtime
+- We work OpenAPI-first (design-time)
+- Custom extensions: `x-
 
 ## API register extensions
 
@@ -211,16 +218,26 @@ info:
   x-sunset: 2027-11-11     # future. If past, status is retired
 ```
 
-## Arazzo support
+## API statuses
 
-- Arazzo support
-- Usecase: dso
-- Release after apidays; want to verify with arazzo folks
-- Arazzo Tool inspired by lorna mitchell
+- `Active`
+- `Deprecated`
+- `Sunset`
+- `Retired` (impossible to `DELETE` an API from the register)
+- `To be deprecated` (any suggestions?)
+
+## Arazzo support
+<!-- _class: title -->
+<!-- 
+- Arazzo to Mermaid and Markdown
+- Arazzo Tool ported from Lorna Mitchell's Python tool
+- Usecase: Digital Department of the Environmental Act
+-->
 
 ## Arazzo.png
 <!-- _class: image -->
 ![arazzo](./arazzo.png)
+<!-- obtaining a permit involves many different APIs -->
 
 ## Project landscape
 <!-- _class: title -->
@@ -249,9 +266,21 @@ info:
 - WCAG compatible
 - Aware of API design
 
+## Github style "badges"
+
+![active](https://img.shields.io/badge/v1.3.2-Active-1e7e34?style=for-the-badge)
+![active/to be deprecated](https://img.shields.io/badge/v1.3.2-Active-d4a017?style=for-the-badge)
+![deprecated](https://img.shields.io/badge/v1.3.2-Deprecated-d35400?style=for-the-badge)
+![sunset](https://img.shields.io/badge/v1.3.2-Sunset-a71d2a?style=for-the-badge)
+![retired](https://img.shields.io/badge/v1.3.2-Retired-6c757d?style=for-the-badge)
+
+## badge preview
+<!-- _class: image -->
+![apidetail](./apidetail.png)
+
 ## OAS Generator
 <!-- _class: image -->
-![ptlo](./oasgenerator.png)
+![oasgenerator](./oasgenerator.png)
 
 ## Reusable ADR schemas and components
 <!-- schema register (based on DVLA presentation last year) -->
