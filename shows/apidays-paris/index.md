@@ -17,31 +17,34 @@ December 11, 2025
 ![ptlo](./ptolu.png)
 
 <!-- Feels like coming home, little recap
-Api journy started 2012, first api days: last time i spoke here, openapi required, eu meeting (call from mehdi), decentralized
-Only instruments: 2 standards
-Openapi and api design rules
-Carrot (rewarding) instead of obliging
-Tools to help
-DRY government (dikes), dont reinvent the wheel
+- Api journy started in 2013, second api days Paris
+- June 2018: openapi mandatory
 - Step 1: standardize the way we describe APIs: OpenAPI Specification
-- We can’t centralize legislation, but we can centralize the way gov APIs should work
  -->
 
 ## Italy
 <!-- _class: image -->
-![ptlo](./italy.png)
+<!-- 
+- October 2018, call from Mehdi
+- 4 Dutch organisations were representing The Netherlands
+- Embarrased, but there is no "agency" or "ministry" of IT or Digital Services here
+- All decentralized
+- Pizza and beer with Italian and Dutch colleagues: birth of National Developer Portal
+-->
+![italy](./italy.png)
 
 ## Apidays2018
 
-![ptlo](./2018.png)
+![2018](./2018.png)
 <!-- _class: image -->
+<!-- Last time I spoke here; tomorrow exactly 7 years ago -->
 
 ## developer.overheid.nl<br/>(dev.gov.nl)
 <!-- _class: title -->
 
 ## homepage
 <!-- _class: image -->
-![](./homepage.png)
+![homepage](./homepage.png)
 
 ## Data from the source
 <!-- _class: title -->
@@ -53,7 +56,7 @@ DRY government (dikes), dont reinvent the wheel
 
 ## Trump
 <!-- _class: image -->
-![alt text](./trump.webp)
+![trump](./trump.webp)
 
 ## EU: Digital Autonomy
 <!-- _class: title -->
@@ -82,20 +85,25 @@ DRY government (dikes), dont reinvent the wheel
 - ~~1 GraphQL~~
 - ~~3 Other (Atom, CKAN, Socrata)~~
 
-## How does it work
+## How it works
 
-How does it work once we have an oas url, oas versions, notifications
-V3.0 mandatory, v3.1 supports schema and mTLS. So we convert it to make schema reuse possible. To 3.1, 3.0. -> npm package
-New api process
-Code generation
-Mocking
-Sdks
-Notification service
+1. `POST` URL of the OAS document to our _API register API_
+1. Validate OAS and presence of `contact` object
+1. If valid, add URL to register
+1. Make local copy of dereferenced OAS
+1. Convert 3.0 to 3.1 and vice versa
+1. Convert YAML to JSON and vice versa
+1. Generate cool stuff (SDKs, Bruno, Postman, etc.)
+1. Validate API Design Rules to calculate score
+1. Poll for changes. If change detected: start at step 2
 
 ## API Design Rules (ADR)
 <!-- _class: title -->
 <!--
-Discussions about versioning, pagination. Body or header links? Toss a coin. Dont care HOW but that we do it all the SAME.
+- We can’t centralize legislation, but we can centralize the way gov APIs should work
+- Discussions about versioning, pagination. Body or header links? Toss a coin.
+- Dont care HOW but that we do it all the SAME.
+- Mandatory standard
 -->
 
 ## API Design Rules (ADR)
@@ -111,7 +119,6 @@ Discussions about versioning, pagination. Body or header links? Toss a coin. Don
 Better for generic tooling, saves discussion, and last but not least: if we find that it should have been different in a next version of the api design rules, we can all follow the same migration path and documentation; generic tooling stays intact when updated to next major version
 Mostly refered to client developers, devs consuming the API's.
 In this talk also refered to API devs.
-
 -->
 
 ## ADR validation with Spectral (docs.stoplight.io/docs/spectral)
@@ -146,11 +153,11 @@ rules:
 
 ## OAS Checker.png
 <!-- _class: image -->
-![ptlo](./oaschecker.png)
+![oaschecker](./oaschecker.png)
 
 ## Howtofix.png
 <!-- _class: image -->
-![alt text](howtofix.png)
+![howtofix](howtofix.png)
 
 ## Impact analyses for new rules
 <!-- _class: title -->
@@ -213,14 +220,14 @@ info:
 
 ## Arazzo.png
 <!-- _class: image -->
-![ptlo](./arazzo.png)
+![arazzo](./arazzo.png)
 
 ## Project landscape
 <!-- _class: title -->
 
 ## HLA
 <!-- _class: image -->
-![ptlo](./hla.png)
+![hla](./hla.png)
 
 ## Separate repositories
 <!-- 
@@ -247,8 +254,9 @@ info:
 ![ptlo](./oasgenerator.png)
 
 ## Reusable ADR schemas and components
-<!-- _class: title -->
-
+<!-- schema register (based on DVLA presentation last year) -->
+- @TODO: JSON Schema register
+- @TODO: Update standard to OAS 3.1 or 3.2
 
 ## Tools API
 
@@ -270,21 +278,19 @@ info:
 
 ## OSS-docs generator
 <!-- _class: image -->
-![ptlo](./ossdocsgenerator.png)
+![ossdocsgenerator](./ossdocsgenerator.png)
 
 ## Publiccode.yml Checker
 <!-- _class: image -->
-![ptlo](./pcchecker.png)
-
-## code.overheid.nl
-
-Collab code.overheid.nl; mirror github/lab. Based on forgejo
+![pcchecker](./pcchecker.png)
 
 ## Next steps
-<!-- schema register (based on DVLA presentation last year) -->
+
 - Stable and compliant landscape
+- Notifications (RSS?)
 - Schema register
-- MCP servers
+- Launching customer of code.overheid.nl (code.gov.nl)
+- MCP
 
 ## Thank you!
 <!-- _class: title -->
@@ -294,5 +300,3 @@ E-mail: <d.vanhees@geonovum.nl>
 LinkedIn: <https://www.linkedin.com/in/dimitrivanhees/>
 Slides: <https://dvh.github.io/slideshows/apidays-paris>
 Github: <https://github.com/developer-overheid-nl>
-
-
