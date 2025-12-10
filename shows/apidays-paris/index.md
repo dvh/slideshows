@@ -43,13 +43,6 @@ DRY government (dikes), dont reinvent the wheel
 <!-- _class: image -->
 ![](./homepage.png)
 
-## Developer Experience
-<!-- _class: title -->
-<!--
-Mostly refered to client developers, devs consuming the API's.
-In this talk also refered to API devs.
--->
-
 ## Data from the source
 <!-- _class: title -->
 <!--
@@ -105,10 +98,20 @@ Notification service
 Discussions about versioning, pagination. Body or header links? Toss a coin. Dont care HOW but that we do it all the SAME.
 -->
 
-## It doesn't matter HOW we do it, as long as we all do it the SAME
-<!-- _class: title -->
+## API Design Rules (ADR)
+
+- It doesn't matter HOW we do it, as long as we all do it the SAME
+- Possibility to generate generic tooling
+- Saves discussion time
+- Changes can be fixed by following the same migration path and tutorials
+- Generic tooling can follow ADR versions
+- Better Developer Experience for API devs
+
 <!-- 
 Better for generic tooling, saves discussion, and last but not least: if we find that it should have been different in a next version of the api design rules, we can all follow the same migration path and documentation; generic tooling stays intact when updated to next major version
+Mostly refered to client developers, devs consuming the API's.
+In this talk also refered to API devs.
+
 -->
 
 ## ADR validation with Spectral (docs.stoplight.io/docs/spectral)
@@ -212,6 +215,9 @@ info:
 <!-- _class: image -->
 ![ptlo](./arazzo.png)
 
+## Project landscape
+<!-- _class: title -->
+
 ## HLA
 <!-- _class: image -->
 ![ptlo](./hla.png)
@@ -236,6 +242,14 @@ info:
 - WCAG compatible
 - Aware of API design
 
+## OAS Generator
+<!-- _class: image -->
+![ptlo](./oasgenerator.png)
+
+## Reusable ADR schemas and components
+<!-- _class: title -->
+
+
 ## Tools API
 
 - Convert OAS 3.0 to OAS 3.1
@@ -245,17 +259,6 @@ info:
 - OAS to Postman collection
 - Arazzo to Markdown
 - Arazzo to Mermaid
-
-## OAS Generator
-<!-- _class: image -->
-![ptlo](./oasgenerator.png)
-
-## Reusable ADR schemas and components
-<!-- _class: title -->
-
-## code.overheid.nl
-
-Collab code.overheid.nl; mirror github/lab. Based on forgejo
 
 ## Open Source Software (OSS) register
 <!-- _class: title -->
@@ -272,6 +275,10 @@ Collab code.overheid.nl; mirror github/lab. Based on forgejo
 ## Publiccode.yml Checker
 <!-- _class: image -->
 ![ptlo](./pcchecker.png)
+
+## code.overheid.nl
+
+Collab code.overheid.nl; mirror github/lab. Based on forgejo
 
 ## Next steps
 <!-- schema register (based on DVLA presentation last year) -->
