@@ -206,7 +206,7 @@ rules:
 - Exploit `info.version` for current semver of the API
 - RFC 9745 not suitable; solution at runtime
 - We work OpenAPI-first (design-time)
-- Custom extensions: `x-
+- Workaround: custom extensions
 
 ## API register extensions
 
