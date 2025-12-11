@@ -190,7 +190,7 @@ rules:
 ## Compliance monitor
 <!-- Again, numbers are not actual -->
 - 80% succeeds `/core/version-uri` now (growth of 10% since last month)
-- 60% succeeds `/core/openapi-location now (decrease of 5% since last week)
+- 60% succeeds `/core/openapi-location` now (decrease of 5% since last week)
 - Yearly report for Netherlands Standardisation Forum
 
 ## API Lifecycle: end-of-life
@@ -302,7 +302,7 @@ info:
 
 ## Publiccode.yml
 
-- OAS for OSS projects in the public secotr
+- OAS for OSS projects in the public sector
 - Collab EU, italy, brussels
 
 ## OSS-docs generator
