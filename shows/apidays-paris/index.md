@@ -16,11 +16,12 @@ December 11, 2025
 <!-- _class: image -->
 ![ptlo](./ptolu.png)
 
-<!-- Feels like coming home, little recap
+<!--
+- Feels like coming home, little recap
 - Api journy started in 2013, second api days Paris
-- June 2018: openapi mandatory
 - Step 1: standardize the way we describe APIs: OpenAPI Specification
- -->
+- June 2018: openapi mandatory
+-->
 
 ## Italy
 <!-- _class: image -->
@@ -51,7 +52,7 @@ December 11, 2025
 ![homepage](./homepage.png)
 
 ## IT acceleration in The Netherlands
-
+<!-- and the second reason... -->
 - Serious incidents with local copies
 - "Data at the source" principle
 - Prevent local copies
@@ -66,7 +67,7 @@ December 11, 2025
 - "Data at the source" principle
 - Prevent local copies
 - Digital Autonomy top priority in EU
-- Dutch National Digital Strategy launched last july
+- Dutch National Digital Strategy launched last July
 
 ## The new API Register
 <!-- _class: title -->
@@ -106,7 +107,7 @@ December 11, 2025
 - We can’t centralize legislation, but we can centralize the way gov APIs should work
 - Discussions about versioning, pagination. Body or header links? Toss a coin.
 - Dont care HOW but that we do it all the SAME.
-- Mandatory standard
+- Mandatory standard alongside the OpenAPI Specification
 -->
 
 ## API Design Rules (ADR)
@@ -201,10 +202,10 @@ rules:
 ![end-of-life](./end-of-life.png)
 
 ## Versioning and statuses
-<!-- DX low when you have to parse runtime headers; what about closed apis? Perhaps we'll do it both, but urge to fix this in openapi, along with the version! -->
+<!-- DX low when you have to parse runtime headers; what about closed apis? Perhaps we'll do it both, but urge to fix this in openapi, along with the version! Have a look at the SIG -->
 
 - Exploit `info.version` for current semver of the API
-- RFC 9745 not suitable; solution at runtime
+- RFC 9745 (`Deprecation` and `Sunset` headers) not suitable; solution at runtime
 - We work OpenAPI-first (design-time)
 - Workaround: custom extensions
 
@@ -285,7 +286,7 @@ info:
 ## Reusable ADR schemas and components
 <!-- schema register (based on DVLA presentation last year) -->
 - @TODO: JSON Schema register
-- @TODO: Update standard to OAS 3.1 or 3.2
+- @TODO: Update standard to OAS 3.1
 
 ## Tools API
 
@@ -303,7 +304,8 @@ info:
 ## Publiccode.yml
 
 - OAS for OSS projects in the public sector
-- Collab EU, italy, brussels
+- Collab EU, Italy, Brussels
+- Sync with European Open Source Portal
 
 ## OSS-docs generator
 <!-- _class: image -->
@@ -317,8 +319,19 @@ info:
 
 - Stable and compliant landscape
 - Notifications (RSS?)
-- Schema register
+- JSON Schema register
 - Launching customer of code.overheid.nl (code.gov.nl)
+- Tooling improvements
+- Upgrade standard to OAS 3.1 or, hopefully, 3.2
+
+## Next steps
+
+- Stable and compliant landscape
+- Notifications (RSS?)
+- JSON Schema register
+- Launching customer of code.overheid.nl (code.gov.nl)
+- Tooling improvements
+- Upgrade standard to OAS 3.1 or, hopefully, 3.2
 - MCP
 
 ## Thank you!
