@@ -8,20 +8,24 @@ headingDivider: 2
 <!-- _class: image -->
 ![hla](./hla.png)
 
+## Integrations
+<!-- _class: image -->
+![hla](../apidays-paris/integrations.png)
+
 ## 2026
 
 - Toegankelijkheid
 - Codekwaliteit
 - Informatiearchitectuur kennisbank
-- Uitbreiding API Design Rules
+- Uitbreiding API Design Rules / Techradar (oa tbv code generatie)
 - Standaardisatie publiccode.yaml
 - Update OpenAPI Specification van 3.0 naar 3.1 (of 3.2?)
 - JSON Schema register (schemas.developer.overheid.nl)
-- MCP (Model Context Protocol)
+- MCP (Model Context Protocol), Arazzo
 - Samenwerking code.overheid.nl
 - Open Source werken
 
-## Vragen?
+## Proost!
 <!-- _class: title -->
 
 - Bijdragen: <https://developer.overheid.nl/contributing>
