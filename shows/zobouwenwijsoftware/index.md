@@ -10,12 +10,14 @@ headingDivider: 2
 
 ## 2026
 
-- Toegankelijkheid voor alle tools
-- Code kwaliteit
-- Uitbreiding API Design Rules tbv code generatie
-- publiccode.yaml naar verplichte standaard
+- Toegankelijkheid
+- Codekwaliteit
+- Informatiearchitectuur kennisbank
+- Uitbreiding API Design Rules
+- Standaardisatie publiccode.yaml
 - Update OpenAPI Specification van 3.0 naar 3.1 (of 3.2?)
 - JSON Schema register (schemas.developer.overheid.nl)
+- MCP (Model Context Protocol)
 - Samenwerking code.overheid.nl
 - Open Source werken
 
