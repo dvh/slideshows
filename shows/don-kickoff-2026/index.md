@@ -51,6 +51,7 @@ headingDivider: 2
 ## Integraties
 
 - data.overheid.nl
+- NGR
 - Forum Standaardisatie
 - NeRDS
 - code.overheid.nl
