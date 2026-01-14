@@ -61,9 +61,9 @@ headingDivider: 2
 - Sprints eindigen telkens eerste woensdag van de maand
 - Woensdag Amersfoort: teamdag, wekelijkse standup
 - Dinsdag/donderdag **korte** standup
-- Werk via het planbord!
-- Houd issues klein!
-- Geen issue voor? Zelf aanmaken.
+- Werk via het **planboard**!
+- Houd issues **klein**!
+- Geen issue voor? **Zelf** aanmaken.
 - Implementatieondersteuning == developer.overheid.nl
 - Vakantie? Zet tijdig in agenda ivm sprintplanning
 
