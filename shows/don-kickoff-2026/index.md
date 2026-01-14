@@ -43,6 +43,7 @@ headingDivider: 2
 
 - Doorontwikkeling API- en OSS-register
 - Schema register: schemas.developer.overheid.nl
+- tools.developer.overheid.nl
 - Verbeteren bijdragemogelijkheden
 - Techradar
 - DON Design System
