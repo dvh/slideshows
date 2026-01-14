@@ -45,8 +45,8 @@ headingDivider: 2
 - Schema register: schemas.developer.overheid.nl
 - Verbeteren bijdragemogelijkheden
 - Techradar
-- Integraties
 - DON Design System
+- Integraties
 
 ## Integraties
 
