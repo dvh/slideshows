@@ -63,7 +63,7 @@ headingDivider: 2
 - Woensdag Amersfoort: teamdag, wekelijkse standup
 - Dinsdag/donderdag **korte** standup
 - Werk via het **planboard**!
-- Houd issues **klein**!
+- Houd issues **klein**
 - Geen issue voor? **Zelf** aanmaken.
 - Implementatieondersteuning == developer.overheid.nl
 - Vakantie? Zet tijdig in agenda ivm sprintplanning
