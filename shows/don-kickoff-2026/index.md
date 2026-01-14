@@ -41,7 +41,7 @@ headingDivider: 2
 
 ## Extra features
 
-- Doorontwikkelen API- en OSS-register
+- Doorontwikkeling API- en OSS-register
 - Schema register: schemas.developer.overheid.nl
 - Verbeteren bijdragemogelijkheden
 - Techradar
