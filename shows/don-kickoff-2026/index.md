@@ -54,6 +54,7 @@ headingDivider: 2
 - NGR
 - Forum Standaardisatie
 - NeRDS
+- TOOI
 - code.overheid.nl
 
 ## Praktisch
