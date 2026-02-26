@@ -291,6 +291,9 @@ export interface Address {
 ## Large Language Models!
 <!-- _class: title -->
 
+## Demo Schema register
+<!-- _class: title -->
+
 ## Project landschap
 <!-- _class: title -->
 
