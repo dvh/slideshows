@@ -1,0 +1,376 @@
+/*!
+  @theme don
+*/
+
+/* @import 'uncover'; */
+
+@import "default";
+
+section {
+  align-content: start !important;
+  background-image: url("./themes/header.svg");
+  background-repeat: no-repeat;
+  font-size: 28px;
+  padding: 100px 50px 40px 50px;
+}
+h2 {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #017bc6;
+}
+p,
+li {
+  margin: 0.3em 0;
+}
+ol,
+ul {
+  padding-left: 1em !important;
+}
+li::marker {
+  color: #017bc6;
+}
+section.title {
+  background-color: #017bc6 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 60px 50px !important;
+}
+section.title a {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+section.title h1 {
+  padding: 0;
+  margin: 0 0 0.3em 0;
+  color: #ffffff !important;
+  text-align: center;
+  font-size: 2em;
+}
+section.title p {
+  margin: 0.2em 0;
+  text-align: center;
+}
+section.title p:last-of-type {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  font-size: 0.9em;
+}
+section.title h2 {
+  padding: 0;
+  margin: 0.5em 0;
+  color: #ffffff !important;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+section h1 {
+  padding-top: 180px;
+  color: #ffffff !important;
+  text-align: center;
+  font-size: 2em;
+}
+section img {
+  max-height: 500px;
+}
+section.image h2 {
+  display: none;
+}
+section.image {
+  background-image: none;
+  padding: 0 !important;
+  text-align: center;
+}
+section.image img {
+  max-height: 720px;
+}
+
+/* Twee-koloms layout */
+section.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 2em;
+}
+section.columns h2,
+section.columns blockquote {
+  grid-column: 1 / -1;
+}
+
+/* Quote slide */
+section.quote {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 100px 100px 80px 100px !important;
+  background-color: #f8f9fa;
+}
+section.quote h2 {
+  color: #017bc6;
+  margin: 0 0 1em 0;
+  font-size: 1.4em;
+}
+section.quote blockquote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 300;
+  border: none;
+  color: #222;
+  margin: 0;
+  padding: 0 0 0 50px;
+  position: relative;
+  line-height: 1.4;
+}
+section.quote blockquote::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 3em;
+  color: #017bc6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+}
+section.quote blockquote p {
+  margin: 0;
+}
+section.quote > p:last-of-type {
+  font-size: 0.8em;
+  color: #666;
+  margin: 1em 0 0 0;
+}
+
+/* Vergelijkings-slide */
+section.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0.5em 1.5em;
+}
+section.comparison h2 {
+  grid-column: 1 / -1;
+}
+section.comparison .wrong,
+section.comparison .right {
+  padding: 1em;
+  border-radius: 8px;
+}
+section.comparison .wrong {
+  background: #fee;
+  border-left: 4px solid #c00;
+}
+section.comparison .right {
+  background: #efe;
+  border-left: 4px solid #0a0;
+}
+section.comparison .wrong h3,
+section.comparison .right h3 {
+  margin: 0 0 0.3em 0;
+  font-size: 1em;
+}
+section.comparison .wrong h3 {
+  color: #c00;
+}
+section.comparison .right h3 {
+  color: #0a0;
+}
+section.comparison p {
+  margin: 0.3em 0 0 0;
+  font-size: 0.85em;
+}
+
+/* Diagram/flow slide */
+section.diagram {
+  text-align: center;
+}
+section.diagram .flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 1em 0;
+}
+section.diagram .box {
+  background: #017bc6;
+  color: white;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+}
+section.diagram .box.source {
+  background: #0a5;
+}
+section.diagram .box.app {
+  background: #666;
+}
+section.diagram .arrow {
+  font-size: 2em;
+  color: #017bc6;
+}
+
+/* Tabellen */
+table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  border-collapse: collapse;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+th {
+  background: #017bc6;
+  color: white;
+  padding: 0.5em 0.8em;
+  text-align: left;
+  font-weight: 600;
+}
+th:first-child {
+  width: 30%;
+}
+td {
+  padding: 0.4em 0.8em;
+  border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Highlight boxes (legacy) */
+.highlight {
+  background: #e8f4fc;
+  border-left: 4px solid #017bc6;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  border-radius: 0 8px 8px 0;
+  color: #000;
+}
+.highlight p {
+  margin: 0;
+}
+.highlight.warning {
+  background: #fff3e0;
+  border-left-color: #f90;
+}
+.highlight.success {
+  background: #e8f5e9;
+  border-left-color: #0a5;
+}
+
+/* GitHub-style alerts */
+section:not(.quote) blockquote.alert {
+  border: none;
+  border-left: 4px solid #017bc6;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  border-radius: 0 8px 8px 0;
+  font-style: normal;
+  background: #e8f4fc;
+  color: #000;
+}
+section:not(.quote) blockquote.alert p {
+  margin: 0;
+}
+section:not(.quote) blockquote.alert-warning {
+  background: #fff3e0;
+  border-left-color: #f90;
+}
+section:not(.quote) blockquote.alert-success {
+  background: #e8f5e9;
+  border-left-color: #0a5;
+}
+section:not(.quote) blockquote.alert-note {
+  background: #e8f4fc;
+  border-left-color: #017bc6;
+}
+
+/* Statement slide */
+section.statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 120px !important;
+  background-image: none;
+  background: linear-gradient(135deg, #017bc6 0%, #0056a0 100%);
+}
+section.statement p {
+  font-size: 2.4em;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+section.statement p strong {
+  font-weight: 600;
+}
+
+/* CTA slide */
+section.cta {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 60px 60px 60px !important;
+  gap: 1.5em;
+}
+section.cta h2 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+section.cta .card-container {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex: 1;
+}
+section.cta .card {
+  flex: 1;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5em;
+  border-top: 4px solid #017bc6;
+}
+section.cta .card h3 {
+  margin: 0 0 0.8em 0;
+  color: #017bc6;
+  font-size: 1.1em;
+}
+section.cta .card ul {
+  margin: 0;
+}
+section.cta .card li {
+  margin: 0.4em 0;
+}
+
+/* Emphasis block */
+.emphasis {
+  margin-top: auto;
+  padding: 1.2em 1.5em;
+  background: linear-gradient(135deg, #017bc6 0%, #0056a0 100%);
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+}
+.emphasis h3 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: white;
+}
+
+/* Mermaid diagrams */
+pre.mermaid {
+  background: transparent;
+  font-size: 18px;
+  margin: 0.5em 0;
+}
