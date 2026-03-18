@@ -23,7 +23,7 @@ Dimitri van Hees
 
 - XSD voor JSON
 - Geschreven in JSON (of YAML)
-- Breed gedragen standaard
+- Breed gedragen standaard: OpenAPI, AsyncAPI, LLM's
 - Versies: Draft-07, 2019-09, 2020-12 (stable)
 
 ## OAS 3.1
@@ -234,15 +234,6 @@ content:
 
 - [https://www.linkedin.com/in/dimitrivanhees/](https://www.linkedin.com/in/dimitrivanhees/)
 - <d.vanhees@geonovum.nl>
-
-## Known issues
-
-- geen afspraken/schema design rules zoals herleidbaarheid
-- versioning
-- insert/update
-- plek van codegen
-- npm package
-- geen plek voor components
 
 ## Op naar één centrale plek voor software development bij de overheid
 <!-- _class: title -->
