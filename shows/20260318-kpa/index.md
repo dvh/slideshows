@@ -130,6 +130,9 @@ content:
 - Plek voor OAS components
 - Toekomstige andere components (OAS 3.0, AsyncAPI, TS Types?)
 
+## Codegen
+<!-- _class: title -->
+
 ## Plan img
 <!-- _class: image -->
 <br/><br/>
@@ -160,7 +163,7 @@ content:
 - Koppeling stelselcatalogus
 - Kwaliteitscontrole
 
-## Nog een demo
+## Demo (2)
 <!-- _class: title -->
 
 ## JSON Schema Design Rules
