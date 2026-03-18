@@ -14,7 +14,7 @@ Dimitri van Hees
 ## Dimitri van Hees
 
 - API architect, consumer, provider, developer
-- Co-auteur DSO en NLGov API Strategie
+- Contributor DSO en NLGov API Strategie
 - OpenAPI Specification contributor en indiener bij PTOLU
 - Product Owner en API architect @ developer.overheid.nl
 - Mede-eigenaar en bierbrouwer @ Brouwtoren, Nijmegen
