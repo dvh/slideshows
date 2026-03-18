@@ -23,7 +23,7 @@ Dimitri van Hees
 
 - XSD voor JSON
 - Geschreven in JSON (of YAML)
-- Breed gedragen standaard: OpenAPI, AsyncAPI, LLM's
+- Breed gedragen standaard
 - Versies: Draft-07, 2019-09, 2020-12 (stable)
 
 ## OAS 3.1
@@ -128,7 +128,7 @@ content:
 - Hergebruik generieke frontend
 - Extra JSON Schema features
 - Plek voor OAS components
-- Toekomstige andere components
+- Toekomstige andere components (OAS 3.0, AsyncAPI, TS Types?)
 
 ## Plan img
 <!-- _class: image -->
