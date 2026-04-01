@@ -1,0 +1,46 @@
+publiccodeYmlVersion: "0.5"
+
+name: Slideshows
+url: https://github.com/developer-overheid-nl/slideshows
+landingURL: https://developer-overheid-nl.github.io/slideshows
+softwareType: standalone/web
+
+developmentStatus: stable
+
+description:
+  nl:
+    shortDescription: >-
+      Marp-gebaseerde presentaties van developer.overheid.nl voor ontwikkelaars
+      bij de Nederlandse overheid.
+    longDescription: |
+      Deze repository bevat Marp-presentaties die worden gebruikt door het team
+      van developer.overheid.nl. De presentaties zijn bedoeld voor ontwikkelaars
+      bij de Nederlandse overheid en behandelen onderwerpen zoals het
+      API-register, publiccode.yml, linters, en het gebruik van
+      developer.overheid.nl als ontwikkelaarsportaal. De slideshows worden
+      automatisch gepubliceerd via GitHub Pages en zijn voorzien van een eigen
+      huisstijlthema.
+    features:
+      - Marp-presentaties met eigen NL-huisstijlthema
+      - Automatische publicatie via GitHub Pages
+      - Meerdere presentaties over developer.overheid.nl-onderwerpen
+
+legal:
+  license: EUPL-1.2
+  mainCopyrightOwner: Geonovum
+
+intendedAudience:
+  countries:
+    - NL
+  scope:
+    - government
+
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - nl
+
+maintenance:
+  type: internal
+  contacts:
+    - name: developer.overheid.nl
