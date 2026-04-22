@@ -116,20 +116,62 @@ p {
 ## Nieuwe checker
 <!-- Dimitri -->
 
-- Architectuur
-- CLI
-- Severities
-- YAML support
+- CLI  support, dus geen Spectral meer nodig:
 
-## Schema-register
+```bash
+npx @developer-overheid-nl/don-checker@latest \
+validate \
+--ruleset adr-21 \
+--input https://api.developer.overheid.nl/api-register/v1/openapi.json
+```
+
+- YAML ↔ JSON tbv publiccode.yml, leesbaarheid OpenAPI Specs
+- Verschillende versies binnen een standaard
+- Results gegroepeerd per severity-level: error, warning, info, hint
+
+## Severities
+<!-- _class: image -->
 <!-- Dimitri -->
 
-- OpenAPI 3.1
+![package](./checker_severities.png)
+
+## NPM Packages
+<!-- Dimitri -->
+
+![package](./npm_package.png)
+
+## JSON Schema register
+<!-- Dimitri -->
+
+- OpenAPI 3.1 komt eraan!
+![ptolu](./ptolu.png)
+
 - Herbruikbare JSON Schema's
 - Herbruikbare OAS components
+
+## Huidige work-in-progress
+
+![package](./schemas_architectuur.png)
+
+## Voorbeeld
+
+```yaml
+headers:
+  API-Version:
+    $ref: https://components.developer.overheid.nl/oas/adr/api-version.json
+description: Bad request
+content:
+  application/problem+json:
+    schema:
+      $ref: https://schemas.developer.overheid.nl/adr/problem-json.json
+```
+
+## Vervolg
+
 - Schema Design Rules
-- JSON-LD
-- Nieuwe werkgroep: <d.vanhees@geonovum.nl>
+- JSON-LD koppeling voor semantiek
+- Nieuwe werkgroep Kennisplatform API's: JSON Schema
+- Meedoen: <d.vanhees@geonovum.nl>
 
 ## Publiccode.yml
 <!-- Tom -->
