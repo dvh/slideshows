@@ -52,17 +52,56 @@ p {
 ## Changelogs
 <!-- Matthijs -->
 
-- Changie
+- Aanleiding
+  - Meer hergebruik en open source betekent ook strakker versioneren en releasen.
+- Onderzoek
+  - Vergelijking van [Changesets](https://github.com/changesets/changesets) en [Changie](https://changie.dev/).
+  - Beide tools helpen wijzigingen per app of package vast te leggen.
+- Resultaat
+  - Consistentere release-notes en een beter onderhoudbare `CHANGELOG.md`.
+  - Voorbeeld: changelog per app, zoals bij `api-register`.
+<!-- Voorbeeld: https://github.com/developer-overheid-nl/don-register-site/blob/main/apps/api-register/CHANGELOG.md -->
+
+## Changelog voorbeeld
+
+<style scoped>
+img {
+  display: block;
+  margin: 10px auto 0 auto;
+  max-height: 560px;
+  border: 1px solid #d1d9e0;
+}
+p {
+  text-align: center;
+  color: #154273;
+  font-size: 0.75em;
+}
+</style>
+
+![w:620](./CHANGELOG.png)
+
+`api-register`: changelog per app
 
 ## API's
 <!-- Matthijs -->
 
-- Trusted en untrusted clients
-- Apisix
-- Open Policy Agent (OPA)
+- Infrastructuur
+  - APISIX - Keycloak - Open Policy Agent (OPA).
+  - Autorisatielogica is uit custom APISIX plugin gehaald en als policy in OPA ondergebracht.
+- Flow
+  - Trusted client
+  - Untrusted client
+- Waarom
+  - Minder maatwerk in APISIX.
+  - Beter beheerbaar en toekomstvast.
+
+---
+
+- Volgende stap
+  - APISIX-routing as code.
 - API-key aanvragen
-- API lifecycle
-- ADR scores
+  - `Untrusted client`: via [key-aanvragen](https://apis.developer.overheid.nl/apis/key-aanvragen).
+  - `Trusted client`: via [developer.overheid@geonovum.nl](mailto:developer.overheid@geonovum.nl) met contactgegevens en organisatie.
 
 ## Nieuwe checker
 <!-- Dimitri -->
