@@ -25,8 +25,29 @@ headingDivider: 2
 <!-- Jaap-Hein -->
 
 - Architectuur
-- Filtering
+  - [Astro](https://astro.build/): Structuur, routing, SSR/SSG, Markdown.
+  - [Rijkshuisstijl community components](https://www.rijkshuisstijl-community.nl/): React component library op basis van NL Design System; [OpenAPI TypeScript](https://openapi-ts.dev/): Type declarations & fetch; [i18Next](https://www.i18next.com/): internationalization; [Biome](https://biomejs.dev/): formatting, linting and assist.
+  - Monorepo; Aantal packages worden gepubliceerd op NPM.
+- Register Site Template
+  - https://github.com/developer-overheid-nl/register-site-template 
+  - Alleen een front-end van de register sites om te clonen.
+  - Maakt gebruik van de gepubliceerde packages.
 - Hergebruik door DSO, Justid, RVO
+
+---
+<style scoped>
+p {
+  text-align: center;
+  background: rgb(255,255,255,0.75);
+  border: 1px solid #154273;
+  border-radius: 5px;
+}
+</style>
+
+![bg sepia:50%](./filters_oud.png)
+![bg drop-shadow](./filters_nieuw.png)
+
+[nieuwe filters](https://oss.developer.overheid.nl/)
 
 ## Changelogs
 <!-- Matthijs -->
