@@ -5,21 +5,70 @@ headingDivider: 2
 ---
 
 # developer.overheid.nl update
+
+<style scoped>
+p {
+  text-align: center;
+}
+</style>
+
+*22 april 2026*
 <!-- _class: title -->
 
-## Kennisbank
+## Welkom!
 <!-- Tom -->
 
-- Herindeling hoofdthema's
+<style scoped>
+img {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+</style>
+
+![](./GithubProfile.svg)
+
+- Open werken, zichtbaarheid, contributies, inspraak
+
+## Kennisbank: herindeling hoofdthema's
+<!-- Tom -->
+
+<style scoped>
+img {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+</style>
+
+
+![](./herindeling_hoofdthemas.png)
+
 - Tags
-- Extra ingang: `content_type`
+- Extra ingang: `content_type` (frontmatter markdown)
 
-## Bijdragen
+
+##
 <!-- Tom -->
 
-- Artikelen
-- Blog
-- Workflow
+
+![](./footer_bijdragen.png)
+
+
+## Nieuw: kennisbank artikel aandragen
+<!-- Tom -->
+<style scoped>
+img {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+</style>
+
+![](./kennisbank_artikel.png)
+
+
+- Artikelen, blog, workflow
 
 ## Register-sites
 <!-- Jaap-Hein -->
