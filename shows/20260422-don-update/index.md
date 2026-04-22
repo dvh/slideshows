@@ -25,6 +25,9 @@ headingDivider: 2
 <!-- Jaap-Hein -->
 
 - Architectuur
+  - [Astro](https://astro.build/): Structuur, routing, SSR/SSG, Markdown.
+  - [Rijkshuisstijl community components](https://www.rijkshuisstijl-community.nl/): React component library op basis van NL Design System.
+  - [OpenAPI TypeScript](https://openapi-ts.dev/): Type declarations & fetch; [i18Next](https://www.i18next.com/): internationalization; [Biome](https://biomejs.dev/): formatting, linting and assist.
 - Filtering
 - Hergebruik door DSO, Justid, RVO
 
