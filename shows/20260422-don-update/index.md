@@ -71,6 +71,9 @@ img {
 - Artikelen, blog, workflow
 
 ## Register-sites
+<!-- _class: title -->
+
+## Register-sites
 <!-- Jaap-Hein -->
 
 - Architectuur
@@ -99,9 +102,15 @@ p {
 [nieuwe filters](https://oss.developer.overheid.nl/)
 
 ## Changelogs
+<!-- _class: title -->
+
+## Changelogs
 <!-- Matthijs -->
 
 - Changie
+
+## API's
+<!-- _class: title -->
 
 ## API's
 <!-- Matthijs -->
@@ -112,6 +121,9 @@ p {
 - API-key aanvragen
 - API lifecycle
 - ADR scores
+
+## Nieuwe checker
+<!-- _class: title -->
 
 ## Nieuwe checker
 <!-- Dimitri -->
@@ -139,6 +151,9 @@ validate \
 <!-- Dimitri -->
 
 ![package](./npm_package.png)
+
+## JSON Schema register
+<!-- _class: title -->
 
 ## JSON Schema register
 <!-- Dimitri -->
@@ -174,6 +189,9 @@ content:
 - Meedoen: <d.vanhees@geonovum.nl>
 
 ## Publiccode.yml
+<!-- _class: title -->
+
+## Publiccode.yml
 <!-- Tom -->
 
 - Nieuwste versie
@@ -181,10 +199,16 @@ content:
 - Verbeteren dmv AI
 
 ## AI Skills
+<!-- _class: title -->
+
+## AI Skills
 <!-- Tom -->
 
 - Disclaimer
 - Anthrophic standaard
+
+## Save the date!
+<!-- _class: title -->
 
 ## Fysieke bijeenkomst
 <!-- Tom -->
@@ -193,4 +217,4 @@ content:
 - Beatrixtheater, Utrecht
 - Demo's
 - Roadmap tweede halfjaar
-- Save the dates: 9 & 10 juni: FOST (fka API Days) Amsterdam
+- 9 & 10 juni: FOST (fka API Days) Amsterdam
