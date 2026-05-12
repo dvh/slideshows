@@ -4,7 +4,7 @@ theme: don
 headingDivider: 2
 ---
 
-# developer.overheid.nl x DSO
+# developer.overheid.nl x DSO-LV
 
 <!-- _class: title -->
 
