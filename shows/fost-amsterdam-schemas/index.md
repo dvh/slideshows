@@ -4,8 +4,7 @@ theme: don
 headingDivider: 2
 ---
 
-# A National Schema Register
-## Reusable Components for Government API Design
+# A National Schema Register: Reusable Components for Government API Design
 <!-- _class: title -->
 <br/>
 
@@ -16,9 +15,8 @@ June 2026
 ## Dimitri van Hees
 
 - API architect, consumer, provider, developer
-- Co-author DSO and NL Gov API Strategy
-- OpenAPI Specification contributor (via PTOLU)
-- Product Owner and API architect @ developer.overheid.nl
+- Contributor NL Gov API Strategy
+- Product Owner and API architect @ developer.overheid.nls
 - Co-owner and beer brewer @ Brouwtoren, Nijmegen
 
 ## The problem
@@ -27,7 +25,7 @@ June 2026
 ## We share more than we reuse
 
 - Hundreds of public-sector APIs
-- All describe the same things: organisations, addresses, persons, dates, money, errors
+- All describe the same things: organisations, addresses, persons, dates, errors
 - All do it slightly differently
 - Each team reinvents the same JSON Schemas
 - Each consumer writes the same mapping code
@@ -38,7 +36,7 @@ June 2026
 - "Organisation" identified by chamber-of-commerce number, OIN, or a TOOI URI
 - Error responses: plain JSON, RFC 7807, or homegrown
 - Money as `number`, `string`, or `{amount, currency}`
-- Dates as ISO 8601... usually
+- Examples
 
 ## Why this matters
 
@@ -52,7 +50,7 @@ June 2026
 <!-- _class: image -->
 ![ptlo](./ptolu.png)
 <!--
-- PTOLU = the Dutch OpenAPI initiative
+- PTOLU = comply or explain
 - We've standardised HOW we describe APIs (OAS) and HOW they behave (ADR)
 - Missing piece: WHAT goes inside the schemas
 -->
@@ -66,17 +64,17 @@ June 2026
 
 ## What it offers
 
-- **Discoverability** — search across all reusable schemas and components
-- **Reusability** — `$ref` from any OAS
-- **Versioning** — semver, with clear deprecation
-- **Documentation** — human-readable docs alongside the JSON
-- **Codegen** — TypeScript types, Java classes, etc.
-- **Schema Design Rules** — to push standardisation further
+- **Discoverability**: search across all reusable schemas and components
+- **Reusability**: `$ref` from any OAS
+- **Versioning**: semver, with clear deprecation
+- **Documentation**: human-readable docs alongside the JSON
+- **Codegen**: TypeScript types, Java classes, etc.
+- **Schema Design Rules**: to push standardisation further
 
 ## Two layers: schemas and components
 
-- **JSON Schemas** — pure data shapes (`address.json`, `organisation.json`)
-- **OpenAPI components** — OAS-specific reusable bits (headers, parameters, responses)
+- **JSON Schemas**: pure data shapes (`address.json`, `organisation.json`)
+- **OpenAPI components** OAS-specific reusable bits (headers, parameters, responses)
 
 ## Inspiration: DVLA
 <!-- _class: image -->
@@ -113,6 +111,7 @@ June 2026
 ```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.developer.overheid.nl/beer.json",
   "type": "object",
   "properties": {
     "name":    { "type": "string" },
@@ -121,23 +120,6 @@ June 2026
     }
   },
   "required": ["name", "brewery"]
-}
-```
-
-## Schemas reference schemas
-
-```json
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "name":    { "type": "string" },
-    "url":     { "type": "string" },
-    "address": {
-      "$ref": "https://schemas.developer.overheid.nl/address.json"
-    }
-  },
-  "required": ["name"]
 }
 ```
 
@@ -165,7 +147,7 @@ responses:
 
 ## Why design rules for schemas
 
-- ADR governs how an API behaves
+- API Design Rules (ADR) governs how an API behaves
 - The Schema Register governs **what canonical building blocks exist**
 - Schema Design Rules (SDR) govern **how to write reusable schemas**
 - Same idea, one layer deeper
@@ -174,24 +156,30 @@ responses:
 
 - Use JSON Schema draft 2020-12
 - One concept per schema, one schema per file
-- Canonical identifiers (TOOI URIs for organisations)
-- Required fields are declared, not implied
+- Title is mandatory
+- Description is mandatory
+- Required fields are declared
 - Examples are mandatory
 - Semantic versioning, with deprecation metadata
-- Naming: kebab-case files, camelCase properties
+- Naming conventions: `kebab-case` files, `camelCase` properties
+- Standardised extensions: `x-jsonld-*`
+
+## JSON-LD
+<!-- _class: image -->
+![jsonld](./json-ld.png)
 
 ## How it all fits together
 
-- **OAS** — how we describe APIs
-- **ADR** — how APIs behave
-- **Schema Register** — what we describe APIs *with*
-- **SDR** — how we write the schemas in the register
+- **OAS**: how we describe APIs
+- **ADR**: how APIs behave
+- **Schema Register**: what we describe APIs *with*
+- **SDR**: how we write the schemas in the register
 - One coherent stack, four standards, hundreds of APIs
 
 ## Tooling
 <!-- _class: title -->
 
-## DON Checker, now CLI-first
+## DON Checker
 
 ```bash
 npx @developer-overheid-nl/don-checker@latest \
@@ -204,6 +192,18 @@ npx @developer-overheid-nl/don-checker@latest \
 - Multiple versions per standard
 - Results grouped by severity: error, warning, info, hint
 - Same engine that runs in the API register
+
+## OAS Generator
+
+```bash
+npx github:developer-overheid-nl/oas-generator \
+  input.json \
+  -o openapi.json
+```
+
+- DRY principle
+- Consistent patterns
+- Boilerplate for AI agents (and humans)
 
 ## Codegen from canonical schemas
 
@@ -234,17 +234,17 @@ export interface Address {
 - Reuse only works if it's the easy path
 - Designers shouldn't have to hunt for the right schema
 - LLMs are very good at "find me the thing that matches this"
-- We use AI to pull canonical components into new designs
+- We can use AI to pull canonical components into new designs
 
 ## A typical workflow
 
 1. Describe the API in natural language
-2. AI proposes endpoints and request/response shapes
-3. AI searches the Schema Register for matching components
-4. Reuse where possible, propose new schemas where not
-5. Emit a complete OpenAPI 3.1 spec with `$ref`s to canonical schemas
-6. Validate against ADR + SDR
-7. Iterate
+1. Agent loads NL Gov Skills
+1. AI searches the Schema Register for matching components (MCP)
+1. Reuse where possible, propose new schemas where not
+1. Generate a complete OpenAPI 3.1 spec with `$ref`s to canonical schemas with our OAS generator
+1. Validate against ADR + SDR
+1. Iterate
 
 ## From prompt to spec
 
@@ -257,25 +257,14 @@ export interface Address {
 ## Demo
 <!-- _class: title -->
 
-## Project landscape
-<!-- _class: image -->
-![hla](./hla.png)
-
 ## Where it's headed
 
 - Open the register to broader contribution
 - Schema Design Rules → draft → comply-or-explain
 - JSON-LD coupling for semantics
-- New Kennisplatform API's working group: JSON Schema
-- Federate with other registers (TOOI, semantic registers, EU)
+- New API Knowledge Platform working group: JSON Schema
+- Federate with other registers (semantic registers, EU)
 - More AI skills, better feedback loops
-
-## How to help
-
-- Contribute schemas you already maintain
-- Review the draft Schema Design Rules
-- Try the tooling, file issues
-- Join the working group: <d.vanhees@geonovum.nl>
 
 ## Thank you!
 <!-- _class: title -->

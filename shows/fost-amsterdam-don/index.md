@@ -15,9 +15,8 @@ June 2026
 ## Dimitri van Hees
 
 - API architect, consumer, provider, developer
-- Co-author DSO and NL Gov API Strategy
-- OpenAPI Specification contributor (via PTOLU)
-- Product Owner and API architect @ developer.overheid.nl
+- Contributor NL Gov API Strategy
+- Product Owner and API architect @ developer.overheid.nls
 - Co-owner and beer brewer @ Brouwtoren, Nijmegen
 
 ## A quick rewind
@@ -42,7 +41,7 @@ June 2026
 - "It provides **self-service tools** to get devs integrated quickly and easily."
 - "And it gives folks **a place to go when they have questions**."
 
-https://www.opslevel.com/resources/developer-portals-what-are-they-and-why-do-you-need-them
+<https://www.opslevel.com/resources/developer-portals-what-are-they-and-why-do-you-need-them>
 
 ## developer.overheid.nl
 <!-- _class: title -->
@@ -58,21 +57,24 @@ https://www.opslevel.com/resources/developer-portals-what-are-they-and-why-do-yo
 - Tools
 - Open Source register
 - API register
+- Schema register
 
 ## Two audiences, one platform
 
 **For developers building on government APIs:**
+
 - Find the right API
 - Understand the rules of the road (ADR)
 - Self-serve docs, SDKs, mocks
 - Know when things change
 
 **For government organisations publishing APIs:**
+
 - A single, consistent place to be found
 - Free tooling and validation
 - Standardisation without losing autonomy
 
-## Why now?
+## Why it's more important than ever
 
 - Serious incidents with local copies of government data
 - "Data at the source" principle
@@ -106,26 +108,22 @@ Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie an
 ## What we get from OAS
 
 - Name & description (`info`)
-- Contact info (`info.contact` — ADR 2.1)
+- Contact info (`info.contact`)
 - Environments (`servers`)
-- Security (`securitySchemes`, mTLS from OAS 3.1)
+- Security (`securitySchemes`)
 - Examples for mocking and code generation
 - JSON Schemas (proper, from OAS 3.1)
-
-## Submission flow
-<!-- _class: image -->
-![aanleverprocedure](./aanlevering.png)
 
 ## How it works
 
 1. `POST` URL of the OAS document to our _API register API_
-2. Validate OAS and presence of a `contact` object
-3. If valid, add the URL to the register
-4. Make a local dereferenced copy of the OAS
-5. Convert 3.0 ↔ 3.1, YAML ↔ JSON
-6. Generate goodies (SDKs, Bruno, Postman, etc.)
-7. Validate against the API Design Rules → score
-8. Poll for changes; on change, return to step 4
+1. Validate OAS and presence of a `contact` object
+1. If valid, add the URL to the register
+1. Make a local dereferenced copy of the OAS
+1. Convert 3.0 ↔ 3.1, YAML ↔ JSON
+1. Generate goodies (SDKs, Bruno, Postman, etc.)
+1. Validate against the API Design Rules → score
+1. Poll for changes; on change, return to step 4
 
 ## Adding an API
 
@@ -149,17 +147,13 @@ Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie an
   "title": "Bad Request",
   "status": 400,
   "detail": "Contact info could not be extracted from OAS",
-  "invalidParams": [
+  "errors": [
     { "name": "contact.name",  "reason": "Missing" },
     { "name": "contact.email", "reason": "Missing" },
     { "name": "contact.url",   "reason": "Missing" }
   ]
 }
 ```
-
-## What follows
-
-![vervolg](./vervolg.png)
 
 ## API Design Rules (ADR)
 <!-- _class: title -->
@@ -225,6 +219,12 @@ info:
 - `Sunset`
 - `Retired` (you can't `DELETE` an API from the register)
 
+## Subscribe to API
+
+- Good old RSS
+- Slack: `/feed subscribe https://api.developer.overheid.nl/api-register/v1/apis/dicF0B3HR/feed.rss`
+- Notifications on changes in lifecycle, design, ADR score, uptime, etc.
+
 ## Beyond the register
 <!-- _class: title -->
 
@@ -235,10 +235,6 @@ info:
 ## OAS generator
 <!-- _class: image -->
 ![oasgenerator](./oasgenerator.png)
-
-## Project landscape
-<!-- _class: image -->
-![hla](./hla.png)
 
 ## Separate repositories
 
@@ -261,14 +257,11 @@ info:
 ## Where it's headed
 
 - Stable and compliant landscape
-- Notifications (RSS, webhooks)
 - JSON Schema & components register
-- Launching customer of `code.developer.overheid.nl`
+- Launching customer of `code.overheid.nl`
 - Tooling improvements
-- Upgrade standard to OAS 3.1 (and hopefully 3.2)
-- MCP
 
-## Thank you!
+## Thank you
 <!-- _class: title -->
 <br/><br/>
 Dimitri van Hees
