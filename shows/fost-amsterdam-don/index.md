@@ -82,7 +82,7 @@ June 2026
 - Dutch National Digital Strategy launched July 2025
 - More APIs, more consumers, higher stakes
 
-## The new API Register
+## The API Register
 <!-- _class: title -->
 
 ## The register today
@@ -224,6 +224,18 @@ info:
 - Good old RSS
 - Slack: `/feed subscribe https://api.developer.overheid.nl/api-register/v1/apis/dicF0B3HR/feed.rss`
 - Notifications on changes in lifecycle, design, ADR score, uptime, etc.
+
+## Arazzo support
+<!-- _class: title -->
+<!--
+- Arazzo to Mermaid and Markdown
+- Use case: Digital Department of the Environmental Act (DSO)
+- Obtaining a permit involves many different APIs
+-->
+
+## Arazzo
+<!-- _class: image -->
+![arazzo](./arazzo.png)
 
 ## Beyond the register
 <!-- _class: title -->

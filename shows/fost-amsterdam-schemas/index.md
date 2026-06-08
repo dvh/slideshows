@@ -64,17 +64,13 @@ June 2026
 
 ## What it offers
 
+- **Two layers**: JSON Schemas (data shapes) + OpenAPI components (headers, parameters, responses)
 - **Discoverability**: search across all reusable schemas and components
 - **Reusability**: `$ref` from any OAS
 - **Versioning**: semver, with clear deprecation
 - **Documentation**: human-readable docs alongside the JSON
 - **Codegen**: TypeScript types, Java classes, etc.
 - **Schema Design Rules**: to push standardisation further
-
-## Two layers: schemas and components
-
-- **JSON Schemas**: pure data shapes (`address.json`, `organisation.json`)
-- **OpenAPI components** OAS-specific reusable bits (headers, parameters, responses)
 
 ## Inspiration: DVLA
 <!-- _class: image -->
@@ -245,14 +241,6 @@ export interface Address {
 1. Generate a complete OpenAPI 3.1 spec with `$ref`s to canonical schemas with our OAS generator
 1. Validate against ADR + SDR
 1. Iterate
-
-## From prompt to spec
-
-- Input: a few sentences and any existing context
-- Output: an OpenAPI 3.1 document with embedded JSON Schemas
-- All `$ref`s point at the Schema Register
-- Validation is part of the loop, not an afterthought
-- Result: standardisation by default, not by discipline
 
 ## Demo
 <!-- _class: title -->
