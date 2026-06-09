@@ -16,14 +16,12 @@ June 2026
 
 - API architect, consumer, provider, developer
 - Contributor NL Gov API Strategy
-- Product Owner and API architect @ developer.overheid.nls
-- Co-owner and beer brewer @ Brouwtoren, Nijmegen
+- Product Owner and API architect @ developer.overheid.nl
 
 ## A quick rewind
 <!-- _class: image -->
 ![ptlo](./ptolu.png)
 <!--
-- Story started in 2013, picked up again seriously in 2018
 - 2018: OpenAPI became the mandatory standard for Dutch gov APIs
 - Birth of a national developer portal idea over pizza and beer in Italy
 - 2023: back to bring developer.overheid.nl to the next level
@@ -54,10 +52,13 @@ June 2026
 
 - Knowledge base
 - Blog
-- Tools
-- Open Source register
+- Tools (validators, generators)
+- Agent skills
+- Open Source register (publiccode-first)
 - API register
-- Schema register
+
+## The API Register
+<!-- _class: title -->
 
 ## Two audiences, one platform
 
@@ -82,28 +83,24 @@ June 2026
 - Dutch National Digital Strategy launched July 2025
 - More APIs, more consumers, higher stakes
 
-## The API Register
-<!-- _class: title -->
-
 ## The register today
 <!-- _class: image -->
 ![api-register](./api-register.png)
 
 ## REST-only, OpenAPI-first
-<!-- 244 OpenAPI specs in the register; still growing -->
 
-- 140 REST(ish/ful)
-- 100 Geo-services (WFS/WMS) → OGC API = REST
-- 4 OData = REST
-- ~~1 GraphQL~~
-- ~~3 Other (Atom, CKAN, Socrata)~~
+- 56,3% REST(ish/ful)
+- 40,5% Geo-services (WFS/WMS) → OGC API = REST(ish/ful)
+- 1,6% OData = REST(ish/ful)
+- ~~0,4% GraphQL~~
+- ~~1,2% Other (Atom, CKAN, Socrata)~~
 
 ## Mandatory standards
 
 - **OpenAPI Specification (OAS)**
 - **REST API Design Rules (ADR)**
 
-Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie and Logius.
+Both on the Dutch "comply-or-explain" list (Dutch Standardisation Board).
 
 ## What we get from OAS
 
@@ -113,17 +110,6 @@ Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie an
 - Security (`securitySchemes`)
 - Examples for mocking and code generation
 - JSON Schemas (proper, from OAS 3.1)
-
-## How it works
-
-1. `POST` URL of the OAS document to our _API register API_
-1. Validate OAS and presence of a `contact` object
-1. If valid, add the URL to the register
-1. Make a local dereferenced copy of the OAS
-1. Convert 3.0 ↔ 3.1, YAML ↔ JSON
-1. Generate goodies (SDKs, Bruno, Postman, etc.)
-1. Validate against the API Design Rules → score
-1. Poll for changes; on change, return to step 4
 
 ## Adding an API
 
@@ -135,6 +121,17 @@ Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie an
   "oasUri": "https://api.standaarden.overheid.nl/v1/openapi.json"
 }
 ```
+
+## How it works
+
+1. `POST` URL of the OAS document to our _API register API_
+1. Validate OAS and presence of a `contact` object
+1. If valid, add the URL to the register
+1. Make a local dereferenced copy of the OAS
+1. Convert 3.0 ↔ 3.1, YAML ↔ JSON
+1. Generate goodies (SDKs, Bruno, Postman, etc.)
+1. Validate against the API Design Rules → score
+1. Poll for changes; on change, return to step 4
 
 ## No `info.contact` in OAS
 
@@ -185,13 +182,13 @@ Both on the Dutch "comply-or-explain" list, governed by Forum Standaardisatie an
 - Per-API compliance score
 - Impact analysis before introducing a new rule
 - Trends per organisation, per rule
-- Yearly report for Forum Standaardisatie
+- Yearly report for Standardisation Board
 
 ## API Lifecycle
 <!-- _class: title -->
 
 ## End-of-life phase
-<!-- _class: image -->
+
 ![end-of-life](./end-of-life.png)
 
 ## Versioning, statuses and the runtime gap
@@ -237,16 +234,15 @@ info:
 <!-- _class: image -->
 ![arazzo](./arazzo.png)
 
-## Beyond the register
+## Agent skills: generators & validators in the AI-loop
 <!-- _class: title -->
 
-## API detail page (badges)
-<!-- _class: image -->
-![apidetail](./apidetail.png)
-
-## OAS generator
+## OpenAPI generator
 <!-- _class: image -->
 ![oasgenerator](./oasgenerator.png)
+
+## Architecture
+<!-- _class: title -->
 
 ## Separate repositories
 
@@ -264,16 +260,29 @@ info:
 - Built on NL Design System
 - Government branding components
 - WCAG compliant
-- Aware of API design (the frontend "speaks OAS")
+- Aware of API design
+
+## Roadmap
+<!-- _class: title -->
 
 ## Where it's headed
 
 - Stable and compliant landscape
 - JSON Schema & components register
 - Launching customer of `code.overheid.nl`
-- Tooling improvements
+- Extensive monitoring and scanning
+- Workshops & meetups
 
-## Thank you
+## Upcoming meetup
+
+- June 17th (next wednesday)
+- 12:30 - 16:00
+- Beatrixtheater, Utrecht
+- Free drinks!
+
+![meetup](./meetupqr.png)
+
+## Thank you!
 <!-- _class: title -->
 <br/><br/>
 Dimitri van Hees

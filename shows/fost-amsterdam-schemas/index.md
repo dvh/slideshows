@@ -16,7 +16,7 @@ June 2026
 
 - API architect, consumer, provider, developer
 - Contributor NL Gov API Strategy
-- Product Owner and API architect @ developer.overheid.nls
+- Product Owner and API architect @ developer.overheid.nl
 - Co-owner and beer brewer @ Brouwtoren, Nijmegen
 
 ## The problem
@@ -253,6 +253,15 @@ export interface Address {
 - New API Knowledge Platform working group: JSON Schema
 - Federate with other registers (semantic registers, EU)
 - More AI skills, better feedback loops
+
+## Upcoming meetup
+
+- June 17th (next wednesday)
+- 12:30 - 16:00
+- Beatrixtheater, Utrecht
+- Free drinks!
+
+![meetup](./meetupqr.png)
 
 ## Thank you!
 <!-- _class: title -->
