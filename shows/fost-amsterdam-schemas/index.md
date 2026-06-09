@@ -72,14 +72,6 @@ June 2026
 - **Codegen**: TypeScript types, Java classes, etc.
 - **Schema Design Rules**: to push standardisation further
 
-## Inspiration: DVLA
-<!-- _class: image -->
-![dvla](./dvla.png)
-<!--
-- The UK's DVLA pioneered a similar register
-- We're building on that pattern, adapted to the Dutch governance context
--->
-
 ## How an OAS uses it
 
 ```json
