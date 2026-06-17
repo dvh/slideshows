@@ -37,9 +37,9 @@ Tom Ootes
 
 ## Afsluitend
 
-- Nu hebben een project voor de API en OSS catalogus. 
+- Nu hebben we een project voor de API- en OSS-register
 - Gebruik de skills, geef ons feedback!
-- Mocht je ideeën hebben, vertel het tijdens de rondvraag.
+- Mocht je ideeën hebben, vertel het tijdens de rondvraag
 
 ## Vragen?
 <!-- _class: title -->
