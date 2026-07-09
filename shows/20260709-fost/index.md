@@ -197,18 +197,18 @@ info:
 
 ## The principle
 
-- **Generators** do the heavy, repetitive work - deterministic
+- **Generators** do the heavy, repetitive work: deterministic
 - **Validators** answer the truth question: "Does this comply?"
 - **CLI** is the natural interface for agents: exit code = signal to iterate
-- **AI** interprets intent and orchestrates - not the oracle of truth
+- **AI** interprets intent and orchestrates, not the oracle of truth
 
 ## Ingredients
 
-- **API Design Rules (ADR)** - how APIs must behave
-- **Schema Design Rules (SDR)** - how schemas must be written
-- **API Register** - the canonical list of government APIs
-- **Schema Register** - reusable JSON Schemas & OAS components
-- **Agent Skills** - instructions the AI can load and follow
+- **API Design Rules (ADR)**: how APIs must behave
+- **Schema Design Rules (SDR)** : how schemas must be written
+- **API Register**: the canonical list of government APIs
+- **Schema Register**: reusable JSON Schemas & OAS components
+- **Agent Skills**: instructions the AI can load and follow
 
 ### Tools
 
@@ -258,6 +258,7 @@ info:
 - Every rule you write down is a piece of truth you can hand off to deterministic tooling
 - More standardisation → tighter generators, sharper validators, fewer hallucinations and less token spend
 - The model does language and intent; the tools do truth
+- Makes life easier for both humans and agents
 
 ## Thank you!
 <!-- _class: title -->
