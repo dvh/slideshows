@@ -25,7 +25,7 @@ July 9, 2026
 <!--
 - Quick rewind
 - Certificate of the Dutch Standardisation Board
-- 2018: OpenAPI became the mandatory standard for Dutch gov API
+- 2018: OpenAPI became the mandatory standard for Dutch gov APIs
 - Birth of a national developer portal idea over pizza and beer in Italy
 -->
 
@@ -106,7 +106,7 @@ Both on the Dutch "comply-or-explain" list (Dutch Standardisation Board).
 ## API register extensions
 <!--
 - info.version exploited
-- extensions with deprecated and sunset header methodologu, except for the date discussion
+- extensions with deprecated and sunset header methodology, but then design-time
 -->
 
 ```yaml
@@ -130,19 +130,19 @@ info:
 
 - OAS 3.0 mandatory since 2018
 - OAS 3.1 upgrade process started in 2022
-- Upgrade approved last June
+- Upgrade approved in June 2026
 - OAS 3.1 mandatory from October 2026
 
 ## We share more than we reuse
 <!--
 - in the meantime we kept reinventing the wheel
-- don't forget address: example where street and housenumber are in separate fields or in 1 field
+- don't forget address: example where street and house number are in separate fields or in one field
 -->
 
 - Hundreds of public-sector APIs
 - All describe the same things: organisations, addresses, persons, dates, errors
 - Each team reinvents the same schemas
-- All do it slightly different
+- All do it slightly differently
 
 ## Reusable schemas to the rescue
 <!-- _class: image -->
@@ -167,18 +167,20 @@ info:
 
 - Apart from API Design Rules
 - Separation of Concerns between OpenAPI and Schema
-- "Provide a top-level example"
-- "Property names must be `lowerCamelCase`"
-- "Description is mandatory"
-- "Abbreviations must be explained in the description"
-- "Use `x-jsonld-type` keyword for semantic enrichment"
+- Examples:
+  - "Provide a top-level example"
+  - "Property names must be `lowerCamelCase`"
+  - "Description is mandatory"
+  - "Abbreviations must be explained in the description"
+  - "Use `x-jsonld-type` keyword for semantic enrichment"
 
 ## Semantic enrichment
 <!-- _class: image -->
 <!--
-- Add Linked Data context and to schemas
+- Add Linked Data context to schemas
 - Way to bridge the gap between Linked Data and APIs
 - Inspired by Italian colleagues
+- But that's a different story so I'll skip this slide for now
 -->
 
 ![json-ld](./json-ld.png)
@@ -196,7 +198,7 @@ info:
 ## The principle
 
 - **Generators** do the heavy, repetitive work - deterministic
-- **Validators** answer the truth question: "does this comply?"
+- **Validators** answer the truth question: "Does this comply?"
 - **CLI** is the natural interface for agents: exit code = signal to iterate
 - **AI** interprets intent and orchestrates - not the oracle of truth
 
@@ -208,7 +210,7 @@ info:
 - **Schema Register** - reusable JSON Schemas & OAS components
 - **Agent Skills** - instructions the AI can load and follow
 
-## Tools
+### Tools
 
 - **OAS Generator**: boilerplate `openapi.json` from `input.json`, ADR-conform by default
 - **Checker**: lints/validates documents against rulesets (e.g. ADR Spectral ruleset)
@@ -241,12 +243,6 @@ info:
 - Machine-readable metadata for public sector open source
 - Collaboration with EU, Italy, Brussels
 - Syncs with the European Commission's Open Source Portal
-
-## publiccode-first in the OSS Register
-
-- Every published project has a `publiccode.yml`
-- The register reads it as its source of truth
-- Enables discovery, reuse, dependency scanning, health checks
 - Rich filtering: by license, category, tech stack, maturity level
 
 ## oss.developer.overheid.nl
@@ -254,10 +250,13 @@ info:
 ![oss-register](./oss-register.png)
 
 ## Standards are the foundation
+<!-- _class: title -->
+
+## Standardization
 
 - Templates, generators and validators exist because standards exist
 - Every rule you write down is a piece of truth you can hand off to deterministic tooling
-- More standardisation → tighter generators, sharper validators, fewer hallucinations (and consumed tokens)
+- More standardisation → tighter generators, sharper validators, fewer hallucinations and less token spend
 - The model does language and intent; the tools do truth
 
 ## Thank you!
