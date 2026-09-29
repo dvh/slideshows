@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowAmber" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="11" refX="7" refY="5.5" orient="auto">
+      <polygon points="0 0, 14 5.5, 0 11" fill="#d97706"/>
+    </marker>
+    <marker id="arrowGray" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="11" refX="7" refY="5.5" orient="auto">
+      <polygon points="0 0, 14 5.5, 0 11" fill="#888"/>
+    </marker>
+  </defs>
+
+  <!-- Bronhouder-domein -->
+  <rect x="20" y="70" width="410" height="200" rx="12" fill="#f0faf4" stroke="#0a5" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="225" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#0a5" font-weight="600">Bronhouder-domein</text>
+
+  <!-- LV-WOZ-domein -->
+  <rect x="470" y="70" width="410" height="200" rx="12" fill="#e8f4fc" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="675" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#017bc6" font-weight="600">LV-WOZ</text>
+
+  <!-- ebMS trust zone (overlay; spans alleen de twee MSH-blokken) -->
+  <rect x="240" y="115" width="420" height="140" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.55"/>
+  <text x="450" y="133" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#b45309" font-weight="700" font-style="italic">ebMS-betrouwbaarheid · acks · retries · non-repudiation</text>
+
+  <!-- WOZ-applicatie (BUITEN ebMS-zone) -->
+  <rect x="40" y="160" width="160" height="60" rx="10" fill="#0a5" filter="url(#shadow)"/>
+  <text x="120" y="184" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" font-weight="600">WOZ-applicatie</text>
+  <text x="120" y="202" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#cce9d9">gemeente</text>
+
+  <!-- MSH bronhouder (IN ebMS-zone) -->
+  <rect x="250" y="160" width="160" height="60" rx="10" fill="#2e7d6f" filter="url(#shadow)"/>
+  <text x="330" y="184" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" font-weight="600">MSH</text>
+  <text x="330" y="202" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#cce9d9">bronhouder</text>
+
+  <!-- MSH LV (IN ebMS-zone) -->
+  <rect x="490" y="160" width="160" height="60" rx="10" fill="#2e7d6f" filter="url(#shadow)"/>
+  <text x="570" y="184" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" font-weight="600">MSH</text>
+  <text x="570" y="202" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#cce9d9">LV</text>
+
+  <!-- LV-applicatie (BUITEN ebMS-zone) -->
+  <rect x="700" y="160" width="160" height="60" rx="10" fill="#017bc6" filter="url(#shadow)"/>
+  <text x="780" y="184" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white" font-weight="600">LV-applicatie</text>
+  <text x="780" y="202" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#cce7f4">verwerkt en legt vast</text>
+
+  <!-- Pijl WOZ-app → MSH-bron (kruist zone-rand; geen protocolgarantie) -->
+  <line x1="202" y1="190" x2="243" y2="190" stroke="#888" stroke-width="2.5" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
+  <text x="220" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#888" font-weight="700">?</text>
+
+  <!-- Pijl MSH-bron → MSH-LV (binnen zone; ebMS-protected) -->
+  <line x1="412" y1="190" x2="483" y2="190" stroke="#d97706" stroke-width="3" marker-end="url(#arrowAmber)"/>
+
+  <!-- Pijl MSH-LV → LV-app (kruist zone-rand; geen protocolgarantie) -->
+  <line x1="652" y1="190" x2="693" y2="190" stroke="#888" stroke-width="2.5" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
+  <text x="680" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#888" font-weight="700">?</text>
+
+  <!-- "Buiten ebMS-zone" labels -->
+  <text x="120" y="248" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#666" font-style="italic">Buiten ebMS-zone</text>
+  <text x="780" y="248" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#666" font-style="italic">Buiten ebMS-zone</text>
+
+  <!-- Bottom annotation -->
+  <text x="450" y="298" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#555" font-style="italic">WOZ-applicatie krijgt geen protocolniveau zekerheid dat de LV-applicatie het bericht heeft verwerkt</text>
+  <text x="450" y="318" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#888">ebMS-garanties stoppen bij de MSH; de applicaties staan buiten de protocol-keten</text>
+</svg>

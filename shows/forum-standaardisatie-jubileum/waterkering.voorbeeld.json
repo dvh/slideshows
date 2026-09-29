@@ -1,0 +1,14 @@
+{
+  "id": "WK-0001",
+  "naam": "Lekdijk",
+  "type": "Dijk",
+  "categorie": "Primaire waterkering",
+  "geometrie": {
+    "type": "LineString",
+    "coordinates": [
+      [4.98, 51.95],
+      [5.02, 51.96],
+      [5.06, 51.965]
+    ]
+  }
+}

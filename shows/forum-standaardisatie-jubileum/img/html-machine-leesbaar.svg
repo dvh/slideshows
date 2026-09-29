@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="20 0 1160 800"
+   width="1160"
+   height="800"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title>HTML als machine leesbaar formaat: semantische tags en schema.org-microdata geven structuur en betekenis, los van de visuele opmaak</title>
+  <defs>
+    <marker id="arrowBlueHtml" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#007BC7" />
+    </marker>
+    <marker id="arrowGreenHtml" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#39870C" />
+    </marker>
+    <marker id="arrowAmberHtml" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C98A1E" />
+    </marker>
+  </defs>
+
+  <!-- decorative accent dots -->
+  <circle cx="1120" cy="28" r="7" fill="#007BC7" opacity="0.18" />
+  <circle cx="1150" cy="52" r="4" fill="#39870C" opacity="0.25" />
+  <circle cx="1095" cy="55" r="5" fill="#F5C26B" opacity="0.3" />
+  <circle cx="1160" cy="24" r="3" fill="#154273" opacity="0.2" />
+
+  <!-- header -->
+  <circle cx="70" cy="95" r="26" fill="#DCEFFB" />
+  <text x="70" y="102" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700" fill="#007BC7">&lt;/&gt;</text>
+  <text x="112" y="90" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#154273">HTML</text>
+  <text x="112" y="112" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6B7785">structuur en betekenis zitten in de tags zelf — niet alleen in de opmaak</text>
+
+  <!-- ============ LEFT: code panel ============ -->
+  <rect x="40" y="140" width="620" height="580" rx="18" fill="#0F2A44" />
+  <g font-family="Consolas, 'Courier New', monospace" font-size="13" xml:space="preserve">
+    <text x="64" y="178"><tspan fill="#8ED1FA">&lt;table </tspan><tspan fill="#F5C26B">itemscope </tspan><tspan fill="#F5C26B">itemtype</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"https://schema.org/Table"</tspan><tspan fill="#8ED1FA">&gt;</tspan></text>
+
+    <text x="88" y="206"><tspan fill="#8ED1FA">&lt;caption&gt;</tspan><tspan fill="#E4EAF0">Waterkering</tspan><tspan fill="#8ED1FA">&lt;/caption&gt;</tspan></text>
+
+    <text x="88" y="234" fill="#8ED1FA">&lt;tr&gt;</text>
+
+    <text x="112" y="262"><tspan fill="#8ED1FA">&lt;th </tspan><tspan fill="#F5C26B">scope</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"col"</tspan><tspan fill="#8ED1FA">&gt;</tspan><tspan fill="#E4EAF0">Naam</tspan><tspan fill="#8ED1FA">&lt;/th&gt;</tspan></text>
+
+    <text x="112" y="290"><tspan fill="#8ED1FA">&lt;th </tspan><tspan fill="#F5C26B">scope</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"col"</tspan><tspan fill="#8ED1FA">&gt;</tspan><tspan fill="#E4EAF0">Type</tspan><tspan fill="#8ED1FA">&lt;/th&gt;</tspan></text>
+
+    <text x="88" y="318" fill="#8ED1FA">&lt;/tr&gt;</text>
+
+    <text x="88" y="346" fill="#8ED1FA">&lt;tr&gt;</text>
+
+    <text x="112" y="374"><tspan fill="#8ED1FA">&lt;td </tspan><tspan fill="#F5C26B">itemprop</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"name"</tspan><tspan fill="#8ED1FA">&gt;</tspan><tspan fill="#E4EAF0">Diefdijk</tspan><tspan fill="#8ED1FA">&lt;/td&gt;</tspan></text>
+
+    <text x="112" y="402"><tspan fill="#8ED1FA">&lt;td </tspan><tspan fill="#F5C26B">itemprop</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"additionalType"</tspan><tspan fill="#8ED1FA">&gt;</tspan><tspan fill="#E4EAF0">Dijk</tspan><tspan fill="#8ED1FA">&lt;/td&gt;</tspan></text>
+
+    <text x="88" y="430" fill="#8ED1FA">&lt;/tr&gt;</text>
+
+    <text x="64" y="458" fill="#8ED1FA">&lt;/table&gt;</text>
+
+    <text x="64" y="514"><tspan fill="#8ED1FA">&lt;time </tspan><tspan fill="#F5C26B">datetime</tspan><tspan fill="#E4EAF0">=</tspan><tspan fill="#9BE38A">"2026-09-21"</tspan><tspan fill="#8ED1FA">&gt;</tspan><tspan fill="#E4EAF0">21 september 2026</tspan><tspan fill="#8ED1FA">&lt;/time&gt;</tspan></text>
+  </g>
+
+  <!-- ============ connectors ============ -->
+  <path d="M 660,258 C 680,258 682,205 698,201" fill="none" stroke="#39870C" stroke-width="2.5" stroke-dasharray="6, 5" marker-end="url(#arrowGreenHtml)" />
+  <path d="M 660,370 C 682,370 682,368 698,366" fill="none" stroke="#C98A1E" stroke-width="2.5" stroke-dasharray="6, 5" marker-end="url(#arrowAmberHtml)" />
+  <path d="M 660,510 C 682,510 682,548 698,552" fill="none" stroke="#007BC7" stroke-width="2.5" stroke-dasharray="6, 5" marker-end="url(#arrowBlueHtml)" />
+
+  <!-- ============ RIGHT: annotation cards ============ -->
+  <!-- Card 1: th scope -->
+  <rect x="700" y="168" width="420" height="128" rx="14" fill="#F4F8FC" stroke="#9BB4C7" stroke-width="1.5" />
+  <rect x="716" y="182" width="150" height="26" rx="13" fill="#EAF6E4" />
+  <text x="791" y="199" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.3" fill="#39870C">KOLOMKOP</text>
+  <text x="716" y="234" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" fill="#154273">&lt;th scope="col"&gt;</text>
+  <text x="716" y="258" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">Kolomkop is expliciet gekoppeld aan zijn</text>
+  <text x="716" y="276" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">kolom — niet alleen visueel vet gedrukt.</text>
+
+  <!-- Card 2: itemprop / microdata -->
+  <rect x="700" y="332" width="420" height="128" rx="14" fill="#F4F8FC" stroke="#9BB4C7" stroke-width="1.5" />
+  <rect x="716" y="346" width="220" height="26" rx="13" fill="#FBEFD8" />
+  <text x="826" y="363" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.3" fill="#C98A1E">MICRODATA (SCHEMA.ORG)</text>
+  <text x="716" y="398" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" fill="#154273">itemprop="name"</text>
+  <text x="716" y="422" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">Expliciete betekenis in de waarde: dit ís</text>
+  <text x="716" y="440" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">een naam — geen giswerk voor de machine.</text>
+
+  <!-- Card 3: time datetime -->
+  <rect x="700" y="496" width="420" height="128" rx="14" fill="#F4F8FC" stroke="#9BB4C7" stroke-width="1.5" />
+  <rect x="716" y="510" width="240" height="26" rx="13" fill="#DCEFFB" />
+  <text x="836" y="527" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.3" fill="#007BC7">MACHINE-LEESBARE DATUM</text>
+  <text x="716" y="562" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700" fill="#154273">&lt;time datetime="2026-09-21"&gt;</text>
+  <text x="716" y="586" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">Datum als data, los van hoe die op het</text>
+  <text x="716" y="604" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#6B7785">scherm getoond wordt ("21 september").</text>
+
+  <!-- footer note -->
+  <text x="700" y="660" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#8A93A0">Een mens leest de opmaak; een machine leest de tags en attributen.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0a5"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#017bc6"/>
+    </marker>
+    <marker id="arrowBlueLeft" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#017bc6"/>
+    </marker>
+  </defs>
+
+  <!-- Bronhouder-domein -->
+  <rect x="30" y="30" width="380" height="280" rx="12" fill="#f0faf4" stroke="#0a5" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="220" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#0a5" font-weight="600">Bronhouder-domein</text>
+
+  <!-- LV-domein -->
+  <rect x="490" y="30" width="380" height="280" rx="12" fill="#e8f4fc" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="680" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#017bc6" font-weight="600">LV-WOZ</text>
+
+  <!-- WOZ-applicatie -->
+  <rect x="70" y="90" width="140" height="60" rx="10" fill="#0a5" filter="url(#shadow)"/>
+  <text x="140" y="116" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🏛️</text>
+  <text x="140" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">WOZ-applicatie</text>
+
+  <!-- Lokale buffer -->
+  <rect x="250" y="90" width="140" height="60" rx="10" fill="#2e7d6f" filter="url(#shadow)"/>
+  <text x="320" y="116" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🗄️</text>
+  <text x="320" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Lokale buffer</text>
+  <text x="320" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#888">queue · retry · volgorde</text>
+
+  <!-- LV-WOZ validatie & vastlegging -->
+  <rect x="555" y="90" width="240" height="60" rx="10" fill="#017bc6" filter="url(#shadow)"/>
+  <text x="675" y="116" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">⚙️</text>
+  <text x="675" y="138" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Validatie &amp; vastlegging</text>
+
+  <!-- Pijl WOZ-applicatie → lokale buffer -->
+  <line x1="210" y1="120" x2="248" y2="120" stroke="#0a5" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="229" y="110" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#0a5">async</text>
+
+  <!-- Pijl Buffer → LV (request) -->
+  <line x1="390" y1="108" x2="552" y2="108" stroke="#017bc6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <text x="471" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#017bc6" font-weight="600">POST /leveringen</text>
+
+  <!-- Pijl LV → Buffer (response) -->
+  <line x1="390" y1="135" x2="552" y2="135" stroke="#017bc6" stroke-width="2" stroke-dasharray="6 3" marker-start="url(#arrowBlueLeft)"/>
+  <text x="471" y="152" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#017bc6">2xx · 4xx · 5xx</text>
+
+  <!-- Koppelvlak scheidingslijn -->
+  <line x1="450" y1="70" x2="450" y2="240" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="450" y1="272" x2="450" y2="290" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="412" y="244" width="76" height="22" rx="4" fill="white" stroke="#017bc6" stroke-width="1"/>
+  <text x="450" y="259" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#017bc6" font-weight="600">sync HTTP</text>
+
+  <!-- Idempotentie + tracering -->
+  <text x="471" y="190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#555" font-style="italic">Idempotency-Key · levering-id</text>
+  <text x="471" y="208" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#555" font-style="italic">GET /leveringen/{id} bij twijfel</text>
+
+  <!-- Toelichting onderaan -->
+  <text x="220" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#555">Asynchroniteit verschuift naar één punt</text>
+  <text x="680" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#555">Levering, vastlegging en verwerkingsresultaat samen</text>
+</svg>

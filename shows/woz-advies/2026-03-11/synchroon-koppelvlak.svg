@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0a5"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#017bc6"/>
+    </marker>
+    <marker id="arrowBlueLeft" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#017bc6"/>
+    </marker>
+  </defs>
+
+  <!-- Bronhouder-domein achtergrond -->
+  <rect x="30" y="20" width="380" height="240" rx="12" fill="#f0faf4" stroke="#0a5" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="220" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#0a5" font-weight="600">Bronhouder-domein</text>
+
+  <!-- LV-domein achtergrond -->
+  <rect x="490" y="20" width="380" height="240" rx="12" fill="#e8f4fc" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="680" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#017bc6" font-weight="600">LV-WOZ</text>
+
+  <!-- Bronsysteem -->
+  <rect x="70" y="100" width="140" height="60" rx="10" fill="#0a5" filter="url(#shadow)"/>
+  <text x="140" y="126" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🏛️</text>
+  <text x="140" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white" font-weight="600">Bronsysteem</text>
+
+  <!-- Buffer -->
+  <rect x="260" y="100" width="110" height="60" rx="10" fill="#2e7d6f" filter="url(#shadow)"/>
+  <text x="315" y="126" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🗄️</text>
+  <text x="315" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white" font-weight="600">Buffer</text>
+  <text x="315" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#888">queue · retry · volgorde</text>
+
+  <!-- LV-WOZ -->
+  <rect x="565" y="100" width="230" height="60" rx="10" fill="#017bc6" filter="url(#shadow)"/>
+  <text x="680" y="126" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">⚙️</text>
+  <text x="680" y="148" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="white" font-weight="600">Validatie &amp; verwerking</text>
+
+  <!-- Pijl bronsysteem → buffer -->
+  <line x1="210" y1="130" x2="255" y2="130" stroke="#0a5" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="232" y="120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#0a5">async</text>
+
+  <!-- Pijl buffer → LV -->
+  <line x1="370" y1="122" x2="560" y2="122" stroke="#017bc6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Pijl LV → buffer -->
+  <line x1="370" y1="140" x2="560" y2="140" stroke="#017bc6" stroke-width="2" stroke-dasharray="6 3" marker-start="url(#arrowBlueLeft)"/>
+
+  <!-- Koppelvlak scheidingslijn -->
+  <line x1="450" y1="60" x2="450" y2="200" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="450" y1="232" x2="450" y2="250" stroke="#017bc6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="425" y="204" width="50" height="22" rx="4" fill="white" stroke="#017bc6" stroke-width="1"/>
+  <text x="450" y="219" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#017bc6" font-weight="600">sync</text>
+
+  <!-- Toelichting -->
+  <text x="220" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#555">Bronhouder bepaalt tempo en volgorde</text>
+  <text x="680" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#555">Direct verwerkingsresultaat</text>
+</svg>

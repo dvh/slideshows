@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="20 0 1160 740"
+   width="1160"
+   height="740"
+   version="1.1"
+   id="svg76"
+   sodipodi:docname="schema-waterkering.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview76"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0028844"
+     inkscape:cx="542.43541"
+     inkscape:cy="436.24171"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg76"
+     showgrid="false" />
+  <title
+     id="title1">JSON Schema van Waterkering: naam is een vrije string, type is een enum uit de Aquo-domeintabel Waterkeringtype waarvan je er precies 1 kiest</title>
+  <defs
+     id="defs2">
+    <marker
+       id="arrowBlue"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#007bc7"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrowGreen"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M 0,0 10,5 0,10 Z"
+         fill="#39870c"
+         id="path2" />
+    </marker>
+    <filter
+       id="cardShadow"
+       x="-0.0034090909"
+       y="-0.0078947367"
+       width="1.0068182"
+       height="1.0157895">
+      <feDropShadow
+         dx="0"
+         dy="5"
+         stdDeviation="7"
+         flood-color="#0F2A44"
+         flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <!-- decorative accent dots -->
+  <!-- header -->
+  <circle
+     cx="70"
+     cy="27"
+     r="26"
+     fill="#dceffb"
+     id="circle6" />
+  <text
+     x="70"
+     y="35"
+     text-anchor="middle"
+     font-family="Consolas, 'Courier New', monospace"
+     font-size="20px"
+     font-weight="700"
+     fill="#007bc7"
+     id="text6">{ }</text>
+  <text
+     x="112"
+     y="22"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="24px"
+     font-weight="700"
+     fill="#154273"
+     id="text7">Waterkering</text>
+  <text
+     x="112"
+     y="44"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     fill="#6b7785"
+     id="text8">elke eigenschap heeft een afgedwongen vorm — geen ruimte voor interpretatie</text>
+  <!-- ============ LEFT: code panel ============ -->
+  <rect
+     x="40"
+     y="72"
+     width="640"
+     height="520"
+     rx="18"
+     fill="#0f2a44"
+     id="rect8" />
+  <g
+     font-family="Consolas, 'Courier New', monospace"
+     font-size="13px"
+     id="g56"
+     transform="translate(0,-68)">
+    <text
+       x="64"
+       y="168"
+       fill="#8ed1fa"
+       id="text9">{</text>
+    <text
+       x="80"
+       y="189"
+       id="text12"><tspan
+         fill="#f5c26b"
+         id="tspan9">&quot;title&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan10">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan11">&quot;Waterkering&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan12">,</tspan></text>
+    <text
+       x="80"
+       y="210"
+       font-size="12px"
+       id="text16"><tspan
+         fill="#f5c26b"
+         id="tspan13">&quot;description&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan14">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan15">&quot;Kunstmatige hoogte, natuurlijke hoogte of gedeelte daarvan …&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan16">,</tspan></text>
+    <text
+       x="80"
+       y="231"
+       id="text20"><tspan
+         fill="#f5c26b"
+         id="tspan17">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan18">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan19">&quot;object&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan20">,</tspan></text>
+    <text
+       x="80"
+       y="252"
+       id="text22"><tspan
+         fill="#f5c26b"
+         id="tspan21">&quot;properties&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan22">: {</tspan></text>
+    <text
+       x="96"
+       y="273"
+       id="text24"><tspan
+         fill="#f5c26b"
+         id="tspan23">&quot;id&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan24">: {</tspan></text>
+    <text
+       x="112"
+       y="294"
+       id="text27"><tspan
+         fill="#f5c26b"
+         id="tspan25">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan26">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan27">&quot;string&quot;</tspan></text>
+    <text
+       x="96"
+       y="315"
+       fill="#e4eaf0"
+       id="text28">},</text>
+    <text
+       x="96"
+       y="336"
+       id="text29"><tspan
+         fill="#f5c26b"
+         id="tspan28">&quot;naam&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan29">: {</tspan></text>
+    <text
+       x="112"
+       y="357"
+       id="text32"><tspan
+         fill="#f5c26b"
+         id="tspan30">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan31">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan32">&quot;string&quot;</tspan></text>
+    <text
+       x="96"
+       y="378"
+       fill="#e4eaf0"
+       id="text33">},</text>
+    <text
+       x="96"
+       y="399"
+       id="text34"><tspan
+         fill="#f5c26b"
+         id="tspan33">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan34">: {</tspan></text>
+    <text
+       x="112"
+       y="420"
+       id="text38"><tspan
+         fill="#f5c26b"
+         id="tspan35">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan36">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan37">&quot;enum&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan38">,</tspan></text>
+    <text
+       x="112"
+       y="441"
+       font-size="12px"
+       id="text42"><tspan
+         fill="#f5c26b"
+         id="tspan39">&quot;description&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan40">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan41">&quot;Aquo-domeintabel 'Waterkeringtype'&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan42">,</tspan></text>
+    <text
+       x="112"
+       y="462"
+       id="text48"><tspan
+         fill="#f5c26b"
+         id="tspan43">&quot;enum&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan44">: [</tspan><tspan
+         fill="#9be38a"
+         id="tspan45">&quot;Dam&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan46">,</tspan><tspan
+         fill="#9be38a"
+         id="tspan47">&quot;Dijk&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan48">, …]</tspan></text>
+    <text
+       x="96"
+       y="483"
+       fill="#e4eaf0"
+       id="text49">},</text>
+    <text
+       x="96"
+       y="504"
+       id="text50"><tspan
+         fill="#f5c26b"
+         id="tspan49">&quot;geometrie&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan50">: {</tspan></text>
+    <text
+       x="112"
+       y="525"
+       id="text53"><tspan
+         fill="#f5c26b"
+         id="tspan51">&quot;type&quot;</tspan><tspan
+         fill="#e4eaf0"
+         id="tspan52">:</tspan><tspan
+         fill="#9be38a"
+         id="tspan53">&quot;string&quot;</tspan></text>
+    <text
+       x="96"
+       y="546"
+       fill="#e4eaf0"
+       id="text54">}</text>
+    <text
+       x="80"
+       y="567"
+       fill="#e4eaf0"
+       id="text55">}</text>
+    <text
+       x="64"
+       y="588"
+       fill="#8ed1fa"
+       id="text56">}</text>
+  </g>
+  <!-- ============ connectors ============ -->
+  <path
+     d="m 183.62855,260.2442 c 23.56239,3.594 483.1315,-128.30639 542.71711,-129.07395"
+     fill="none"
+     stroke="#007bc7"
+     stroke-width="2.5"
+     stroke-dasharray="6, 5"
+     marker-end="url(#arrowBlue)"
+     id="path56"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 175.87274,328.15649 c 25,0 468.49098,-10.89423 565.27946,17.30869"
+     fill="none"
+     stroke="#39870c"
+     stroke-width="2.5"
+     stroke-dasharray="6, 5"
+     marker-end="url(#arrowGreen)"
+     id="path57"
+     sodipodi:nodetypes="cc" />
+  <!-- ============ RIGHT: card A - string ============ -->
+  <g
+     id="g77"
+     transform="translate(16,-68)">
+    <circle
+       cx="760"
+       cy="195"
+       r="24"
+       fill="#dceffb"
+       id="circle57" />
+    <text
+       x="760.70508"
+       y="200.88478"
+       text-anchor="middle"
+       font-family="Arial, Helvetica, sans-serif"
+       font-size="18px"
+       font-weight="700"
+       fill="#007bc7"
+       id="text57">Aa</text>
+  </g>
+  <text
+     x="810"
+     y="123"
+     font-family="Consolas, 'Courier New', monospace"
+     font-size="17px"
+     font-weight="700"
+     fill="#154273"
+     id="text58">naam</text>
+  <text
+     x="810"
+     y="142"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="13px"
+     fill="#6b7785"
+     id="text59">type: string → vrije tekst</text>
+  <rect
+     x="750"
+     y="162"
+     width="380"
+     height="46"
+     rx="9"
+     fill="#f4f8fc"
+     stroke="#9bb4c7"
+     stroke-width="1.5"
+     id="rect59" />
+  <text
+     x="768"
+     y="191"
+     font-family="Consolas, 'Courier New', monospace"
+     font-size="16px"
+     fill="#154273"
+     id="text60">&quot;Diefdijk&quot;</text>
+  <rect
+     x="1108"
+     y="172"
+     width="2"
+     height="24"
+     fill="#007bc7"
+     id="rect60" />
+  <text
+     x="750"
+     y="235"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="12.5px"
+     fill="#6b7785"
+     id="text61">Elke tekstwaarde mag — er wordt niet gecontroleerd óf het</text>
+  <text
+     x="750"
+     y="251"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="12.5px"
+     fill="#6b7785"
+     id="text62">een bestaande of correcte naam is.</text>
+  <!-- ============ RIGHT: card B - enum ============ -->
+  <g
+     id="g78"
+     transform="translate(-2.1152193,-70.013758)">
+    <rect
+       x="750"
+       y="402"
+       width="200"
+       height="28"
+       rx="14"
+       fill="#39870c"
+       id="rect63" />
+    <text
+       x="850"
+       y="421"
+       text-anchor="middle"
+       font-family="Arial, Helvetica, sans-serif"
+       font-size="12px"
+       font-weight="700"
+       letter-spacing="0.3"
+       fill="#ffffff"
+       id="text63">ENUM — KIES EXACT 1</text>
+  </g>
+  <text
+     x="750"
+     y="380"
+     font-family="Consolas, 'Courier New', monospace"
+     font-size="15px"
+     font-weight="700"
+     fill="#154273"
+     id="text64">type</text>
+  <text
+     x="800"
+     y="378"
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="12.5px"
+     fill="#6b7785"
+     id="text65" />
+  <!-- 8 enum options, one selected -->
+  <g
+     font-family="Arial, Helvetica, sans-serif"
+     font-size="14px"
+     id="g74"
+     transform="translate(0,-74)">
+    <!-- Dam -->
+    <g
+       id="g79"
+       transform="translate(0,6)">
+      <circle
+         cx="762"
+         cy="474"
+         r="9"
+         fill="#ffffff"
+         stroke="#9bb4c7"
+         stroke-width="2"
+         id="circle65" />
+      <text
+         x="782"
+         y="479"
+         fill="#8a93a0"
+         id="text66">Dam</text>
+    </g>
+    <!-- Dijk: selected -->
+    <rect
+       x="746"
+       y="500"
+       width="404"
+       height="34"
+       rx="9"
+       fill="#eaf6e4"
+       id="rect66" />
+    <circle
+       cx="762"
+       cy="517"
+       r="9"
+       fill="#39870c"
+       id="circle66" />
+    <path
+       d="m 757.5,517 3.5,3.5 6.5,-9.5"
+       fill="none"
+       stroke="#ffffff"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path66" />
+    <text
+       x="782"
+       y="522"
+       font-weight="700"
+       fill="#154273"
+       id="text67">Dijk</text>
+    <text
+       x="1134"
+       y="522"
+       text-anchor="end"
+       font-size="12px"
+       font-weight="700"
+       fill="#39870c"
+       id="text68">✓ gekozen</text>
+    <!-- Duin -->
+    <circle
+       cx="762"
+       cy="552"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle68" />
+    <text
+       x="782"
+       y="557"
+       fill="#8a93a0"
+       id="text69">Duin</text>
+    <!-- Flexibele waterkering -->
+    <circle
+       cx="762"
+       cy="586"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle69" />
+    <text
+       x="782"
+       y="591"
+       fill="#8a93a0"
+       id="text70">Flexibele waterkering</text>
+    <!-- Hoge gronden -->
+    <circle
+       cx="762"
+       cy="620"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle70" />
+    <text
+       x="782"
+       y="625"
+       fill="#8a93a0"
+       id="text71">Hoge gronden</text>
+    <!-- Kistdam -->
+    <circle
+       cx="762"
+       cy="654"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle71" />
+    <text
+       x="782"
+       y="659"
+       fill="#8a93a0"
+       id="text72">Kistdam</text>
+    <!-- Kunstwerk -->
+    <circle
+       cx="762"
+       cy="688"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle72" />
+    <text
+       x="782"
+       y="693"
+       fill="#8a93a0"
+       id="text73">Kunstwerk</text>
+    <!-- Wandconstructie -->
+    <circle
+       cx="762"
+       cy="722"
+       r="9"
+       fill="#ffffff"
+       stroke="#9bb4c7"
+       stroke-width="2"
+       id="circle73" />
+    <text
+       x="782"
+       y="727"
+       fill="#8a93a0"
+       id="text74">Wandconstructie</text>
+  </g>
+  <!-- rejected value -->
+  <g
+     id="g80"
+     transform="translate(0,-78)">
+    <line
+       x1="746"
+       y1="744"
+       x2="1134"
+       y2="744"
+       stroke="#e3e8ee"
+       stroke-width="1.5"
+       id="line74" />
+    <path
+       d="m 754,758 16,16 m 0,-16 -16,16"
+       stroke="#b3261e"
+       stroke-width="2.6"
+       stroke-linecap="round"
+       id="path74" />
+    <text
+       x="782"
+       y="771"
+       font-family="Consolas, 'Courier New', monospace"
+       font-size="13.5px"
+       fill="#b3261e"
+       text-decoration="line-through"
+       id="text75"
+       style="text-decoration:line-through;text-decoration-line:line-through">&quot;stormvloedkering&quot;</text>
+    <text
+       x="782"
+       y="790"
+       font-family="Arial, Helvetica, sans-serif"
+       font-size="12px"
+       fill="#8a93a0"
+       id="text76">↳ staat niet in de lijst → schema wijst dit af</text>
+    <text
+       xml:space="preserve"
+       style="writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:#e17000;stroke-width:1.00157"
+       x="956.78418"
+       y="166.39725"
+       id="text77"><tspan
+         sodipodi:role="line"
+         id="tspan77"
+         x="956.78418"
+         y="166.39725" /></text>
+  </g>
+  <metadata
+     id="metadata80">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>JSON Schema van Waterkering: naam is een vrije string, type is een enum uit de Aquo-domeintabel Waterkeringtype waarvan je er precies 1 kiest</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

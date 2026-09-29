@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c60"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0a5"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#017bc6"/>
+    </marker>
+  </defs>
+
+  <!-- Bronhouder A -->
+  <rect x="30" y="60" width="150" height="65" rx="10" fill="#0a5" filter="url(#shadow)"/>
+  <text x="105" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🏛️</text>
+  <text x="105" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Bronhouder A</text>
+
+  <!-- Bronhouder B -->
+  <rect x="30" y="200" width="150" height="65" rx="10" fill="#0a5" filter="url(#shadow)"/>
+  <text x="105" y="228" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🏛️</text>
+  <text x="105" y="252" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Bronhouder B</text>
+
+  <!-- Pijl A → Adapter (ebMS2/StUF) -->
+  <line x1="180" y1="92" x2="330" y2="92" stroke="#c60" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <rect x="215" y="72" width="80" height="20" rx="4" fill="#fff3e0" stroke="#c60" stroke-width="1"/>
+  <text x="255" y="86" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#c60" font-weight="600">ebMS2/StUF</text>
+
+  <!-- Pijl B → Event-backend (REST/JSON) -->
+  <line x1="180" y1="232" x2="530" y2="170" stroke="#0a5" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <rect x="300" y="210" width="80" height="20" rx="4" fill="#e8f5e9" stroke="#0a5" stroke-width="1"/>
+  <text x="340" y="224" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#0a5" font-weight="600">REST/JSON</text>
+
+  <!-- Adapter -->
+  <rect x="335" y="60" width="140" height="65" rx="10" fill="#c60" filter="url(#shadow)"/>
+  <text x="405" y="88" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🔄</text>
+  <text x="405" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Adapter</text>
+  <text x="405" y="145" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#888">StUF → events</text>
+
+  <!-- Pijl Adapter → Event-backend -->
+  <line x1="475" y1="92" x2="530" y2="140" stroke="#017bc6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Event-backend -->
+  <rect x="535" y="115" width="160" height="65" rx="10" fill="#017bc6" filter="url(#shadow)"/>
+  <text x="615" y="143" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">⚙️</text>
+  <text x="615" y="167" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Event-backend</text>
+
+  <!-- Pijl Event-backend → Registratie -->
+  <line x1="695" y1="148" x2="745" y2="148" stroke="#017bc6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Registratie -->
+  <rect x="750" y="115" width="130" height="65" rx="10" fill="#017bc6" filter="url(#shadow)"/>
+  <text x="815" y="143" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20">🗃️</text>
+  <text x="815" y="167" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="white" font-weight="600">Registratie</text>
+
+  <!-- Toelichting -->
+  <text x="450" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#555">Eén backend, twee ingangen · adapter als tijdelijke vertaallaag</text>
+</svg>
