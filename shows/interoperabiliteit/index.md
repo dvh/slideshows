@@ -14,7 +14,7 @@ Dimitri van Hees
 
 > Een set standaarden, richtlijnen en praktische hulpmiddelen voor het verantwoord ontwikkelen, inkopen en gebruiken van digitale systemen binnen de Nederlandse overheid.
 
-https://minbzk.github.io/NeRDS/
+https://nerds.digitaledienst.overheid.nl/
 
 ## Don't reinvent the wheel!
 <!-- _class: title -->
