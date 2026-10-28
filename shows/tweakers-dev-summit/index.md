@@ -616,6 +616,7 @@ Voor de BioShock-fans onder ons: dit is geen verzoek. … Nee hoor, grapje. Wij 
 
 Vragen?
 
+- Slides op https://ootes.io/talks
 - 🐘 [@tomootes](https://social.codefor.nl/@tomootes)
 - 📬 tom@ootes.io
 
