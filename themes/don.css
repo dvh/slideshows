@@ -51,3 +51,26 @@ section.image {
 section.image img {
   max-height: 720px;
 }
+/* Tekst links, QR-code (of ander beeld) rechts. Volgorde in markdown maakt niet uit. */
+section.qr {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-auto-rows: min-content;
+  column-gap: 48px;
+}
+section.qr > * {
+  grid-column: 1;
+}
+section.qr > h2 {
+  grid-column: 1 / -1;
+}
+section.qr > p:has(> img) {
+  grid-column: 2;
+  grid-row: 2 / span 20;
+  align-self: start;
+  margin: 0;
+}
+section.qr img {
+  width: 100%;
+  max-height: none;
+}
