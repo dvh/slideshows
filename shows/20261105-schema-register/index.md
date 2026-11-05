@@ -8,9 +8,18 @@ headingDivider: 2
 <!-- _class: title -->
 <br/>
 
-Dimitri van Hees
+Dimitri van Hees & Joost Farla
 Kennisplatform API's
 5 november 2026
+
+## Vanaf 1 januari: OpenAPI 3.1!
+<!-- _class: title -->
+
+## OpenAPI 3.1 wordt verplicht
+
+- OAS 3.1 is per 1 januari 2027 de verplichte standaard
+- 3.1 ondersteunt JSON Schema 2020-12 volledig
+- Daarmee kunnen we JSON Schema echt gaan gebruiken
 
 ## Het Schema-register is live: https://schemas.developer.overheid.nl
 <!-- _class: title -->
@@ -53,41 +62,22 @@ Kennisplatform API's
 ## Wat we zagen
 
 - Veel schema's zonder `title` of `description`: wat is dit eigenlijk?
-- Veel verschillende schema's: zelfde structuur, andere annotaties
 - Foutmeldingsschema's talloze keren, terwijl problem+json één keer zou moeten bestaan
 - Examples die niet kloppen met het type, zoals een integer bij `type: string`
+- Veel verschillende schema's: zelfde structuur, andere annotaties
 
-## Gevolg
+## Zelfde structuur, andere annotaties
 
-- Tientallen manieren om een adres te modelleren
-- Een schema dat je niet begrijpt, hergebruik je niet (en een AI agent ook niet)
-- Elk team vindt hetzelfde wiel opnieuw uit
-- Elke afnemer schrijft per API eigen code om bijvoorbeeld adressen om te zetten
-- Een register vol varianten is geen register maar een archief
+Op test: één GeoJSON Polygon, meerdere varianten
 
-## Schema Design Rules (SDR)
-<!-- _class: title -->
-
-## Vanaf 1 januari: OpenAPI 3.1!
-<!-- _class: title -->
-
-<!--
-- OAS 3.1 per 1 januari 2027 de verplichte standaard
-- 3.1 = volledige ondersteuning van JSON Schema 2020-12
-- Schema's worden daarmee een volwaardig onderdeel van elke API
--->
-
-## Wat 3.1 mogelijk maakt: één structuur, eigen annotaties
-
-Op test: één GeoJSON Polygon, honderden varianten
-
+- **Structuur**: wat een geldig object is. **Annotaties**: wat het hier betekent
 - Gebouw en postcodegebied: zelfde structuur, andere `description` en `examples`
-- Sinds 2020-12 mogen annotaties naast een `$ref` staan, zonder `allOf`
+- Mogelijke oplossing: sinds OpenAPI 3.1 mogen annotaties naast een `$ref` staan
 
 ```json
 {
   "contour": {
-    "$ref": "https://<organisatie>/<standaard>/<versie>/Polygon.schema.json",
+    "$ref": "./Polygon.schema.json",
     "description": "De contour van het gebouw."
   }
 }
@@ -98,16 +88,20 @@ Op test: één GeoJSON Polygon, honderden varianten
 - Zelfde vraag speelt bij vertalingen
 -->
 
-## De ADR kan zeggen "gebruik JSON Schema", de SDR zegt hoe
+## Gevolg
 
-- OpenAPI zegt niets over wat er in het `schema`-veld staat
-- De ADR daardoor tot nu toe ook weinig
-- JSON Schema wordt breder gebruikt dan OpenAPI
-- Dus: een eigen set afspraken, naast de ADR
+- Tientallen manieren om een adres te modelleren
+- Een schema dat je niet begrijpt, hergebruik je niet (en een AI agent ook niet)
+- Elk team vindt hetzelfde wiel opnieuw uit
+- Elke afnemer schrijft eigen code om bijvoorbeeld adressen om te zetten
+- Een register vol varianten is geen register maar een archief
+
+## Schema Design Rules (SDR)
+<!-- _class: title -->
 
 ## Breder dan OpenAPI
 
-- OpenAPI en AsyncAPI
+- AsyncAPI, CloudEvents
 - Validators
 - Generators: TypeScript-types, classes, formulieren, documentatie
 - AI: genereren van code en data, valideren van output
@@ -119,7 +113,22 @@ Op test: één GeoJSON Polygon, honderden varianten
 - Extensies: alleen via de SDR overheidsbreed te standaardiseren
 -->
 
-## Samenhang met de ADR
+## Wat de SDR opleveren
+
+1. Het **schemaregister** biedt meerwaarde: hergebruik, links, toetsing
+1. Schema's zijn **geschikt voor AI**: genereren en valideren
+1. Schema's zijn **productieklaar**
+
+## Relatie met API Design Rules
+<!-- _class: title -->
+
+- De ADR kan zeggen "gebruik JSON Schema", de SDR zegt hoe
+- OpenAPI zegt niets over wat er in het `schema`-veld staat
+- De ADR daardoor tot nu toe ook weinig
+- JSON Schema wordt breder gebruikt dan OpenAPI
+- Dus: een eigen set afspraken, naast de ADR
+
+## ADR vs SDR
 
 - **ADR**: URL-paden, queryparameters, gedrag van de API
 - **SDR**: request- en response-bodies, berichten, gegevensstructuren
@@ -132,7 +141,7 @@ Regels die over bodies gaan en dus naar de SDR kunnen, waarna de ADR ernaar verw
 - Veldnamen: geen afkortingen, Nederlandse naamgeving (of niet)
 - De resourcenaam niet herhalen in een veldnaam (of wel)
 - Property casing, destijds bij de ADR geparkeerd
-- Formats, zoals de OpenAPI Format Registry die de ADR nu gebruikt (#694)
+- Formats, zoals de OpenAPI Format Registry die de ADR nu gebruikt
 
 ## Verhuiskandidaten: open ADR-issues
 
@@ -152,33 +161,18 @@ Regels die over bodies gaan en dus naar de SDR kunnen, waarna de ADR ernaar verw
 - Gesloten maar relevant: #340, casing van schemanamen en properties niet in de regellijst
 -->
 
-## Wat de SDR opleveren
-
-1. Het **schemaregister** biedt meerwaarde: hergebruik, links, toetsing
-1. Schema's zijn **geschikt voor AI**: genereren en valideren
-1. Schema's zijn **productieklaar**
-
-Dit zijn ook de toetsstenen voor elke regel.
-
-## De werkgroep
-<!-- _class: title -->
-
 ## Werkgroep Schema Design Rules
 
 - Nieuwe werkgroep van het Kennisplatform API's
-- Kick-off op 28 oktober bij Geonovum
+- Kick-off was 28 oktober bij Geonovum
 - Geonovum, Gemeente Amsterdam, VNG, Logius
-<!--
-- Aanwezig: Yashar Robert (Amsterdam), Henri Korver en Michiel Trimpe (VNG), Tim van der Lippe (Logius), Joost Farla (Geonovum), ikzelf als voorzitter
--->
 
 ## Uitgangspunten
 
-- Klein beginnen: een versie 0.1 met concrete regels
 - Een overheidsprofiel bovenop JSON Schema
+- Klein beginnen: een versie 0.1 met concrete regels
 - Register en regels staan los van elkaar: elke regel moet ook buiten het register te onderbouwen zijn
-- Niet botsen met informatiemodellen (MIM)
-- Versionering in scope, maar niet blokkerend voor 0.1
+- Verschil quickwins vs "moeilijke" onderwerpen zoals versionering
 
 ## Werkwijze
 
@@ -186,19 +180,17 @@ Dit zijn ook de toetsstenen voor elke regel.
 - Eén GitHub-issue per onderwerp
 - Elk issue start met een concreet voorstel
 - Regeltekst in het Engels, met MUST / SHOULD / MAY
-- Uitgewerkt in een ruleset
+- Uitgewerkt in een ruleset zodat we automatisch kunnen toetsen
 
 ## Toetsset
 
 Bestaande schema's om de regels aan te toetsen:
 
-- problem+json
+- ADR schema's (ProblemDetails)
 - CloudEvents
-- BAG (Gemeente Amsterdam)
-- VNG: adres, persoon, bedrijf, zaak
-- PDOK, OGC en Kadaster
-
-Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de regel.
+- Basisregistraties
+- VNG schemas: adres, persoon, bedrijf, zaak
+- Geoschema's van PDOK, Geonovum, OGC en Kadaster
 
 **Draag schema's aan uit andere domeinen**, ook OpenAPI-schema's die nog geen los JSON Schema zijn. Hoe breder de toetsset, hoe beter de regels.
 
@@ -272,40 +264,6 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 | `unsatisfiable_max_contains` | `maxContains` boven de arraygrens is zinloos |
 | `unsatisfiable_min_properties` | `minProperties` onder aantal `required` is zinloos |
 
-## Overbodige constraints
-
-<style scoped>table { font-size: 0.5em; }</style>
-
-| Regel | Omschrijving |
-|-------|--------------|
-| `properties_default` | Lege `properties` |
-| `pattern_properties_default` | Lege `patternProperties` |
-| `property_names_default` | Lege `propertyNames` |
-| `property_names_type_default` | `type: string` in `propertyNames` |
-| `items_array_default` | Lege array als `items` |
-| `items_schema_default` | `true` als `items` |
-| `unevaluated_items_default` | `true` als `unevaluatedItems` |
-| `unevaluated_properties_default` | `true` als `unevaluatedProperties` |
-
-## Overbodige constraints
-
-<style scoped>table { font-size: 0.5em; }</style>
-
-| Regel | Omschrijving |
-|-------|--------------|
-| `content_schema_default` | `true` als `contentSchema` |
-| `dependencies_default` | Lege `dependencies` |
-| `dependent_required_default` | Lege `dependentRequired` |
-| `disallow_default` | Lege array als `disallow` |
-| `divisible_by_default` | `divisibleBy: 1` |
-| `multiple_of_default` | `multipleOf: 1` |
-| `then_empty` | Leeg schema als `then` |
-| `else_empty` | Leeg schema als `else` |
-
-<!--
-- disallow, divisibleBy, dependencies: oude drafts
--->
-
 ## Voorselectie op GitHub
 <!-- _class: title -->
 <!--
@@ -335,11 +293,10 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 
 ## Extensies: de `x-`-prefix
 
-- Mogelijke extensies: semantiek, extra formats, `unit`, `provenance`, contact
-- Doet iedereen het op dezelfde manier, dan kun je er tooling omheen bouwen
 - Volgende versies van JSON Schema: onbekende keywords niet meer toegestaan, tenzij met `x-`-prefix
 - Daar sorteren we op voor: extensies krijgen altijd een `x-`-prefix
-- Open: naam en inhoud per extensie (#693)
+- Mogelijke extensies: `x-unit`, `x-provenance`, `x-contact`, `x-jsonld`
+- Doet iedereen het op dezelfde manier, dan kun je er tooling omheen bouwen
 
 ## Voorbeeld: semantiek in Italië
 <!-- _class: image -->
@@ -362,13 +319,10 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 
 ## OpenLint 1.0
 <!-- _class: title -->
-<!--
-- Groot nieuws sinds gisteren
--->
 
 ## Wat is OpenLint?
 
-- Opvolger van Spectral: opgeschoonde kloon van de fork onder API Commons
+- Opvolger van Spectral: opgeschoonde clone van de fork onder API Commons
 - Rulesetformaat losgemaakt van de linter, met een eigen specificatie
 - Komt onder Open Source Europe
 - Nederland is aan boord via developer.overheid.nl, samen met onder meer Italië en Duitsland
@@ -384,14 +338,44 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 - Rulesetformaat blijft gelijk: bestaande rulesets werken zonder aanpassingen
 - Ook de ADR-ruleset
 - Alle tooling van developer.overheid.nl draait er nu op, ook de DON Checker
-- Spectral rechtstreeks gebruikt? Vervang de package door `openlint`
-- Nog beter: gebruik de DON Checker
+
+## Aan de slag: van Spectral naar OpenLint
+
+Package en commando vervangen, `.spectral.yaml` wordt nog steeds opgepikt
+
+```diff
+- npm install --save-dev @stoplight/spectral-cli
++ npm install --save-dev openlint
+
+- npx spectral lint openapi.yaml
++ npx openlint lint openapi.yaml
+```
+
+Vanuit je eigen code: andere import en klasse, zelfde ruleset
+
+```diff
+- import { Spectral, type RulesetDefinition } from "@stoplight/spectral-core";
++ import { OpenLint, type RulesetDefinition } from "@openlint/openlint-core";
+```
+<!--
+- Nieuwe projecten kunnen ook .openlint.yaml gebruiken
+-->
+
+## Nog beter: de DON Checker
+
+- Wij houden de linter en de rulesets voor je bij
+- ADR en publiccode.yml, in de CLI, in je pipeline en in de browser
+
+```sh
+npx @developer-overheid-nl/don-checker@latest \
+  validate --standard adr --input ./openapi.json
+```
 
 ## Meer dan OpenAPI
 
 - Nu: OpenAPI, AsyncAPI, Arazzo
-- Ambitie: meer formaten, waaronder JSON Schema
-- Daarna: LSP voor elke editor, compliance met vacuum
+- Straks: meer formaten, waaronder JSON Schema en RDF (NL-SBB, DCAT-AP-NL)
+- LSP voor elke editor, compliance met vacuum
 - **De Schema Design Rules worden de usecase voor JSON Schema in OpenLint**
 <!--
 - Mooi haakje: wat we in de werkgroep afspreken, wordt direct een ruleset
@@ -399,24 +383,19 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 - Meedoen: github.com/openlint/community, Office Hours
 -->
 
-## Samengevat: doe mee
-<!-- _class: title -->
-<!--
-- Vragen graag, maar geen inhoudelijke discussie hier
-- We beslissen vandaag niets
-- De discussie loopt op GitHub, zodat iedereen kan meelezen en meedoen
--->
-
 ## Lees de blogpost over OpenLint
 <!-- _class: qr -->
 
 ![qr](./blog-qr.png)
 
-- Meer over OpenLint 1.0 en wat er nog komt
+Meer over OpenLint 1.0 en wat er nog komt
 
 <https://developer.overheid.nl/blog/2026/11/04/openlint-vervangt-spectral>
 
-## Discussieer mee op GitHub
+## Samengevat: doe mee!
+<!-- _class: title -->
+
+## Discussieer mee over de SDR op GitHub
 <!-- _class: qr -->
 
 ![qr](./issues-qr.png)
@@ -424,8 +403,6 @@ Faalt een algemeen gewaardeerd schema op één regel? Dan heroverwegen we de reg
 Reageer op de bestaande SDR-issues, of maak een nieuw issue aan
 
 Label `WG: Schema design rules` op Geonovum/KP-APIs
-
-Geen bezwaar op een voorstel? Dan geldt het als voorlopig aangenomen.
 
 [github.com/Geonovum/KP-APIs/issues](https://github.com/Geonovum/KP-APIs/issues?q=label%3A%22WG%3A%20Schema%20design%20rules%22)
 
@@ -445,9 +422,9 @@ Geen bezwaar op een voorstel? Dan geldt het als voorlopig aangenomen.
 - Onze eigen schema's volgen al UpperCamelCase.schema.json (#690)
 -->
 
-## Haak aan bij de werkgroep
+## Haak aan bij de werkgroep Schema Design Rules
 
-Mail naar <api@geonovum.nl>
+Mail naar <d.vanhees@geonovum.nl>
 
 ## Vragen?
 <!-- _class: title -->
