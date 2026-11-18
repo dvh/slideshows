@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="ijzer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9d9d9"/>
+      <stop offset="0.5" stop-color="#8b8b8b"/>
+      <stop offset="1" stop-color="#5a5a5a"/>
+    </linearGradient>
+    <radialGradient id="gloed" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f9e11e" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#f9e11e" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#f9e11e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="schaduw" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#154273" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#154273" stop-opacity="0"/>
+    </radialGradient>
+    <path id="ster" d="M0-7l2.06 4.17 4.6.67-3.33 3.25.79 4.58L0 2.5l-4.12 2.17.79-4.58-3.33-3.25 4.6-.67z"/>
+  </defs>
+
+  <!-- EU-sterrenkrans: in Europa -->
+  <g fill="#f9e11e" stroke="#c9a800" stroke-width="0.8">
+    <use href="#ster" transform="translate(200 30) scale(1.4)"/>
+    <use href="#ster" transform="translate(287 53.3) scale(1.4)"/>
+    <use href="#ster" transform="translate(350.7 117) scale(1.4)"/>
+    <use href="#ster" transform="translate(374 204) scale(1.4)"/>
+    <use href="#ster" transform="translate(350.7 291) scale(1.4)"/>
+    <use href="#ster" transform="translate(287 354.7) scale(1.4)"/>
+    <use href="#ster" transform="translate(200 378) scale(1.4)"/>
+    <use href="#ster" transform="translate(113 354.7) scale(1.4)"/>
+    <use href="#ster" transform="translate(49.3 291) scale(1.4)"/>
+    <use href="#ster" transform="translate(26 204) scale(1.4)"/>
+    <use href="#ster" transform="translate(49.3 117) scale(1.4)"/>
+    <use href="#ster" transform="translate(113 53.3) scale(1.4)"/>
+  </g>
+
+  <!-- schaduw -->
+  <ellipse cx="200" cy="362" rx="150" ry="30" fill="url(#schaduw)"/>
+
+  <!-- gloed uit de open doos -->
+  <circle cx="200" cy="120" r="125" fill="url(#gloed)"/>
+  <g stroke="#f9e11e" stroke-width="5" stroke-linecap="round" opacity="0.9">
+    <line x1="200" y1="78" x2="200" y2="40"/>
+    <line x1="160" y1="88" x2="138" y2="58"/>
+    <line x1="240" y1="88" x2="262" y2="58"/>
+    <line x1="128" y1="112" x2="96" y2="96"/>
+    <line x1="272" y1="112" x2="304" y2="96"/>
+  </g>
+
+  <!-- achterste flappen, open -->
+  <polygon points="80,155 200,95 172,62 52,122" fill="#8fcae7" stroke="#0b2a4a" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="200,95 320,155 348,122 228,62" fill="#8fcae7" stroke="#0b2a4a" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- binnenkant -->
+  <polygon points="200,95 320,155 200,215 80,155" fill="#fff7c2" stroke="#0b2a4a" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="200,95 200,140 110,185 80,155" fill="#f9e11e" opacity="0.35"/>
+
+  <!-- code komt naar buiten -->
+  <text x="200" y="150" text-anchor="middle" font-family="'Liberation Mono', 'Courier New', monospace" font-size="54" font-weight="700" fill="#ffffff" stroke="#154273" stroke-width="3" paint-order="stroke">&lt;/&gt;</text>
+
+  <!-- zijkanten -->
+  <polygon points="80,155 200,215 200,345 80,285" fill="#01689b"/>
+  <polygon points="200,215 320,155 320,285 200,345" fill="#154273"/>
+  <g fill="none" stroke="#0b2a4a" stroke-width="2" stroke-linejoin="round" opacity="0.6">
+    <polygon points="80,155 200,215 200,345 80,285"/>
+    <polygon points="200,215 320,155 320,285 200,345"/>
+  </g>
+
+  <!-- voorste flappen, naar buiten geklapt -->
+  <polygon points="80,155 200,215 186,242 66,182" fill="#cce7f4" stroke="#0b2a4a" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="200,215 320,155 334,182 214,242" fill="#cce7f4" stroke="#0b2a4a" stroke-opacity="0.6" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- labels -->
+  <g transform="matrix(1 0.5 0 1 80 155)">
+    <rect x="22" y="50" width="76" height="40" rx="5" fill="#ffffff"/>
+    <text x="60" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#39870c">✓ OPEN</text>
+  </g>
+  <g transform="matrix(1 -0.5 0 1 200 215)">
+    <text x="60" y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#cce7f4" letter-spacing="2">OPEN SOURCE</text>
+    <text x="60" y="86" text-anchor="middle" font-size="12" fill="#8fcae7">EUPL-1.2</text>
+  </g>
+
+  <!-- gebroken ketting op de grond -->
+  <g transform="translate(70 360) rotate(-8)">
+    <g transform="translate(0 0)">
+      <ellipse rx="15" ry="8.5" fill="none" stroke="#2b2b2b" stroke-width="8"/>
+      <ellipse rx="15" ry="8.5" fill="none" stroke="url(#ijzer)" stroke-width="5"/>
+    </g>
+    <g transform="translate(21 0)">
+      <rect x="-16" y="-4.5" width="32" height="9" rx="4.5" fill="#2b2b2b"/>
+      <rect x="-14.5" y="-3" width="29" height="6" rx="3" fill="url(#ijzer)"/>
+    </g>
+    <g transform="translate(42 0)">
+      <ellipse rx="15" ry="8.5" fill="none" stroke="#2b2b2b" stroke-width="8"/>
+      <ellipse rx="15" ry="8.5" fill="none" stroke="url(#ijzer)" stroke-width="5"/>
+    </g>
+    <!-- opengebroken schakel -->
+    <g transform="translate(70 -4) rotate(28)">
+      <path d="M-6 -8A15 8.5 0 1 0 6 8" fill="none" stroke="#2b2b2b" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-6 -8A15 8.5 0 1 0 6 8" fill="none" stroke="url(#ijzer)" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- open hangslot -->
+  <g transform="translate(312 340) rotate(10)">
+    <path d="M-14 6V-14a16 16 0 0 1 32 0V-6" fill="none" stroke="#2b2b2b" stroke-width="9" stroke-linecap="round" transform="translate(12 -12)"/>
+    <path d="M-14 6V-14a16 16 0 0 1 32 0V-6" fill="none" stroke="url(#ijzer)" stroke-width="5.5" stroke-linecap="round" transform="translate(12 -12)"/>
+    <rect x="-26" y="-6" width="52" height="44" rx="7" fill="#5a5a5a" stroke="#1f1f1f" stroke-width="2"/>
+    <circle cx="0" cy="12" r="5.5" fill="#1a1a1a"/>
+    <path d="M-2.5 14h5l2 12h-9z" fill="#1a1a1a"/>
+  </g>
+</svg>

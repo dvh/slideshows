@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 70 1000 500" width="1000" height="500" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#e6eef6" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- grid-papier -->
+  <rect width="1000" height="580" fill="url(#grid)"/>
+
+
+  <!-- ===== links: gesloten product ===== -->
+  <text x="40" y="108" font-size="26" font-weight="700" fill="#535353">Gesloten product</text>
+  <text x="40" y="132" font-size="15" fill="#8b8b8b">bijvoorbeeld Microsoft 365</text>
+
+  <g fill="#f3f3f3" stroke="#b4b4b4" stroke-width="1.5" stroke-dasharray="6 4">
+    <rect x="40" y="150" width="340" height="80" rx="10"/>
+    <rect x="40" y="280" width="340" height="110" rx="10"/>
+  </g>
+  <line x1="210" y1="230" x2="210" y2="280" stroke="#b4b4b4" stroke-width="3" stroke-dasharray="6 4"/>
+
+  <text x="62" y="185" font-size="22" font-weight="700" fill="#535353">Microsoft 365</text>
+  <text x="62" y="210" font-size="15" fill="#535353">licentie per gebruiker, per maand</text>
+
+  <!-- slotje: lock-in -->
+  <g transform="translate(330 296)">
+    <rect x="0" y="10" width="22" height="18" rx="3" fill="#8b8b8b"/>
+    <path d="M5 10V5a6 6 0 0 1 12 0v5" fill="none" stroke="#8b8b8b" stroke-width="3"/>
+  </g>
+  <text x="62" y="314" font-size="19" font-weight="700" fill="#535353">Eén leverancier</text>
+  <text x="62" y="342" font-size="15" fill="#535353">bepaalt zelf prijs en voorwaarden</text>
+  <text x="62" y="366" font-size="15" fill="#535353">en waar je data staat</text>
+
+  <g font-size="16" fill="#535353">
+    <text x="40" y="432"><tspan fill="#d52b1e" font-weight="700">✗</tspan>  overstappen = opnieuw beginnen</text>
+    <text x="40" y="462"><tspan fill="#d52b1e" font-weight="700">✗</tspan>  data in de VS-cloud</text>
+  </g>
+
+  <!-- scheiding -->
+  <line x1="400" y1="90" x2="400" y2="480" stroke="#cce7f4" stroke-width="2"/>
+  <circle cx="400" cy="300" r="20" fill="#e17000"/>
+  <text x="400" y="306" text-anchor="middle" font-family="'Liberation Mono', 'Courier New', monospace" font-size="16" font-weight="700" fill="#ffffff">vs</text>
+
+  <!-- ===== rechts: open source product ===== -->
+  <text x="430" y="108" font-size="26" font-weight="700" fill="#154273">Open source product</text>
+  <text x="430" y="132" font-size="15" font-weight="600" fill="#39870c">bijvoorbeeld Nextcloud · geleverd door Nederlandse partijen</text>
+
+  <rect x="430" y="150" width="530" height="80" rx="10" fill="#154273"/>
+  <text x="454" y="185" font-size="22" font-weight="700" fill="#ffffff">Nextcloud</text>
+  <text x="454" y="210" font-size="15" fill="#cce7f4">bestanden, agenda, chat, samen bewerken · geen licentiekosten</text>
+
+  <!-- vertakking naar leveranciers -->
+  <g stroke="#154273" stroke-width="3" fill="none">
+    <path d="M695 230V255"/>
+    <path d="M520 280V255H870V280"/>
+    <path d="M695 255V280"/>
+  </g>
+
+  <text x="707" y="249" font-size="14" font-weight="700" fill="#154273">🡓 Nederlandse leveranciers</text>
+
+  <g fill="#cce7f4">
+    <rect x="430" y="280" width="170" height="110" rx="10"/>
+    <rect x="610" y="280" width="170" height="110" rx="10"/>
+    <rect x="790" y="280" width="170" height="110" rx="10"/>
+  </g>
+  <g fill="#154273">
+    <rect x="430" y="280" width="7" height="110" rx="3"/>
+    <rect x="610" y="280" width="7" height="110" rx="3"/>
+    <rect x="790" y="280" width="7" height="110" rx="3"/>
+    <g transform="translate(570 368)"><rect width="22" height="5" fill="#ae1c28"/><rect y="5" width="22" height="5" fill="#ffffff"/><rect y="10" width="22" height="5" fill="#21468b"/><rect width="22" height="15" fill="none" stroke="#154273" stroke-width="0.5"/></g>
+    <g transform="translate(750 368)"><rect width="22" height="5" fill="#ae1c28"/><rect y="5" width="22" height="5" fill="#ffffff"/><rect y="10" width="22" height="5" fill="#21468b"/><rect width="22" height="15" fill="none" stroke="#154273" stroke-width="0.5"/></g>
+    <g transform="translate(930 368)"><rect width="22" height="5" fill="#ae1c28"/><rect y="5" width="22" height="5" fill="#ffffff"/><rect y="10" width="22" height="5" fill="#21468b"/><rect width="22" height="15" fill="none" stroke="#154273" stroke-width="0.5"/></g>
+    <g font-size="18" font-weight="700">
+      <text x="450" y="312">Leverancier A</text>
+      <text x="630" y="312">Leverancier B</text>
+      <text x="810" y="312">Leverancier C</text>
+    </g>
+    <g font-size="14">
+      <text x="450" y="342">hosting in NL</text>
+      <text x="450" y="364">beheer &amp; updates</text>
+      <text x="630" y="342">support &amp; SLA</text>
+      <text x="630" y="364">vanuit Nederland</text>
+      <text x="810" y="342">migratie</text>
+      <text x="810" y="364">&amp; training in NL</text>
+    </g>
+  </g>
+
+  <g font-size="16" fill="#154273">
+    <text x="430" y="432"><tspan fill="#39870c" font-weight="700">✓</tspan>  je koopt dienstverlening in, geen licenties</text>
+    <text x="430" y="462"><tspan fill="#39870c" font-weight="700">✓</tspan>  ontevreden? wissel van leverancier, data blijft</text>
+  </g>
+
+  <!-- footer -->
+  <text x="500" y="540" text-anchor="middle" font-family="'Liberation Mono', 'Courier New', monospace" font-size="17" fill="#154273">dezelfde software · keuze uit meerdere Nederlandse leveranciers</text>
+</svg>

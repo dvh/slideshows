@@ -33,16 +33,15 @@ invite: "Graag nodig ik jullie uit voor een inspirerende kennissessie over open 
 
 <!-- _paginate: false -->
 
-# Open Source developen (met AI)
+# Open Source als kans voor de veiligheidsregio's
 
 <!-- _class:  invert  -->
 
 <ul class="horizontal-list">
-  <li>Tom Ootes</li>
+  <li>Tom Ootes & Jan Klopper</li>
   <li>tom@ootes.io</li>
   <li>Veiligheidsregio Drenthe</li>
-  <li>Assen</li>
-  <li>18 november 2026</li>
+  <li>19 november 2026</li>
 </ul>
 
 <!--
@@ -95,13 +94,12 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
 <!-- _class: invert -->
 
-1. developer.overheid.nl & mijn verhaal bij VWS
-2. Het overheidslandschap: eilandjes, maar dezelfde taken
-3. Het antwoord: extreem bruikbare tooling
-4. Pijler 1, open source: publiccode.yml & een skill
-5. Pijler 2, open standaarden: API Design Rules & OAS-Checker
-6. Pijler 3, Overheidsbrede services: code.overheid.nl
-7. Oproep
+1. Kort: developer.overheid.nl
+2. Wat is open source?
+3. Waarom nu: actualiteit, EU-strategie & digitale soevereiniteit
+4. Digital Commons & andere redenen om open te werken
+5. Hoe begin je: inkoop van producten (Nextcloud) en ontwikkeling
+6. Software bouwen met AI: kansen, valkuilen & skills
 
 ##
 
@@ -114,24 +112,120 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
 ## Open Source
 
+![bg right:45% 92%](./img/open-source-cyclus.svg)
+
 - De broncode is beschikbaar
+- Iedereen kan bijdragen/ voorstellen doen
+- Verzoeken doen tot wijzigingen van de code
+- Investeringen komen terug bij alle stakeholders
+- Gedeeld eigenaarschap
 
-## Je ziet een kans tot samenwerking
+## Huidige ontwikkelingen
 
-##
+<!-- _class: invert -->
+
+<div class="two-columns">
+  <img src="./img/digid-overname.jpg" alt="Staatssecretaris verbiedt Amerikaanse overname van bedrijf achter DigiD">
+  <img src="./img/nos-techbedrijven.jpg" alt="NOS: Techbedrijven deelden namen Nederlandse ambtenaren met VS">
+</div>
+
+## EU: Open Source Strategy (3 juni)
+
+![bg right:45%](./img/eu-sovereignty-package.jpg)
+
+- 2 miljard verdeeld over 7 jaar
+- Investeringen in
+  - Kritische open source projecten
+  - Open Source startups
+  - Kennisontwikkeling
+
+## Als route naar digitale soevereiniteit
+
+- Zelf leverancier kiezen
+- Slim in grillige geopolitieke context
+- Ook grote bedrijven steeds min stabiel (Office 365)
+
+![bg right:40%](./img/bedankt_voor_het_volhouden.png)
+
+## Proprietary: wat was ook alweer het probleem?
+
+![bg right:30% 90%](./img/software-lock-in.svg)
+
+- Vendor lock-in
+- Prijsstijgingen
+- Geen invloed roadmap
+- Geen code-portabiliteit
+- Black-box (security, ook downstream)
+- Diplomatiek (chantabel)
+- Cloud act (data)
+
+## Open source: hoe lost het dit op?
+
+![bg right:30% 60%](./img/emoji-opensource.svg)
+
+- Vrij om zelf keuzes te maken
+- Open source product = meerdere leveranciers
+- Zelf bijdragen levert voor iedereen winst op
+- Communities kunnen de code kopiëren zelf verdergaan
+- Zelf hosten of bij leverancier
+- In Europa
+
+## “Digital Commons”
+
+![bg right:40%](./img/bos.jpg)
+
+- Vertaal als “Meente” van “Gemeente”
+  - Een gemeenschappelijk stuk grond
+- Metafoor van een bos
+  - Onderhouden door de gemeenschap
+  - Iedereen kan er gebruik van maken
+- Voorbeelden: Wikipedia, PostgreSQL, Linux
+- Geld blijft in Europa
+
+## Vibe coden is als Eucalyptus planten
+
+![alt text](./img/forestfire.png)
+
+## Andere redenen open sourcen:
+
+- WOO verplicht openbaren code
+- Open, tenzij
+- Public Money, Public Code
+
+## Hoe te beginnen?
+
+- Begin met afnemen van Open Source producten
+- Begin ook met bijdragen aan bestaande projecten (QGIS)
+- [https://oss.developer.overheid.nl](https://oss.developer.overheid.nl)
+
+## Open Source inkoop; voorbeeld Nextcloud
+
+<img src="./img/nextcloud-vs-microsoft.svg" alt="Gesloten product met één leverancier tegenover open source product (Nextcloud) met keuze uit meerdere leveranciers" class="img-centered" style="max-height: 420px;">
+
+<!--
+Voorbeeld Nextcloud als alternatief voor Microsoft 365: bestanden, agenda, chat/videobellen, samen bewerken.
+Bij open source koop je geen licenties, maar dienstverlening: hosting, beheer, support, migratie.
+Dezelfde software wordt door meerdere (Nederlandse) partijen aangeboden. Ontevreden? Wissel van leverancier, je data en software blijven.
+Sluit aan op digitale soevereiniteit (eerdere slide).
+-->
+
+## Open Source, inkoop software ontwikkeling
+
+- Bij offreren Open Source opgeven als eis
+- Trekt vaak juist innovatieve partijen aan met lef, die trots zijn op hun code
 
 ## Waar helpt AI ons bij?
 
 - Makkelijk wensen omzetten in software
-- Als je iteratief werkt (veel demo's) snel testen
+- Snel leveren aan de praktijk
 - Doorvragen; makkelijk leren van AI (als je wilt)
-- Onafhankelijk worden van leveranciers
+- Onafhankelijk worden van leveranciers door zelf bouwen
 
 ## Valkuilen
 
 - Zonder instructies kiest AI zelf
 - Je bouwt iets wat je niet kan onderhouden / niet begrijpt
-- Gevoelige gegevens in de prompt, bijvoorbeeld persoonsgegevens of interne documenten
+- Gevoelige gegevens, persoonsgegevens of interne documenten
 - AI zet makkelijk wachtwoorden of API-sleutels in de code
 - Werkt in de demo, niet in productie
 - Iedereen bouwt zijn eigen eilandje, er ontstaat wildgroei
@@ -142,28 +236,12 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 - Gebruikersonderzoek > UX-research > gewoon interviews afnemen
 - Goede technische standaarden/ best practices
 - Community building > andere veiligheidsregio's uitnodigen
-- Kritisch nadenken en keuzes maken. AI geeft je opties, maar jij beslist wat verstandig is
+- Kritisch nadenken en keuzes maken
 
-## AI Skills
+## Advies
 
-- Instructies
-- Geïnstalleerd op je AI
-- Geactiveerd bij een bepaalde trigger
-
-## Voorbeeld skill
-
-<!-- _class: invert code-editor -->
-
-<style scoped>section { --code-editor-file: "SKILL.md"; --code-editor-status: "Markdown · Agent Skill"; }</style>
-
-```md
----
-name: set-programming-language
-description: Wanneer je software bouwt, bijvoorbeeld web-apps of websites, gebruik dan deze stack.
----
-
-Wanneer je een webtoepassing bouwt, gebruik dan altijd Python.
-
-- Kies geen andere programmeertaal voor de backend.
-- Twijfel je? Vraag het eerst na bij de gebruiker.
-```
+- Zet in op samen ontwikkelen/ community building
+- Bouw aan de relaties
+- Koop open source producten en support in
+- Huur software-partijen in voor open ontwikkeling
+- Draag kosten gezamenlijk als regio's
