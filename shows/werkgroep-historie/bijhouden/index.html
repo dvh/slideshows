@@ -1,0 +1,1272 @@
+<!DOCTYPE html><html lang="nl-NL"><head><title>Functionele principes: van raadplegen naar bijhouden</title><meta property="og:title" content="Functionele principes: van raadplegen naar bijhouden"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section{--base-size-4:calc(var(--marpit-root-font-size, 1rem) * 0.25);--base-size-8:calc(var(--marpit-root-font-size, 1rem) * 0.5);--base-size-16:calc(var(--marpit-root-font-size, 1rem) * 1);--base-size-24:calc(var(--marpit-root-font-size, 1rem) * 1.5);--base-size-40:calc(var(--marpit-root-font-size, 1rem) * 2.5);--base-text-weight-normal:400;--base-text-weight-medium:500;--base-text-weight-semibold:600;--fontStack-monospace:ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;--fgColor-accent:Highlight;}div#\:\$p > svg > foreignObject > section [data-theme=light],div#\:\$p > svg > foreignObject > section{color-scheme:light;--focus-outlineColor:#0969da;--fgColor-default:#1f2328;--fgColor-muted:#59636e;--fgColor-accent:#0969da;--fgColor-success:#1a7f37;--fgColor-attention:#9a6700;--fgColor-danger:#d1242f;--fgColor-done:#8250df;--bgColor-default:#fff;--bgColor-muted:#f6f8fa;--bgColor-neutral-muted:#818b981f;--bgColor-attention-muted:#fff8c5;--borderColor-default:#d1d9e0;--borderColor-muted:#d1d9e0b3;--borderColor-neutral-muted:#d1d9e0b3;--borderColor-accent-emphasis:#0969da;--borderColor-success-emphasis:#1a7f37;--borderColor-attention-emphasis:#9a6700;--borderColor-danger-emphasis:#cf222e;--borderColor-done-emphasis:#8250df;--color-prettylights-syntax-comment:#59636e;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-prettylights-syntax-entity:#6639ba;--color-prettylights-syntax-storage-modifier-import:#1f2328;--color-prettylights-syntax-entity-tag:#0550ae;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-variable:#953800;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-brackethighlighter-angle:#59636e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-italic:#1f2328;--color-prettylights-syntax-markup-bold:#1f2328;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-ignored-text:#d1d9e0;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-sublimelinter-gutter-mark:#818b98;}div#\:\$p > svg > foreignObject > section [data-theme=dark],div#\:\$p > svg > foreignObject > section:where(.invert){color-scheme:dark;--focus-outlineColor:#1f6feb;--fgColor-default:#f0f6fc;--fgColor-muted:#9198a1;--fgColor-accent:#4493f8;--fgColor-success:#3fb950;--fgColor-attention:#d29922;--fgColor-danger:#f85149;--fgColor-done:#ab7df8;--bgColor-default:#0d1117;--bgColor-muted:#151b23;--bgColor-neutral-muted:#656c7633;--bgColor-attention-muted:#bb800926;--borderColor-default:#3d444d;--borderColor-muted:#3d444db3;--borderColor-neutral-muted:#3d444db3;--borderColor-accent-emphasis:#1f6feb;--borderColor-success-emphasis:#238636;--borderColor-attention-emphasis:#9e6a03;--borderColor-danger-emphasis:#da3633;--borderColor-done-emphasis:#8957e5;--color-prettylights-syntax-comment:#9198a1;--color-prettylights-syntax-constant:#79c0ff;--color-prettylights-syntax-constant-other-reference-link:#a5d6ff;--color-prettylights-syntax-entity:#d2a8ff;--color-prettylights-syntax-storage-modifier-import:#f0f6fc;--color-prettylights-syntax-entity-tag:#7ee787;--color-prettylights-syntax-keyword:#ff7b72;--color-prettylights-syntax-string:#a5d6ff;--color-prettylights-syntax-variable:#ffa657;--color-prettylights-syntax-brackethighlighter-unmatched:#f85149;--color-prettylights-syntax-brackethighlighter-angle:#9198a1;--color-prettylights-syntax-invalid-illegal-text:#f0f6fc;--color-prettylights-syntax-invalid-illegal-bg:#8e1519;--color-prettylights-syntax-carriage-return-text:#f0f6fc;--color-prettylights-syntax-carriage-return-bg:#b62324;--color-prettylights-syntax-string-regexp:#7ee787;--color-prettylights-syntax-markup-list:#f2cc60;--color-prettylights-syntax-markup-heading:#1f6feb;--color-prettylights-syntax-markup-italic:#f0f6fc;--color-prettylights-syntax-markup-bold:#f0f6fc;--color-prettylights-syntax-markup-deleted-text:#ffdcd7;--color-prettylights-syntax-markup-deleted-bg:#67060c;--color-prettylights-syntax-markup-inserted-text:#aff5b4;--color-prettylights-syntax-markup-inserted-bg:#033a16;--color-prettylights-syntax-markup-changed-text:#ffdfb6;--color-prettylights-syntax-markup-changed-bg:#5a1e02;--color-prettylights-syntax-markup-ignored-text:#f0f6fc;--color-prettylights-syntax-markup-ignored-bg:#1158c7;--color-prettylights-syntax-meta-diff-range:#d2a8ff;--color-prettylights-syntax-sublimelinter-gutter-mark:#3d444d;}div#\:\$p > svg > foreignObject > section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;background-color:var(--bgColor-default);color:var(--fgColor-default);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;margin:0;word-wrap:break-word}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:16px;}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1):hover .anchor .octicon-link:before,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2):hover .anchor .octicon-link:before,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3):hover .anchor .octicon-link:before,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4):hover .anchor .octicon-link:before,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5):hover .anchor .octicon-link:before,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6):hover .anchor .octicon-link:before{background-color:currentColor;content:" ";display:inline-block;height:16px;-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0"/></svg>');mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0"/></svg>');width:16px}div#\:\$p > svg > foreignObject > section details,div#\:\$p > svg > foreignObject > section figcaption,div#\:\$p > svg > foreignObject > section figure{display:block}div#\:\$p > svg > foreignObject > section summary{display:list-item}div#\:\$p > svg > foreignObject > section [hidden]{display:none!important}div#\:\$p > svg > foreignObject > section a{background-color:transparent;color:var(--fgColor-accent);text-decoration:none}div#\:\$p > svg > foreignObject > section abbr[title]{border-bottom:none;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}div#\:\$p > svg > foreignObject > section b,div#\:\$p > svg > foreignObject > section strong{font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section dfn{font-style:italic}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){border-bottom:1px solid var(--borderColor-muted);font-size:2em;font-weight:var(--base-text-weight-semibold, 600);margin:.67em 0;padding-bottom:.3em}div#\:\$p > svg > foreignObject > section mark{background-color:var(--bgColor-attention-muted);color:var(--fgColor-default)}div#\:\$p > svg > foreignObject > section small{font-size:90%}div#\:\$p > svg > foreignObject > section sub,div#\:\$p > svg > foreignObject > section sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}div#\:\$p > svg > foreignObject > section sub{bottom:-.25em}div#\:\$p > svg > foreignObject > section sup{top:-.5em}div#\:\$p > svg > foreignObject > section img{border-style:none;box-sizing:content-box;max-width:100%}div#\:\$p > svg > foreignObject > section code,div#\:\$p > svg > foreignObject > section kbd,div#\:\$p > svg > foreignObject > section :is(pre, marp-pre),div#\:\$p > svg > foreignObject > section samp{font-family:monospace;font-size:1em}div#\:\$p > svg > foreignObject > section figure{margin:1em var(--base-size-40)}div#\:\$p > svg > foreignObject > section hr{background:transparent;background-color:var(--borderColor-default);border:0;box-sizing:content-box;height:.25em;margin:var(--base-size-24) 0;overflow:hidden;padding:0}div#\:\$p > svg > foreignObject > section input{font:inherit;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible}div#\:\$p > svg > foreignObject > section [type=button],div#\:\$p > svg > foreignObject > section [type=reset],div#\:\$p > svg > foreignObject > section [type=submit]{-webkit-appearance:button;-moz-appearance:button;appearance:button}div#\:\$p > svg > foreignObject > section [type=checkbox],div#\:\$p > svg > foreignObject > section [type=radio]{box-sizing:border-box;padding:0}div#\:\$p > svg > foreignObject > section [type=number]::-webkit-inner-spin-button,div#\:\$p > svg > foreignObject > section [type=number]::-webkit-outer-spin-button{height:auto}div#\:\$p > svg > foreignObject > section [type=search]::-webkit-search-cancel-button,div#\:\$p > svg > foreignObject > section [type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance:none}div#\:\$p > svg > foreignObject > section ::-webkit-input-placeholder{color:inherit;opacity:.54}div#\:\$p > svg > foreignObject > section ::-webkit-file-upload-button{-webkit-appearance:button;appearance:button;font:inherit}div#\:\$p > svg > foreignObject > section a:hover{text-decoration:underline}div#\:\$p > svg > foreignObject > section ::-moz-placeholder{color:var(--fgColor-muted);opacity:1}div#\:\$p > svg > foreignObject > section ::placeholder{color:var(--fgColor-muted);opacity:1}div#\:\$p > svg > foreignObject > section hr:after,div#\:\$p > svg > foreignObject > section hr:before{content:"";display:table}div#\:\$p > svg > foreignObject > section hr:after{clear:both}div#\:\$p > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0;display:block;font-variant:tabular-nums;max-width:100%;overflow:auto;width:-moz-max-content;width:max-content}div#\:\$p > svg > foreignObject > section td,div#\:\$p > svg > foreignObject > section th{padding:0}div#\:\$p > svg > foreignObject > section details summary{cursor:pointer}div#\:\$p > svg > foreignObject > section [role=button]:focus,div#\:\$p > svg > foreignObject > section a:focus,div#\:\$p > svg > foreignObject > section input[type=checkbox]:focus,div#\:\$p > svg > foreignObject > section input[type=radio]:focus{box-shadow:none;outline:2px solid var(--focus-outlineColor);outline-offset:-2px}div#\:\$p > svg > foreignObject > section [role=button]:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section a:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section input[type=checkbox]:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section input[type=radio]:focus:not(:focus-visible){outline:1px solid transparent}div#\:\$p > svg > foreignObject > section [role=button]:focus-visible,div#\:\$p > svg > foreignObject > section a:focus-visible,div#\:\$p > svg > foreignObject > section input[type=checkbox]:focus-visible,div#\:\$p > svg > foreignObject > section input[type=radio]:focus-visible{box-shadow:none;outline:2px solid var(--focus-outlineColor);outline-offset:-2px}div#\:\$p > svg > foreignObject > section a:not([class]):focus,div#\:\$p > svg > foreignObject > section a:not([class]):focus-visible,div#\:\$p > svg > foreignObject > section input[type=checkbox]:focus,div#\:\$p > svg > foreignObject > section input[type=checkbox]:focus-visible,div#\:\$p > svg > foreignObject > section input[type=radio]:focus,div#\:\$p > svg > foreignObject > section input[type=radio]:focus-visible{outline-offset:0}div#\:\$p > svg > foreignObject > section kbd{background-color:var(--bgColor-muted);border-bottom-color:var(--borderColor-neutral-muted);border:1px solid var(--borderColor-neutral-muted);border-radius:6px;box-shadow:inset 0 -1px 0 var(--borderColor-neutral-muted);color:var(--fgColor-default);display:inline-block;font:11px var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);line-height:10px;padding:var(--base-size-4);vertical-align:middle}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-weight:var(--base-text-weight-semibold, 600);line-height:1.25;margin-bottom:var(--base-size-16);margin-top:var(--base-size-24)}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){border-bottom:1px solid var(--borderColor-muted);font-size:1.5em;padding-bottom:.3em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.25em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:.875em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){color:var(--fgColor-muted);font-size:.85em;font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section p{margin-bottom:10px;margin-top:0}div#\:\$p > svg > foreignObject > section blockquote{border-left:.25em solid var(--borderColor-default);color:var(--fgColor-muted);margin:0;padding:0 1em}div#\:\$p > svg > foreignObject > section ol,div#\:\$p > svg > foreignObject > section ul{margin-bottom:0;margin-top:0;padding-left:2em}div#\:\$p > svg > foreignObject > section ol ol,div#\:\$p > svg > foreignObject > section ul ol{list-style-type:lower-roman}div#\:\$p > svg > foreignObject > section ol ol ol,div#\:\$p > svg > foreignObject > section ol ul ol,div#\:\$p > svg > foreignObject > section ul ol ol,div#\:\$p > svg > foreignObject > section ul ul ol{list-style-type:lower-alpha}div#\:\$p > svg > foreignObject > section dd{margin-left:0}div#\:\$p > svg > foreignObject > section code,div#\:\$p > svg > foreignObject > section :is(pre, marp-pre),div#\:\$p > svg > foreignObject > section samp,div#\:\$p > svg > foreignObject > section tt{font-family:var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);font-size:12px}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){margin-bottom:0;margin-top:0;word-wrap:normal}div#\:\$p > svg > foreignObject > section .octicon{display:inline-block;overflow:visible!important;vertical-align:text-bottom;fill:currentColor}div#\:\$p > svg > foreignObject > section input::-webkit-inner-spin-button,div#\:\$p > svg > foreignObject > section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}div#\:\$p > svg > foreignObject > section .mr-2{margin-right:var(--base-size-8, 8px)!important}div#\:\$p > svg > foreignObject > section:after,div#\:\$p > svg > foreignObject > section:before{display:table}div#\:\$p > svg > foreignObject > section:after{clear:both}div#\:\$p > svg > foreignObject > section>:first-child{margin-top:0!important}div#\:\$p > svg > foreignObject > section>:last-child{margin-bottom:0!important}div#\:\$p > svg > foreignObject > section a:not([href]){color:inherit;text-decoration:none}div#\:\$p > svg > foreignObject > section .absent{color:var(--fgColor-danger)}div#\:\$p > svg > foreignObject > section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:var(--base-size-4)}div#\:\$p > svg > foreignObject > section .anchor:focus{outline:none}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section details,div#\:\$p > svg > foreignObject > section dl,div#\:\$p > svg > foreignObject > section ol,div#\:\$p > svg > foreignObject > section p,div#\:\$p > svg > foreignObject > section :is(pre, marp-pre),div#\:\$p > svg > foreignObject > section table,div#\:\$p > svg > foreignObject > section ul{margin-bottom:var(--base-size-16);margin-top:0}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section blockquote>:last-child{margin-bottom:0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) .octicon-link,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) .octicon-link,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) .octicon-link,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) .octicon-link,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) .octicon-link,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) .octicon-link{color:var(--fgColor-default);vertical-align:middle;visibility:hidden}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1):hover .anchor,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2):hover .anchor,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3):hover .anchor,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4):hover .anchor,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5):hover .anchor,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6):hover .anchor{text-decoration:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1):hover .anchor .octicon-link,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2):hover .anchor .octicon-link,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3):hover .anchor .octicon-link,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4):hover .anchor .octicon-link,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5):hover .anchor .octicon-link,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6):hover .anchor .octicon-link{visibility:visible}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) code,div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) tt,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) code,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) tt,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) code,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) tt,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) code,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) tt,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) code,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) tt,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) code,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) tt{font-size:inherit;padding:0 .2em}div#\:\$p > svg > foreignObject > section summary :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section summary :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section summary :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section summary :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section summary :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section summary :is(h6, marp-h6){display:inline-block}div#\:\$p > svg > foreignObject > section summary :is(h1, marp-h1) .anchor,div#\:\$p > svg > foreignObject > section summary :is(h2, marp-h2) .anchor,div#\:\$p > svg > foreignObject > section summary :is(h3, marp-h3) .anchor,div#\:\$p > svg > foreignObject > section summary :is(h4, marp-h4) .anchor,div#\:\$p > svg > foreignObject > section summary :is(h5, marp-h5) .anchor,div#\:\$p > svg > foreignObject > section summary :is(h6, marp-h6) .anchor{margin-left:-40px}div#\:\$p > svg > foreignObject > section summary :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section summary :is(h2, marp-h2){border-bottom:0;padding-bottom:0}div#\:\$p > svg > foreignObject > section ol.no-list,div#\:\$p > svg > foreignObject > section ul.no-list{list-style-type:none;padding:0}div#\:\$p > svg > foreignObject > section ol[type="a s"]{list-style-type:lower-alpha}div#\:\$p > svg > foreignObject > section ol[type="A s"]{list-style-type:upper-alpha}div#\:\$p > svg > foreignObject > section ol[type="i s"]{list-style-type:lower-roman}div#\:\$p > svg > foreignObject > section ol[type="I s"]{list-style-type:upper-roman}div#\:\$p > svg > foreignObject > section div>ol:not([type]),div#\:\$p > svg > foreignObject > section ol[type="1"]{list-style-type:decimal}div#\:\$p > svg > foreignObject > section ol ol,div#\:\$p > svg > foreignObject > section ol ul,div#\:\$p > svg > foreignObject > section ul ol,div#\:\$p > svg > foreignObject > section ul ul{margin-bottom:0;margin-top:0}div#\:\$p > svg > foreignObject > section li>p{margin-top:var(--base-size-16)}div#\:\$p > svg > foreignObject > section li+li{margin-top:.25em}div#\:\$p > svg > foreignObject > section dl{padding:0}div#\:\$p > svg > foreignObject > section dl dt{font-size:1em;font-style:italic;font-weight:var(--base-text-weight-semibold, 600);margin-top:var(--base-size-16);padding:0}div#\:\$p > svg > foreignObject > section dl dd{margin-bottom:var(--base-size-16);padding:0 var(--base-size-16)}div#\:\$p > svg > foreignObject > section table th{font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border:1px solid var(--borderColor-default);padding:6px 13px}div#\:\$p > svg > foreignObject > section table td>:last-child{margin-bottom:0}div#\:\$p > svg > foreignObject > section table tr{background-color:var(--bgColor-default);border-top:1px solid var(--borderColor-muted)}div#\:\$p > svg > foreignObject > section table tr:nth-child(2n){background-color:var(--bgColor-muted)}div#\:\$p > svg > foreignObject > section table img{background-color:transparent}div#\:\$p > svg > foreignObject > section img[align=right]{padding-left:20px}div#\:\$p > svg > foreignObject > section img[align=left]{padding-right:20px}div#\:\$p > svg > foreignObject > section .emoji{background-color:transparent;max-width:none;vertical-align:text-top}div#\:\$p > svg > foreignObject > section :is(span, marp-span).frame,div#\:\$p > svg > foreignObject > section :is(span, marp-span).frame>:is(span, marp-span){display:block;overflow:hidden}div#\:\$p > svg > foreignObject > section :is(span, marp-span).frame>:is(span, marp-span){border:1px solid var(--borderColor-default);float:left;margin:13px 0 0;padding:7px;width:auto}div#\:\$p > svg > foreignObject > section :is(span, marp-span).frame :is(span, marp-span) img{display:block;float:left}div#\:\$p > svg > foreignObject > section :is(span, marp-span).frame :is(span, marp-span) :is(span, marp-span){clear:both;color:var(--fgColor-default);display:block;padding:5px 0 0}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-center{clear:both;display:block;overflow:hidden}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-center>:is(span, marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:center}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-center :is(span, marp-span) img{margin:0 auto;text-align:center}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-right{clear:both;display:block;overflow:hidden}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-right>:is(span, marp-span){display:block;margin:13px 0 0;overflow:hidden;text-align:right}div#\:\$p > svg > foreignObject > section :is(span, marp-span).align-right :is(span, marp-span) img{margin:0;text-align:right}div#\:\$p > svg > foreignObject > section :is(span, marp-span).float-left{display:block;float:left;margin-right:13px;overflow:hidden}div#\:\$p > svg > foreignObject > section :is(span, marp-span).float-left :is(span, marp-span){margin:13px 0 0}div#\:\$p > svg > foreignObject > section :is(span, marp-span).float-right{display:block;float:right;margin-left:13px;overflow:hidden}div#\:\$p > svg > foreignObject > section :is(span, marp-span).float-right>:is(span, marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:right}div#\:\$p > svg > foreignObject > section code,div#\:\$p > svg > foreignObject > section tt{background-color:var(--bgColor-neutral-muted);border-radius:6px;font-size:85%;margin:0;padding:.2em .4em;white-space:break-spaces}div#\:\$p > svg > foreignObject > section code br,div#\:\$p > svg > foreignObject > section tt br{display:none}div#\:\$p > svg > foreignObject > section del code{text-decoration:inherit}div#\:\$p > svg > foreignObject > section samp{font-size:85%}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{font-size:100%}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent;border:0;margin:0;padding:0;white-space:pre;word-break:normal}div#\:\$p > svg > foreignObject > section .highlight{margin-bottom:var(--base-size-16)}div#\:\$p > svg > foreignObject > section .highlight :is(pre, marp-pre){margin-bottom:0;word-break:normal}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background-color:var(--bgColor-muted);border-radius:6px;color:var(--fgColor-default);font-size:85%;line-height:1.45;overflow:auto;padding:var(--base-size-16)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code,div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) tt{display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0;word-wrap:normal;background-color:transparent;border:0}div#\:\$p > svg > foreignObject > section .csv-data td,div#\:\$p > svg > foreignObject > section .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}div#\:\$p > svg > foreignObject > section .csv-data .blob-num{background:var(--bgColor-default);border:0;padding:10px var(--base-size-8) 9px;text-align:right}div#\:\$p > svg > foreignObject > section .csv-data tr{border-top:0}div#\:\$p > svg > foreignObject > section .csv-data th{background:var(--bgColor-muted);border-top:0;font-weight:var(--base-text-weight-semibold, 600)}div#\:\$p > svg > foreignObject > section [data-footnote-ref]:before{content:"["}div#\:\$p > svg > foreignObject > section [data-footnote-ref]:after{content:"]"}div#\:\$p > svg > foreignObject > section .footnotes{border-top:1px solid var(--borderColor-default);color:var(--fgColor-muted);font-size:12px}div#\:\$p > svg > foreignObject > section div#\:\$p > svg > foreignObject > section section.footnotes{--marpit-root-font-size:12px;}div#\:\$p > svg > foreignObject > section .footnotes ol,div#\:\$p > svg > foreignObject > section .footnotes ol ul{padding-left:var(--base-size-16)}div#\:\$p > svg > foreignObject > section .footnotes ol ul{display:inline-block;margin-top:var(--base-size-16)}div#\:\$p > svg > foreignObject > section .footnotes li{position:relative}div#\:\$p > svg > foreignObject > section .footnotes li:target:before{border:2px solid var(--borderColor-accent-emphasis);border-radius:6px;bottom:calc(var(--base-size-8)*-1);content:"";left:calc(var(--base-size-24)*-1);pointer-events:none;position:absolute;right:calc(var(--base-size-8)*-1);top:calc(var(--base-size-8)*-1)}div#\:\$p > svg > foreignObject > section .footnotes li:target{color:var(--fgColor-default)}div#\:\$p > svg > foreignObject > section .footnotes .data-footnote-backref g-emoji{font-family:monospace}div#\:\$p > svg > foreignObject > section body:has(:modal){padding-right:var(--dialog-scrollgutter)!important}div#\:\$p > svg > foreignObject > section .pl-c{color:var(--color-prettylights-syntax-comment)}div#\:\$p > svg > foreignObject > section .pl-c1,div#\:\$p > svg > foreignObject > section .pl-s .pl-v{color:var(--color-prettylights-syntax-constant)}div#\:\$p > svg > foreignObject > section .pl-e,div#\:\$p > svg > foreignObject > section .pl-en{color:var(--color-prettylights-syntax-entity)}div#\:\$p > svg > foreignObject > section .pl-s .pl-s1,div#\:\$p > svg > foreignObject > section .pl-smi{color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p > svg > foreignObject > section .pl-ent{color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p > svg > foreignObject > section .pl-k{color:var(--color-prettylights-syntax-keyword)}div#\:\$p > svg > foreignObject > section .pl-pds,div#\:\$p > svg > foreignObject > section .pl-s,div#\:\$p > svg > foreignObject > section .pl-s .pl-pse .pl-s1,div#\:\$p > svg > foreignObject > section .pl-sr,div#\:\$p > svg > foreignObject > section .pl-sr .pl-cce,div#\:\$p > svg > foreignObject > section .pl-sr .pl-sra,div#\:\$p > svg > foreignObject > section .pl-sr .pl-sre{color:var(--color-prettylights-syntax-string)}div#\:\$p > svg > foreignObject > section .pl-smw,div#\:\$p > svg > foreignObject > section .pl-v{color:var(--color-prettylights-syntax-variable)}div#\:\$p > svg > foreignObject > section .pl-bu{color:var(--color-prettylights-syntax-brackethighlighter-unmatched)}div#\:\$p > svg > foreignObject > section .pl-ii{background-color:var(--color-prettylights-syntax-invalid-illegal-bg);color:var(--color-prettylights-syntax-invalid-illegal-text)}div#\:\$p > svg > foreignObject > section .pl-c2{background-color:var(--color-prettylights-syntax-carriage-return-bg);color:var(--color-prettylights-syntax-carriage-return-text)}div#\:\$p > svg > foreignObject > section .pl-sr .pl-cce{color:var(--color-prettylights-syntax-string-regexp);font-weight:700}div#\:\$p > svg > foreignObject > section .pl-ml{color:var(--color-prettylights-syntax-markup-list)}div#\:\$p > svg > foreignObject > section .pl-mh,div#\:\$p > svg > foreignObject > section .pl-mh .pl-en,div#\:\$p > svg > foreignObject > section .pl-ms{color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p > svg > foreignObject > section .pl-mi{color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p > svg > foreignObject > section .pl-mb{color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p > svg > foreignObject > section .pl-md{background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p > svg > foreignObject > section .pl-mi1{background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p > svg > foreignObject > section .pl-mc{background-color:var(--color-prettylights-syntax-markup-changed-bg);color:var(--color-prettylights-syntax-markup-changed-text)}div#\:\$p > svg > foreignObject > section .pl-mi2{background-color:var(--color-prettylights-syntax-markup-ignored-bg);color:var(--color-prettylights-syntax-markup-ignored-text)}div#\:\$p > svg > foreignObject > section .pl-mdr{color:var(--color-prettylights-syntax-meta-diff-range);font-weight:700}div#\:\$p > svg > foreignObject > section .pl-ba{color:var(--color-prettylights-syntax-brackethighlighter-angle)}div#\:\$p > svg > foreignObject > section .pl-sg{color:var(--color-prettylights-syntax-sublimelinter-gutter-mark)}div#\:\$p > svg > foreignObject > section .pl-corl{color:var(--color-prettylights-syntax-constant-other-reference-link);text-decoration:underline}div#\:\$p > svg > foreignObject > section [role=button]:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section a:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section button:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section summary:focus:not(:focus-visible){box-shadow:none;outline:none}div#\:\$p > svg > foreignObject > section [tabindex="0"]:focus:not(:focus-visible),div#\:\$p > svg > foreignObject > section details-dialog:focus:not(:focus-visible){outline:none}div#\:\$p > svg > foreignObject > section g-emoji{display:inline-block;font-family:Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:1em;font-style:normal!important;font-weight:var(--base-text-weight-normal, 400);line-height:1;min-width:1ch;vertical-align:-.075em}div#\:\$p > svg > foreignObject > section g-emoji img{height:1em;width:1em}div#\:\$p > svg > foreignObject > section .task-list-item{list-style-type:none}div#\:\$p > svg > foreignObject > section .task-list-item label{font-weight:var(--base-text-weight-normal, 400)}div#\:\$p > svg > foreignObject > section .task-list-item.enabled label{cursor:pointer}div#\:\$p > svg > foreignObject > section .task-list-item+.task-list-item{margin-top:var(--base-size-4)}div#\:\$p > svg > foreignObject > section .task-list-item .handle{display:none}div#\:\$p > svg > foreignObject > section .task-list-item-checkbox{margin:0 .2em .25em -1.4em;vertical-align:middle}div#\:\$p > svg > foreignObject > section ul:dir(rtl) .task-list-item-checkbox{margin:0 -1.6em .25em .2em}div#\:\$p > svg > foreignObject > section ol:dir(rtl) .task-list-item-checkbox{margin:0 -1.6em .25em .2em}div#\:\$p > svg > foreignObject > section .contains-task-list:focus-within .task-list-item-convert-container,div#\:\$p > svg > foreignObject > section .contains-task-list:hover .task-list-item-convert-container{display:block;height:24px;overflow:visible;width:auto;clip:auto}div#\:\$p > svg > foreignObject > section ::-webkit-calendar-picker-indicator{filter:invert(50%)}div#\:\$p > svg > foreignObject > section .markdown-alert{border-left:.25em solid var(--borderColor-default);color:inherit;margin-bottom:var(--base-size-16);padding:var(--base-size-8) var(--base-size-16)}div#\:\$p > svg > foreignObject > section .markdown-alert>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section .markdown-alert>:last-child{margin-bottom:0}div#\:\$p > svg > foreignObject > section .markdown-alert .markdown-alert-title{align-items:center;display:flex;font-weight:var(--base-text-weight-medium, 500);line-height:1}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-note{border-left-color:var(--borderColor-accent-emphasis)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-note .markdown-alert-title{color:var(--fgColor-accent)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-important{border-left-color:var(--borderColor-done-emphasis)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-important .markdown-alert-title{color:var(--fgColor-done)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-warning{border-left-color:var(--borderColor-attention-emphasis)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-warning .markdown-alert-title{color:var(--fgColor-attention)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-tip{border-left-color:var(--borderColor-success-emphasis)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-tip .markdown-alert-title{color:var(--fgColor-success)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-caution{border-left-color:var(--borderColor-danger-emphasis)}div#\:\$p > svg > foreignObject > section .markdown-alert.markdown-alert-caution .markdown-alert-title{color:var(--fgColor-danger)}div#\:\$p > svg > foreignObject > section>:first-child>.heading-element:first-child{margin-top:0!important}div#\:\$p > svg > foreignObject > section .highlight :is(pre, marp-pre):has(+.zeroclipboard-container){min-height:52px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){color:var(--h1-color);font-size:1.6em}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){border-bottom:none}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.05em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--heading-strong-color);font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:563px}div#\:\$p > svg > foreignObject > section hr{height:0;padding-top:.25em}div#\:\$p > svg > foreignObject > section img{background-color:transparent}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){border:1px solid var(--borderColor-default);line-height:1.15;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:529px}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-doctag),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-keyword),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-meta .hljs-keyword),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-template-tag),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-template-variable),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-type),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-variable.language_){color:var(--color-prettylights-syntax-keyword)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-title),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-title.class_),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-title.class_.inherited__),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-title.function_){color:var(--color-prettylights-syntax-entity)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-attr),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-attribute),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-literal),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-meta),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-number),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-operator),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-selector-attr),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-selector-class),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-selector-id),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-variable){color:var(--color-prettylights-syntax-constant)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-meta .hljs-string),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-regexp),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-string){color:var(--color-prettylights-syntax-string)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-built_in),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-symbol){color:var(--color-prettylights-syntax-variable)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-code),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-comment),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-formula){color:var(--color-prettylights-syntax-comment)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-name),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-quote),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-selector-pseudo),div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-selector-tag){color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-subst){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-section){color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-bullet){color:var(--color-prettylights-syntax-markup-list)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-emphasis){color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-strong){color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-addition){background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) :where(.hljs-deletion){background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{color:var(--header-footer-color);font-size:18px;left:30px;margin:0;position:absolute}div#\:\$p > svg > foreignObject > section header{top:21px}div#\:\$p > svg > foreignObject > section footer{bottom:21px}div#\:\$p > svg > foreignObject > section{--h1-color:#246;--header-footer-color:hsla(0,0%,40%,.75);--heading-strong-color:#48c;--paginate-color:#777;--base-size-4:4px;--base-size-8:8px;--base-size-16:16px;--base-size-24:24px;--base-size-40:40px;align-items:stretch;display:block;flex-flow:column nowrap;font-size:29px;height:720px;padding:78.5px;place-content:safe center center;width:1280px}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:29px;}div#\:\$p > svg > foreignObject > section:where(.invert){--h1-color:#cee7ff;--header-footer-color:hsla(0,0%,60%,.75);--heading-strong-color:#7bf;--paginate-color:#999;}div#\:\$p > svg > foreignObject > section>:last-child,div#\:\$p > svg > foreignObject > section[data-footer]>:nth-last-child(2){margin-bottom:0}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:after{bottom:21px;color:var(--paginate-color);font-size:24px;padding:0;position:absolute;right:30px}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:24px;}div#\:\$p > svg > foreignObject > section[data-color] :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section[data-color] :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section[data-color] :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section[data-color] :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section[data-color] :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section[data-color] :is(h6, marp-h6){color:currentcolor}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+  @theme don
+*/div#\:\$p > svg > foreignObject > section{align-content:start!important;background-image:url("./themes/header.svg");background-repeat:no-repeat;font-size:28px;padding:100px 50px 40px 50px}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size: 28px;}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0.5em;color:#017bc6}div#\:\$p > svg > foreignObject > section p, div#\:\$p > svg > foreignObject > section li{margin:0.3em 0}div#\:\$p > svg > foreignObject > section ol, div#\:\$p > svg > foreignObject > section ul{padding-left:1em!important}div#\:\$p > svg > foreignObject > section li::marker{color:#017bc6}div#\:\$p > svg > foreignObject > section.title{background-color:#017bc6!important;color:#ffffff!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;padding:60px 50px!important}div#\:\$p > svg > foreignObject > section.title a{color:#ffffff!important;text-decoration:underline}div#\:\$p > svg > foreignObject > section.title :is(h1, marp-h1){padding:0;margin:0 0 0.3em 0;color:#ffffff!important;text-align:center;font-size:2em}div#\:\$p > svg > foreignObject > section.title p{margin:0.2em 0;text-align:center}div#\:\$p > svg > foreignObject > section.title p:last-of-type{position:absolute;bottom:60px;left:0;right:0;font-size:0.9em}div#\:\$p > svg > foreignObject > section.title :is(h2, marp-h2){padding:0;margin:0.5em 0;color:#ffffff!important;text-align:center;font-size:1.2em;font-weight:400}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){padding-top:180px;color:#ffffff!important;text-align:center;font-size:2em}div#\:\$p > svg > foreignObject > section img{max-height:500px}div#\:\$p > svg > foreignObject > section.image :is(h2, marp-h2){display:none}div#\:\$p > svg > foreignObject > section.image{background-image:none;padding:0!important;text-align:center}div#\:\$p > svg > foreignObject > section.image img{max-height:720px}div#\:\$p > svg > foreignObject > section.columns{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:0 2em}div#\:\$p > svg > foreignObject > section.columns :is(h2, marp-h2), div#\:\$p > svg > foreignObject > section.columns blockquote{grid-column:1 / -1}div#\:\$p > svg > foreignObject > section.quote{display:flex!important;flex-direction:column!important;padding:100px 100px 80px 100px!important;background-color:#f8f9fa}div#\:\$p > svg > foreignObject > section.quote :is(h2, marp-h2){color:#017bc6;margin:0 0 1em 0;font-size:1.4em}div#\:\$p > svg > foreignObject > section.quote blockquote{flex:1;display:flex;flex-direction:column;justify-content:center;font-size:1.5em;font-style:italic;font-weight:300;border:none;color:#222;margin:0;padding:0 0 0 50px;position:relative;line-height:1.4}div#\:\$p > svg > foreignObject > section.quote blockquote::before{content:'"';font-family:Georgia, serif;font-size:3em;color:#017bc6;position:absolute;left:0;top:0;line-height:1}div#\:\$p > svg > foreignObject > section.quote blockquote p{margin:0}div#\:\$p > svg > foreignObject > section.quote > p:last-of-type{font-size:0.8em;color:#666;margin:1em 0 0 0}div#\:\$p > svg > foreignObject > section.comparison{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:0.5em 1.5em}div#\:\$p > svg > foreignObject > section.comparison :is(h2, marp-h2){grid-column:1 / -1}div#\:\$p > svg > foreignObject > section.comparison .wrong, div#\:\$p > svg > foreignObject > section.comparison .right{padding:1em;border-radius:8px}div#\:\$p > svg > foreignObject > section.comparison .wrong{background:#fee;border-left:4px solid #c00}div#\:\$p > svg > foreignObject > section.comparison .right{background:#efe;border-left:4px solid #0a0}div#\:\$p > svg > foreignObject > section.comparison .wrong :is(h3, marp-h3), div#\:\$p > svg > foreignObject > section.comparison .right :is(h3, marp-h3){margin:0 0 0.3em 0;font-size:1em}div#\:\$p > svg > foreignObject > section.comparison .wrong :is(h3, marp-h3){color:#c00}div#\:\$p > svg > foreignObject > section.comparison .right :is(h3, marp-h3){color:#0a0}div#\:\$p > svg > foreignObject > section.comparison p{margin:0.3em 0 0 0;font-size:0.85em}div#\:\$p > svg > foreignObject > section.diagram{text-align:center}div#\:\$p > svg > foreignObject > section.diagram .flow{display:flex;justify-content:center;align-items:center;gap:1em;margin:1em 0}div#\:\$p > svg > foreignObject > section.diagram .box{background:#017bc6;color:white;padding:1em 1.5em;border-radius:8px;font-weight:bold}div#\:\$p > svg > foreignObject > section.diagram .box.source{background:#0a5}div#\:\$p > svg > foreignObject > section.diagram .box.app{background:#666}div#\:\$p > svg > foreignObject > section.diagram .arrow{font-size:2em;color:#017bc6}div#\:\$p > svg > foreignObject > section.diagram div#\:\$p > svg > foreignObject > section section.arrow{--marpit-root-font-size: 2em;}div#\:\$p > svg > foreignObject > section table{display:table!important;width:100%!important;min-width:100%!important;border-collapse:collapse;margin:0.5em 0;font-size:0.9em}div#\:\$p > svg > foreignObject > section th{background:#017bc6;color:white;padding:0.5em 0.8em;text-align:left;font-weight:600}div#\:\$p > svg > foreignObject > section th:first-child{width:20%}div#\:\$p > svg > foreignObject > section td{padding:0.4em 0.8em;border-bottom:1px solid #ddd}div#\:\$p > svg > foreignObject > section tr:nth-child(even){background:#f8f9fa}div#\:\$p > svg > foreignObject > section .highlight{background:#e8f4fc;border-left:4px solid #017bc6;padding:0.5em 1em;margin:0.5em 0;border-radius:0 8px 8px 0;color:#000}div#\:\$p > svg > foreignObject > section .highlight p{margin:0}div#\:\$p > svg > foreignObject > section .highlight.warning{background:#fff3e0;border-left-color:#f90}div#\:\$p > svg > foreignObject > section .highlight.success{background:#e8f5e9;border-left-color:#0a5}div#\:\$p > svg > foreignObject > section:not(.quote) blockquote.alert{border:none;border-left:4px solid #017bc6;padding:0.5em 1em;margin:0.5em 0;border-radius:0 8px 8px 0;font-style:normal;background:#e8f4fc;color:#000}div#\:\$p > svg > foreignObject > section:not(.quote) blockquote.alert p{margin:0}div#\:\$p > svg > foreignObject > section:not(.quote) blockquote.alert-warning{background:#fff3e0;border-left-color:#f90}div#\:\$p > svg > foreignObject > section:not(.quote) blockquote.alert-success{background:#e8f5e9;border-left-color:#0a5}div#\:\$p > svg > foreignObject > section:not(.quote) blockquote.alert-note{background:#e8f4fc;border-left-color:#017bc6}div#\:\$p > svg > foreignObject > section.statement{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 120px!important;background-image:none;background:linear-gradient(135deg, #017bc6 0%, #0056a0 100%)}div#\:\$p > svg > foreignObject > section.statement p{font-size:2.4em;font-weight:300;color:white;text-align:center;line-height:1.4;margin:0;letter-spacing:-0.02em}div#\:\$p > svg > foreignObject > section.statement p strong{font-weight:600}div#\:\$p > svg > foreignObject > section.cta{display:flex;flex-direction:column;padding:120px 60px 60px 60px!important;gap:1.5em}div#\:\$p > svg > foreignObject > section.cta :is(h2, marp-h2){text-align:center;margin-bottom:0.5em}div#\:\$p > svg > foreignObject > section.cta .card-container{display:flex;gap:2em;justify-content:center;flex:1}div#\:\$p > svg > foreignObject > section.cta .card{flex:1;background:#f8f9fa;border-radius:12px;padding:1.5em;border-top:4px solid #017bc6}div#\:\$p > svg > foreignObject > section.cta .card :is(h3, marp-h3){margin:0 0 0.8em 0;color:#017bc6;font-size:1.1em}div#\:\$p > svg > foreignObject > section.cta .card ul{margin:0}div#\:\$p > svg > foreignObject > section.cta .card li{margin:0.4em 0}div#\:\$p > svg > foreignObject > section .emphasis{margin-top:auto;padding:1.2em 1.5em;background:linear-gradient(135deg, #017bc6 0%, #0056a0 100%);color:white;border-radius:12px;text-align:center}div#\:\$p > svg > foreignObject > section .emphasis :is(h3, marp-h3){margin:0;font-size:1.3em;font-weight:600;line-height:1.4;color:white}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre).mermaid{background:transparent;font-size:18px;margin:0.5em 0}div#\:\$p > svg > foreignObject > section img{display:block;margin:0 auto}div#\:\$p > svg > foreignObject > section{font-variant-emoji:text}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){font-size:0.7em}div#\:\$p > svg > foreignObject > section table td:first-child, div#\:\$p > svg > foreignObject > section table th:first-child{white-space:nowrap}div#\:\$p > svg > foreignObject > section.small table{font-size:0.64em}div#\:\$p > svg > foreignObject > section.small table td, div#\:\$p > svg > foreignObject > section.small table th{padding:0.25em 0.6em}div#\:\$p > svg > foreignObject > section.small table th:first-child{width:12%}div#\:\$p > svg > foreignObject > section.small p{font-size:0.8em}div#\:\$p > svg > foreignObject > section.agenda table th:first-child{width:22%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-class="title" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="title" data-marpit-pagination="1" style="--paginate:true;--class:title;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h1 id="functionele-principes-van-raadplegen-naar-bijhouden">Functionele principes: van raadplegen naar bijhouden</h1>
+<p><strong>Werkgroep Historie</strong> · Kennisplatform API's · Geonovum</p>
+<p>14 oktober 2026</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-class="agenda" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="agenda" data-marpit-pagination="2" style="--paginate:true;--class:agenda;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="agenda">Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>Tijd</th>
+<th>Onderdeel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13:00 - 13:15</td>
+<td>Terugblik op 23 september: wat we hebben verkend, en vier stellingen</td>
+</tr>
+<tr>
+<td>13:15 - 13:40</td>
+<td>Principes voor raadplegen: 4 tot en met 6</td>
+</tr>
+<tr>
+<td>13:40 - 14:20</td>
+<td>Principes voor bijhouden: 1 tot en met 4</td>
+</tr>
+<tr>
+<td>14:20 - 14:30</td>
+<td>Vervolgafspraken</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="title" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="title" data-marpit-pagination="3" style="--paginate:true;--class:title;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h1 id="terugblik-op-23-september">Terugblik op 23 september</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="4" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="wat-we-hebben-verkend">Wat we hebben verkend</h2>
+<ul>
+<li>Een toestand kan op verschillende manieren worden geïdentificeerd: <strong>tijdstip, versienummer of token</strong></li>
+<li>Herhaalbaarheid kent <strong>meerdere patronen</strong> (alle momenten opnieuw meegeven, of een token) en <strong>grenzen</strong> (uitfasering, bewaartermijnen)</li>
+<li>Een API <strong>legt uit welke tijdsassen zij voert</strong> en wat zij ermee bedoelt (specificatie of discovery)</li>
+<li>Open gebleven: de <strong>naam</strong> van de as (registratietijd of systeemtijd) en het <strong>beschikbaarheidsvraagstuk</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="5" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="waar-het-misging-%C3%A9%C3%A9n-voorziening-een-lopende-transactie">Waar het misging: één voorziening, een lopende transactie</h2>
+<table>
+<thead>
+<tr>
+<th>Klok</th>
+<th>Gebeurtenis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10:00:00</td>
+<td>Transactie start; het gegeven krijgt registratietijd 10:00:00</td>
+</tr>
+<tr>
+<td>10:00:03</td>
+<td>Afnemer vraagt de stand op registratietijd 10:00:03. Antwoord: <strong>het gegeven ontbreekt</strong></td>
+</tr>
+<tr>
+<td>10:00:07</td>
+<td>Commit; het gegeven wordt zichtbaar</td>
+</tr>
+<tr>
+<td>10:00:10</td>
+<td>Afnemer herhaalt dezelfde vraag (10:00:03). Antwoord: <strong>het gegeven is er wel</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight warning">
+De verzameling "alles met registratietijd tot en met T" groeit na T nog door, zolang er transacties lopen die vóór T begonnen.
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="6" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="registratietijd-en-beschikbaarheid-vier-stellingen">Registratietijd en beschikbaarheid: vier stellingen</h2>
+<ol>
+<li>Beschikbaarheid is <strong>geen vastgelegde tijd van het gegeven</strong>, maar een <strong>eigenschap van het antwoord</strong>: één beschikbaarheidsmoment, tot waar de antwoordende instantie compleet is</li>
+<li><strong>Hoe een aanbieder aan dat moment komt, is zijn eigen zaak</strong>; hoe hij dat communiceert is interface</li>
+<li><strong>Herhaalbaarheid hangt aan dat moment</strong>: een tijdreisvraag is herhaalbaar zolang haar beschouwingsmoment op de registratieas er niet voorbij ligt. Daarbuiten laat de API niet kijken, of zegt zij dat zij nog niet zo ver is</li>
+<li>In een keten is de registratietijd van de vorige schakel <strong>inhoud</strong>, geen tweede registratieas van deze voorziening. Wie erop wil tijdreizen, declareert die as onder eigen naam</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-class="title" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="title" data-marpit-pagination="7" style="--paginate:true;--class:title;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h1 id="principes-voor-raadplegen-4-tot-en-met-6">Principes voor raadplegen: 4 tot en met 6</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="8" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="4-zonder-beschouwingsmomenten-de-huidige-stand-zoals-nu-bekend">4. Zonder beschouwingsmomenten: de huidige stand zoals nu bekend</h2>
+<ul>
+<li><strong>Nu op elke as</strong>: geen beschouwingsmoment opgegeven betekent de werkelijkheid van nu, met de kennis van nu</li>
+<li><strong>Nu is een bepaald moment</strong>: op de registratieas is dat het beschikbaarheidsmoment van de antwoordende instantie; het antwoord noemt het (principe 5), zodat ook deze vraag herhaalbaar is</li>
+<li><strong>Historie is een laag erbovenop</strong>: wie geen historie nodig heeft, merkt daar ook niets van</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="9" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="5-elk-antwoord-draagt-de-verwijzing-waarmee-het-is-te-herhalen">5. Elk antwoord draagt de verwijzing waarmee het is te herhalen</h2>
+<ul>
+<li><strong>Dezelfde vraag, hetzelfde antwoord</strong>: wie de verwijzing volgt, krijgt het antwoord opnieuw, binnen de grenzen die de API over herhaalbaarheid declareert</li>
+<li><strong>De verwijzing is standaard</strong>: de standaard schrijft haar voor, zodat elke afnemer bij elke API op dezelfde manier herhaalt</li>
+<li><strong>De inhoud is aan de API</strong>: zij bepaalt wat de verwijzing vastzet (de beschouwingsmomenten per as en het beschikbaarheidsmoment, of alleen een token) en declareert dat</li>
+<li><strong>De verwijzing hoort bij het antwoord</strong>: zij reist mee als het antwoord wordt opgeslagen, doorgegeven of als bestand geleverd</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="10" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="6-e%C3%A9n-antwoord-is-%C3%A9%C3%A9n-momentopname">6. Eén antwoord is één momentopname</h2>
+<ul>
+<li><strong>Dezelfde momenten voor alles in het antwoord</strong>: elk object, elke gevolgde relatie en elke pagina staan op dezelfde beschouwingsmomenten; geen collage van tijdstippen</li>
+<li><strong>Verwijzingen nemen de momenten mee</strong>: wie een verwijzing uit het antwoord volgt, ook naar de volgende pagina, blijft in dezelfde momentopname</li>
+<li><strong>Een ander moment is een nieuwe vraag</strong>: een deel van het antwoord op een ander moment bekijken vraagt om een eigen verzoek</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="title" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="title" data-marpit-pagination="11" style="--paginate:true;--class:title;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h1 id="bijhouden">Bijhouden</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="12" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="1-de-ontvanger-kent-de-registratietijd-toe">1. De ontvanger kent de registratietijd toe</h2>
+<ul>
+<li><strong>Niet de indiener</strong>: de registratietijd zegt wanneer de ontvanger het wist; een meegestuurde registratietijd wordt genegeerd of geweigerd</li>
+<li><strong>Elke andere as is gedeclareerd</strong>: per as zegt de API of de client het moment levert, de ontvanger het bepaalt, of de as niet bestaat</li>
+<li><strong>De registratietijd van een vorige schakel is inhoud</strong>: een gewoon gegeven, of een as onder eigen naam, nooit stilzwijgend overgenomen als de eigen registratietijd</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="13" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="2-het-antwoord-op-een-mutatie-is-een-raadpleegantwoord">2. Het antwoord op een mutatie is een raadpleegantwoord</h2>
+<ul>
+<li><strong>Dezelfde vorm als bij raadplegen</strong>: de verwijzing om terug te lezen wat je schreef (raadpleegprincipe 5) en het adres van de ontstane toestand (raadpleegprincipe 1)</li>
+<li><strong>Met de registratietijd</strong> die de ontvanger heeft toegekend</li>
+<li><strong>Daarmee sluit de kring</strong>: de client leest zijn eigen schrijfactie terug, verwijst ernaar, en kan die verwijzing meegeven als basis voor een volgende mutatie (principe 4)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="14" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="3-dezelfde-mutatie-opnieuw-aanbieden-verandert-niets">3. Dezelfde mutatie opnieuw aanbieden verandert niets</h2>
+<ul>
+<li><strong>Eén feit, hoe vaak ook aangeboden</strong>: een mutatie die de ontvanger al heeft verwerkt, krijgt geen tweede registratietijd</li>
+<li><strong>Hetzelfde antwoord</strong>: de herhaling krijgt hetzelfde raadpleegantwoord als de eerste aanbieding (principe 2), met dezelfde verwijzing en hetzelfde adres</li>
+<li><strong>Herkenbaar en begrensd</strong>: de API declareert waaraan zij een herhaling herkent en hoe lang zij die herkent</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" data-marpit-pagination="15" style="--paginate:true;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h2 id="4-een-mutatie-kan-zeggen-op-welke-waarneming-zij-is-gebaseerd">4. Een mutatie kan zeggen op welke waarneming zij is gebaseerd</h2>
+<ul>
+<li><strong>Wat de client zag</strong>: de verwijzing uit een eerder antwoord (raadpleegprincipe 5) of het adres van de toestand waarop hij zich baseert</li>
+<li><strong>De ontvanger herkent het conflict</strong>: is er sindsdien iets veranderd, dan weet hij dat vóór hij verwerkt, en zegt hij het</li>
+<li><strong>Wat hij dan doet is ketenafspraak</strong>: weigeren, signaleren of tolereren; de API declareert welke sleutel zij ondersteunt en of zij de voorwaarde verplicht stelt</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="title" data-theme="don" data-style="section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+" lang="nl-NL" class="title" data-marpit-pagination="16" style="--paginate:true;--class:title;--theme:don;--style:section img {
+  display: block;
+  margin: 0 auto;
+}
+section {
+  font-variant-emoji: text;
+}
+section pre {
+  font-size: 0.7em;
+}
+section table td:first-child,
+section table th:first-child {
+  white-space: nowrap;
+}
+section.small table {
+  font-size: 0.64em;
+}
+section.small table td,
+section.small table th {
+  padding: 0.25em 0.6em;
+}
+section.small table th:first-child {
+  width: 12%;
+}
+section.small p {
+  font-size: 0.8em;
+}
+section.agenda table th:first-child {
+  width: 22%;
+}
+;" data-marpit-pagination-total="16">
+<h1 id="vervolgafspraken">Vervolgafspraken</h1>
+<p><a href="https://github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20Historie">github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20Historie</a></p>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>Werksessie, geen formele vaststelling. Per onderwerp één vraag waarover we een uitspraak willen; de rest schriftelijk.
+
+Vorige keer kwamen we niet door de slides: de begrippendiscussie en principe 1 namen de meeste tijd. Daarom vandaag een strakke tijdsindeling en een parkeerlijst (in de chat) voor alles wat over &quot;kan dat technisch wel&quot; gaat.
+
+Afwezig: Rijk van Haaften, Ruud Kathmann, Jeanot Bijpost. Ivo Hendriks vertegenwoordigt het UBB-standpunt. Het blok bijhouden begint met een mondelinge afbakening (notities bij de titelslide), omdat mijn eerdere, niet gedeelde werkversie daar te ver ging (negen principes die samen één historiemodel veronderstellen).
+
+Bron: de slides van 23 september en de analyse &quot;Registratietijd, beschikbaarheidstijd en herhaalbaarheid&quot; (13 oktober) met de bijlage over veelgebruikte databases.</p></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>Dit is de samenvatting uit het verslag (paragraaf 4). Niet opnieuw bespreken; wie iets anders heeft gehoord, mailt.
+
+De naamgeving beslissen we vandaag niet. De analyse (paragraaf 9) doet een voorstel: registratietijd voor de as, met systeemtijd en transactietijd als uitgelegde synoniemen; beschikbaarheidsmoment (niet -tijd) voor het punt per antwoord. Reacties schriftelijk.
+
+Het beschikbaarheidsvraagstuk is het onderwerp van de volgende twee slides. Rijk constateerde vorige keer dat twee gesprekken door elkaar liepen: definities, en wat technisch kan. De analyse scheidt die twee.</p></div><div class="bespoke-marp-note" data-index="4" tabindex="0"><p>Kan worden overgeslagen als de tijd dringt; de stellingen op de volgende slide staan op zichzelf.
+
+Dit is het scenario dat ik vorige keer voorlegde en dat Rob herkent uit DigiTwinDB. Er zijn nog twee varianten (analyse, paragraaf 2): overlappende transacties waardoor de volgorde op de registratieas niet de volgorde van zichtbaarheid is (de reden dat Microsoft change tracking op commitvolgorde baseert), en replica's of ketens waarbij niemand vastlegt wanneer een replica bij was.
+
+Wat niet dit probleem is: het poststuk dat vrijdag binnenkomt en maandag wordt ingevoerd (Rob), de postkamer (Ivo). Dat is administratieve vertraging vóór de registratie; daarover is geen meningsverschil.
+
+Speelt dit op elke database? Niet op alle, wel op alle gangbare relationele, en op elke database zodra de applicatie zelf de registratietijd toekent (bijlage bij de analyse):
+- wel: PostgreSQL, SQL Server (temporal tables), MySQL en MariaDB geven een rij de tijd van het begin van de transactie of van de schrijfactie, en de rij wordt pas bij de commit zichtbaar; SQL Server documenteert dat expliciet
+- niet op de eigen as: Oracle (SCN bij commit), Spanner en CockroachDB (committijd uit een gesynchroniseerde klok), XTDB en Datomic (één schrijver kent de systeemtijd na elkaar toe); daar loopt de as in de volgorde van zichtbaar worden
+- de voorwaarde: dat geldt alleen als de API de systeemtijd van de database als registratieas gebruikt. Vult de applicatie zelf een kolom tijdstipRegistratie vóór de commit, en dat is in registers de gewone praktijk, dan komt het probleem op elke database terug, ook op Oracle of XTDB
+Als iemand zegt &quot;wij draaien Oracle, dus dat speelt bij ons niet&quot;: klopt voor het SCN, niet voor de door de applicatie toegekende registratietijd.
+
+De kern van de analyse: een tijdreisvraag op registratietijd T is herhaalbaar zodra T vóór het begin van de oudste nog lopende transactie ligt. Dat punt heet in het UBB-werkdocument &quot;het meest recente moment waarop geen schrijvers meer actief waren&quot; (T80 tegenover T100), en in de analyse het beschikbaarheidsmoment.</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>Te stellen vraag: kan iemand hier niet mee leven? Inhoudelijke reacties per mail; de analyse en de bijlage zijn de onderbouwing.
+
+Tien minuten, niet heropenen. Toetsvragen aan drie mensen:
+
+- Ivo: geven stelling 1 en 4 het UBB-standpunt correct weer? Het UBB-werkdocument (hoofdstuk 4): &quot;Availability is not a third axis. The projection is a store of its own, with its own system time, and that clock, read by a consumer, tells when the data was available. Another system's clock is data.&quot; En paragraaf 8.2.1: het moment moet wel terug naar de afnemer (&quot;we answered your question at T80&quot;). De begrippenslide van 23 september en UBB hadden dus allebei gelijk, over verschillende dingen: UBB over de opslag, de begrippenslide over het onderscheid. De analyse voegt het teruggeven en de eisen aan dat moment toe.
+- Mark Strijker: stelling 4 getoetst aan de BGT, die naast tijdstipRegistratie al een LV-publicatiedatum draagt. STOP doet hetzelfde met &quot;ontvangen op&quot; en &quot;bekend op&quot;. En: beschikbaarOp uit de ADR-extensie is in deze lezing het beschouwingsmoment op de registratieas van deze voorziening, begrensd door haar beschikbaarheidsmoment. Mark had dus gelijk dat je ermee op de registratietijdlijn zoekt.
+- Rob: DigiTwinDB kent de registratietijd toe bij commit, geserialiseerd. Dan vallen registratietijd en beschikbaarheid samen en is stelling 3 automatisch waar.
+
+Stelling 2 legt de verantwoordelijkheid: hoe de aanbieder aan het moment komt is registerontwerp, dat hij het afgeeft is interface. De precisie van het moment (dag, seconden, de duur van de langste transactie, of exact) is een gevolg van de gekozen methode en hoort in de beschrijving van de API; vandaag niet bespreken. Rijks bezwaar (de committijd is niet vast te leggen) is de reden dat die eis redelijk is, in de analyse (paragraaf 4) beantwoord: de committijd is niet nodig, alleen het begin van de oudste nog lopende transactie, en dat houdt elke database bij. Vier methoden met oplopende precisie: batchpublicatie, replicapositie, oudste open transactie, registratietijd bij commit. De garantie is overal dezelfde; de precisie wordt gedeclareerd in de beschrijving van het temporele gedrag van de API. Rijks &quot;op dagniveau wel redelijk&quot; is methode 1.
+
+Als iemand naar de haalbaarheid op echte databases vraagt: de bijlage bij de analyse toetst PostgreSQL, SQL Server, Oracle, MySQL/MariaDB, MongoDB, Spanner/CockroachDB en XTDB. Drie uitkomsten: (1) gangbare relationele databases kennen de tijd toe bij het begin van de transactie, dus het scenario op de vorige slide is de norm; (2) de ondergrens is overal ingebouwd en goedkoop (oudste actieve transactie, change tracking-versie, SCN, clustertijd, snapshot token); (3) ingebouwd tijdreizen is kort houdbaar (MongoDB vijf minuten, CockroachDB vier uur, Oracle zolang de undo reikt), dus een register dat herhaalbaarheid over jaren belooft, modelleert zijn historie zelf of kiest een native bitemporele store zoals XTDB, waar de enkele transactielog de systeemtijd in commitvolgorde toekent en het snapshot token en await token precies de boven- en ondergrens uit stelling 3 en de sessiegaranties zijn. Performance: het beschikbaarheidsmoment bepalen kost vrijwel niets; de kosten van historie zitten in opslag en bevraging, en die zijn er ook zonder dit onderscheid.
+
+Ruuds behoefte (&quot;wat had ik op 1 april om 12 uur kunnen zien&quot;) is beantwoordbaar als het antwoord van toen zijn beschikbaarheidsmoment meedroeg (raadpleegprincipe 5). In een keten alleen per voorziening.
+
+Gevolg voor de begrippentabel: de rij beschikbaarheidstijd wordt beschikbaarheidsmoment, een eigenschap van het antwoord, geen soort tijd van het gegeven. Gevolgen voor de principetekst staan in paragraaf 8 van de analyse (begrippen, raadpleegprincipes 3 en 4, bijhouden).
+
+Parkeren: gelijkspelregel bij gelijke momenten, tijdstempel of token, gedrag in het grijze gebied (terugbrengen tot het beschikbaarheidsmoment en dat melden, of &quot;nog niet zo ver&quot;).</p></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>Te stellen vraag: gegevens die pas in de toekomst geldig worden: toestaan en declareren, maar buiten de huidige stand houden?
+
+Raadpleegprincipe 4.
+
+Waarom: dit is de voorwaarde voor adoptie. Als het voeren van de standaard betekent dat elke bestaande afnemer moet worden omgebouwd, gebeurt het niet. Rob van Dort: beide parameters weglaten geeft de huidige stand. Mark Strijker vorige keer: vragen moeten herhaalbaar zijn, behalve als er impliciet &quot;nu&quot; in zit; &quot;nu&quot; is over een jaar iets heel anders. Dat klopt, en daarom vertelt het antwoord welk &quot;nu&quot; het was (volgende principe).
+
+De toevoeging uit de analyse (paragraaf 4, het grijze gebied): een vraag zonder beschouwingsmoment op de registratieas krijgt het beschikbaarheidsmoment als beschouwingsmoment, zodat het antwoord herhaalbaar is met de teruggegeven waarden.
+
+Over de vraag: de ADR-extensie schrijft voor dat bij het ontbreken van een datum de meest recente geldige informatie wordt teruggegeven, en als er nog geen geldige versie bestaat, de meest recente bekende. Dat tweede deel is een bewuste keuze voor gegevens met geldigheid in de toekomst. De ADR-extensie staat een API toe toekomstige geldigheid niet te ondersteunen; het UBB-werkdocument noemt toekomstig gedateerde gegevens als uitgesteld onderwerp. Voorstel: toestaan, vooraf declareren in de beschrijving van de API, standaard buiten de actuele stand houden.</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>Te stellen vraag: akkoord met deze verdeling, de verwijzing standaard en de inhoud aan de API, ook als die inhoud alleen een token is?
+
+Raadpleegprincipe 5, aangescherpt ten opzichte van 23 september. Toen: &quot;het antwoord noemt zijn momenten&quot;. Nu: het antwoord bevat alles wat nodig is om de vraag te herhalen. De standaard legt de vorm vast (een verwijzing, in HTTP bijvoorbeeld een Link-header of een link in de inhoud), zodat elke afnemer bij elke API op dezelfde manier kan herhalen. Wat de verwijzing vastzet, is aan de API: of een aanbieder tijdstippen, versienummers of een ondoorzichtig token gebruikt, is een declaratie en geen besluit van de werkgroep. Zo blijft het modelneutraal zonder dat elke API haar eigen herhaalmechanisme verzint. Bij een token hoeft het antwoord geen momenten te noemen: het token zet de beschouwingsmomenten en het beschikbaarheidsmoment vast, en dat is genoeg om te herhalen. Het beschikbaarheidsmoment blijft als begrip bestaan (stelling 1: één moment per antwoord), maar zit dan in het token.
+
+Waarom: de herhaalbare vraag uit het UBB-werkdocument. Een vraag op T100 levert in de praktijk het antwoord dat op T80 compleet was. Wat het antwoord ook teruggeeft, het moet dat T80 vastzetten, anders weet de afnemer niet wat hij heeft gezien. Precedenten: Memento stuurt Memento-Datetime mee; Datomic en XTDB geven bij elk antwoord het basismoment terug, XTDB als token; Spanner geeft op verzoek het gekozen leesmoment terug; Microsoft Graph en Google geven een deltaLink; de ADR-extensie laat in een collectie elke itemverwijzing de beschikbaarOp meedragen. Dit sluit aan bij Jeanots twee patronen (alle momenten opnieuw meegeven, of een token dat naar het antwoord leidt): beide voldoen.
+
+Wat dit principe niet regelt, en waar het dan wel hoort:
+- Dat een kalendertijd altijd een geldige vraag is (&quot;wat was bekend op 1 april 12:00&quot;, de vraag van de Belastingdienst en van Ruud) hoort bij raadpleegprincipe 3, de parameters per as. Een API met tokens moet die vraag naar haar eigen waarde kunnen vertalen, zoals Memento met de TimeGate en Oracle met TIMESTAMP_TO_SCN.
+- Wat een token niet kan (vergelijken tussen API's, citeren in een dossier, hergebruiken in een vraag aan een andere API) is een gevolg van de gekozen vorm en hoort in de declaratie van de API. Cosmos DB zegt het zelf over zijn sessietoken: een ondergrens, geen historische versie. Daarom blijft mijn aanbeveling een tijdstip, maar als aanbeveling, niet als eis.
+
+Het teruggegeven beschikbaarheidsmoment moet veilig zijn, niet simpelweg &quot;nu&quot;. Vier eisen (analyse, paragraaf 4): toegekend op basis van wat zichtbaar is, monotoon, eenduidig geordend, en pas afgegeven als alles eronder compleet is. Die eisen gelden voor de as zoals de API haar beheert, ook als de client alleen een token ziet. Hoe de aanbieder eraan komt is registerontwerp; dat hij er een heeft en teruggeeft is interface.
+
+Headers of inhoud: beide zijn goed. De Link-header (RFC 8288) is hiervoor bedoeld, Memento werkt volledig met headers (Memento-Datetime, Link met rel=memento en rel=timemap), FHIR zet versie en moment in headers en in de inhoud, en HTTP Message Signatures (RFC 9421) kan headers meeondertekenen. De eis is dat de gegevens meereizen met het antwoord: bij een bestandslevering zijn er geen headers, en een afnemer die een antwoord opslaat of doorgeeft raakt headers makkelijk kwijt. Een API die alleen headers gebruikt, declareert dat; voor massale verstrekking moet het in de inhoud. Eén keer per antwoord, niet per item (volgt uit het volgende principe).
+
+De vraag van de vorige versie (&quot;alle assen teruggeven, ook de assen die de vraag niet noemde?&quot;) is hiermee beantwoord: alles wat nodig is om te herhalen, dus ook de assen die de vraag niet noemde.
+
+Wat geparkeerd blijft is kleiner geworden: tijdstempel of token is nu een keuze van de aanbieder, met de declaratie als plek om te zeggen wat de afnemer daarmee wel en niet kan. Schriftelijk afhandelen, Jeanot is er vandaag niet.</p></div><div class="bespoke-marp-note" data-index="9" tabindex="0"><p>Te stellen vraag: hoe ver reikt dit over API-grenzen heen? Een verwijzing naar een andere API draagt de momenten mee, maar wat doet die API ermee?
+
+Raadpleegprincipe 6.
+
+Waarom: Rob van Dort: door het moment te fixeren krijg je altijd een consistente foto, ook terwijl zware batches muteren. Voor de BGT is dit direct herkenbaar: een consistent beeld langs de transactietijd is volgens Mark Strijker daar de grootste uitdaging.
+
+Doorwerking langs relaties komt uit OData (Extension for Temporal Data): temporele queryopties werken door langs gevolgde relaties. OData staat ook toe ze per relatie te overschrijven; dat zit niet in dit principe, want dan is het antwoord geen momentopname meer. Dat links de momenten meedragen heeft een Nederlands precedent: in paragraaf 11.2 van de ADR-extensie draagt in een collectie elke verwijzing naar een item de beschikbaarOp mee.
+
+Bladeren: een resultaat over meerdere pagina's moet over al die pagina's dezelfde momentopname tonen. Zit het beschikbaarheidsmoment niet in de bladerverwijzing, dan krijg je bij een lange doorloop dubbele of ontbrekende rijen.
+
+Voorstel bij de vraag: binnen één API afdwingen. Over API-grenzen heen kan de standaard voorschrijven dat een link het moment draagt, en dat een API die de standaard volgt een meegegeven moment respecteert. Meer niet. Twee API's kunnen bovendien op verschillende beschikbaarheidsmomenten bij zijn; wat de tweede doet als hij nog niet bij is tot het moment van de eerste, is de vraag uit het grijze gebied (analyse, paragraaf 4) en verdient een eigen sessie samen met het Federatief Datastelsel.</p></div><div class="bespoke-marp-note" data-index="10" tabindex="0"><p>Mondeling inleiden, geen eigen slide. De scope is de interface, niet het historiemodel: de standaard moet werken voor een registratie met alleen registratietijd én voor een registratie met formele en materiële historie. Twee toetsen per principe: gaat het over wat er over de lijn gaat, en volgt het uit de assen die de API voert? Wat overblijft zijn vier principes, de spiegel van raadpleegprincipe 3 en 5.
+
+Te stellen vraag: is dit de juiste afbakening? De bijhoudkant als spiegel van de raadpleegkant, en niet meer.
+
+Mijn eerdere werkversie (niet gedeeld) had negen principes voor bijhouden, met een handelingenrepertoire van zeven handelingen en regels voor het splitsen van perioden. Bij nader inzien standaardiseert dat op één historiemodel, en dat willen we niet: de scope is API's. Daarom heroverwogen.
+
+Het criterium: een onderwerp valt af zodra het gaat over wat een organisatie doet in plaats van over wat er over de lijn gaat. Aangescherpt met: en zodra het één historiemodel veronderstelt. Wat overblijft is wat uit de tijdassen zelf volgt, en dat is de spiegel van wat we over raadplegen afspreken.
+
+Wat afvalt en waar het heen gaat, per onderwerp het antwoord als iemand ernaar vraagt:
+- Idempotentie: de techniek (Idempotency-Key, ADR) valt af, maar het functionele gedrag is principe 3 geworden: herhaald aanbieden maakt geen tweede feit op de registratieas.
+- Voorwaardelijk schrijven: de techniek (voorwaardelijke verzoeken in HTTP) valt af, maar het functionele gedrag is principe 4: een mutatie kan zeggen op welke waarneming zij is gebaseerd.
+- Bundeling en atomiciteit: ADR en Digikoppeling; de verwijzing uit het antwoord (principe 2) is het aanknopingspunt.
+- Terugwerkende kracht en aankomst buiten volgorde: volgt uit principe 1. De registratietijd is het moment van ontvangst, de geldigheid komt uit het domein; een mutatie die later binnenkomt dan haar geldigheid, is gewoon een mutatie.
+- Herleidbaarheid (grondslag, brondocument): informatiemodel, MIM en PROV.
+- Splits- en gatensemantiek op de geldigheidsas: registergedrag, modelafhankelijk; het WOZ-advies noemt dit de belangrijkste bron van implementatieproblemen, maar dat is een probleem van het register, niet van de interface. OData kent er benoemde varianten voor (gaten laten of gaten vullen); een API kan declareren welke zij voert.
+- Het handelingenrepertoire (wijzigen, corrigeren, beëindigen, enzovoort): wat over de lijn gaat is een nieuwe toestand met, als de API een geldigheidsas voert, de periode waarop zij slaat. Daaruit volgt wat er met de assen gebeurt: een latere periode is een verandering in de werkelijkheid, dezelfde periode met een andere waarde een vervanging van de vastlegging. De bedoeling erachter (was de oude waarde fout, of is de wereld veranderd) is domeininhoud: het gebeurtenistype, met betekenissen uit het informatiemodel en het UBB-vocabulaire (hoofdstuk 7 van het UBB-werkdocument: registreren, wijzigen, corrigeren, beëindigen, herstellen, heropleven, intrekken). Een API kan dat als gegeven meegeven; de standaard verwijst ernaar in plaats van het over te schrijven. Mark Westbroeks punt (&quot;corrigeren is echt iets anders dan onttrekken&quot;) blijft waar, maar hoort bij het informatiemodel en UBB, niet bij de interface.
+De vier principes die overblijven zijn de enige die alleen bestaan omdat er tijdassen zijn, en ze spiegelen de raadpleegkant: principe 1 is de schrijfkant van raadpleegprincipe 3 (momenten per as), principe 2, 3 en 4 die van raadpleegprincipe 5 (het antwoord draagt de verwijzing; dezelfde vraag, hetzelfde antwoord; de verwijzing als basis voor de volgende mutatie).
+
+Vastleggen: is de werkgroep het eens met deze afbakening? Mark Westbroek en Mark Strijker hebben in de kick-off het handelingenrepertoire als kern benoemd; de vraag aan hen is of zij ermee kunnen leven dat dit bij het informatiemodel en UBB ligt, met de API als drager van het gebeurtenistype.</p></div><div class="bespoke-marp-note" data-index="11" tabindex="0"><p>Te stellen vraag: wiens registratietijdlijn een landelijke voorziening bijhoudt is een ketenafspraak. Volstaat het dat de interface beide momenten kan dragen?
+
+Bijhoudprincipe 1. Onomstreden in de bronnen: Rob geeft transTime niet mee en laat het systeem die bepalen; het UBB-werkdocument stelt dat de geldigheidsvelden door het domein worden toegekend en de systeemtijd door de store; SQL:2011 onderhoudt de systeemperiode automatisch; FHIR beheert versionId en lastUpdated op de server. Dit geeft de registratietijd haar bewijskracht: zij zegt wanneer de ontvanger het wist, en dat is niet aan de indiener.
+
+De declaratie per as is wat het modelneutraal maakt. De WOZ laat de client de geldigheid leveren; de BGT voert geen geldigheidsas en zegt dat. Fedora (Memento) laat zien dat een door de client opgegeven moment een aparte, gedeclareerde uitzondering kan zijn, bijvoorbeeld voor het importeren van bestaande historie.
+
+De derde regel is stelling 4 van vandaag toegepast op bijhouden: de BGT draagt naast tijdstipRegistratie een LV-publicatiedatum, STOP onderscheidt &quot;ontvangen op&quot; en &quot;bekend op&quot;. Twee schakels in dezelfde keten, netjes benoemd in plaats van in elkaar geschoven. Mark Strijker kan dit toetsen aan Bravo.
+
+De vraag wiens registratietijdlijn een landelijke voorziening bijhoudt, komt uit het WOZ-advies: de LV WOZ probeert vandaag de formele historie van de bronhouder over te nemen, houdt zelf geen tijdlijn bij, en kan daardoor de kernvraag van afnemers (&quot;wat wist de LV vier weken geleden?&quot;) niet beantwoorden, zodat de Belastingdienst die tijdlijn zelf reconstrueert. Welke tijdlijn de LV voert is een ketenafspraak; dat de interface beide kan dragen is standaard. Dit is het punt met de grootste doorwerking in lopende trajecten (LV WOZ, Bravo).</p></div><div class="bespoke-marp-note" data-index="12" tabindex="0"><p>Te stellen vraag: moet het antwoord de nieuwe toestand zelf bevatten, of volstaat de verwijzing?
+
+Bijhoudprincipe 2 koppelt de schrijfkant aan alles wat we over raadplegen hebben afgesproken. Zonder dit principe staat de schrijfkant los van de raadpleegprincipes.
+
+Het antwoord geeft terug waarmee de client zijn eigen schrijfactie kan teruglezen (de sessiegaranties: lees je eigen schrijfacties) en waarmee hij ernaar kan verwijzen (raadpleegprincipe 1, het eigen adres).
+
+&quot;Verwerkt&quot; is niet hetzelfde als &quot;te zien&quot;. Op het moment van antwoorden weet de ontvanger zeker welke registratietijd hij heeft toegekend; of de mutatie al binnen zijn beschikbaarheidsmoment valt, hangt van de situatie af. Drie gevallen:
+- registratietijd bij het begin van de transactie (methode 3, de meeste registers): er lopen nog oudere transacties, het beschikbaarheidsmoment ligt nog vóór de registratietijd van deze mutatie; zij is gecommit maar valt nog in het grijze gebied;
+- leesreplica's of meerdere nodes (scenario C, ook XTDB): de schrijfkant is klaar, maar de instantie die de volgende leesvraag beantwoordt, is misschien nog niet zo ver;
+- registratietijd bij commit, geserialiseerd (methode 4, DigiTwinDB en XTDB op de eigen as): registratietijd en beschikbaarheid vallen samen.
+Beschikbaarheid is een eigenschap van de antwoordende instantie (stelling 1), nooit een wereldwijd feit: bij replicatie kan de ontvanger alleen zeggen tot waar hij zelf compleet is. Wat een andere instantie toont, weet hij niet. Daarom draagt het antwoord de verwijzing: de client geeft haar bij zijn volgende vraag mee, en de instantie die antwoordt wacht tot zij zo ver is, of meldt dat zij nog niet zo ver is (de twee antwoorden uit het grijze gebied, analyse paragraaf 4). XTDB doet precies dit met een await-token.
+
+Precedenten: FHIR honoreert Prefer: return=minimal, return=representation of return=OperationOutcome (RFC 7240) en geeft ETag en Last-Modified bij elk antwoord terug; Cosmos DB geeft bij elke schrijfactie het sessietoken terug. Wat de werkgroep toevoegt, is dat het antwoord dezelfde vorm heeft als een raadpleegantwoord.
+
+Bij de vraag: mijn neiging is de verwijzing verplicht, de toestand optioneel (de client vraagt erom met Prefer). De verwijzing uit het antwoord is ook wat de herhaling in principe 3 teruggeeft (herhaald aanbieden verandert niets).</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>Te stellen vraag: is dit een principe van deze standaard, of volstaat een verwijzing naar de API Design Rules?
+
+Bijhoudprincipe 3 is de schrijfkant van &quot;dezelfde vraag, hetzelfde antwoord&quot; (raadpleegprincipe 5): dezelfde mutatie, hetzelfde resultaat. De historie-eigen kern is de eerste regel: herhaald aanbieden maakt geen tweede feit op de registratieas. Zonder die regel ontstaat bij elke herhaalde aanlevering in een keten een spookversie met een eigen registratietijd, en dat is precies wat een afnemer die op registratietijd tijdreist niet kan onderscheiden van een echte mutatie.
+
+De tweede regel volgt uit principe 2: als het antwoord op een mutatie een raadpleegantwoord is, dan is het antwoord op de herhaling hetzelfde raadpleegantwoord. Waaraan de API de herhaling herkent, zegt de derde regel.
+
+De derde regel is de declaratie: waaraan herkent de API een herhaling (een door de client meegegeven sleutel, of de inhoud van de mutatie) en hoe lang (Stripe en de Zalando-richtlijnen gebruiken 24 uur). De techniek (de Idempotency-Key-header waar de IETF aan werkt, de regels in de ADR) hoort niet in deze standaard; alleen dat het gedrag er is en gedeclareerd wordt.
+
+Dit sluit aan bij wat vorige keer over herhaalbaarheid is gezegd: ook bij raadplegen zijn de grenzen (bewaartermijn) per API te beschrijven.</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>Te stellen vraag: mag een API dit verplicht stellen voor elke mutatie?
+
+Bijhoudprincipe 4 is het sluitstuk van de kring uit principe 2: de client leest terug wat hij schreef of zag, en geeft die waarneming mee als basis voor zijn volgende mutatie. De ontvanger kan dan zien of er intussen iets is veranderd. Dit vervangt het oud-nieuwpaar uit StUF, dat hetzelfde doel diende maar de hele oude toestand meestuurde.
+
+Waarom een eigen principe: dat HTTP voorwaardelijke verzoeken kent, betekent niet dat API's ze gebruiken. De standaard zegt dat het gedrag er is, en dat de sleutel de verwijzing of het adres uit deze standaard is. Dat is functioneel; de techniek is aan de API en de API Design Rules.
+
+De techniek, alleen voor de notities: dit zijn de voorwaardelijke verzoeken uit HTTP. OGC API Features deel 4 (concept) heeft er twee conformiteitsklassen voor, op tijdstempel (GET geeft Last-Modified, PUT vereist If-Unmodified-Since) en op versie (GET geeft ETag, PUT vereist If-Match), met 412 bij een mismatch en 428 als de voorwaarde ontbreekt. FHIR gebruikt If-Match met het versienummer en laat de server toe If-Match verplicht te stellen. Bij ons is de tijdstempel het beschikbaarheidsmoment en de versie het adres van de toestand. Valkuil: zwakke ETags falen altijd bij If-Match; het adres moet dus een sterke waarde zijn.
+
+Of de ontvanger bij een conflict weigert, signaleert of tolereert, is ketenafspraak (het WOZ-advies werkt afkeuren, tolereren en signaleren uit). Bij de vraag: FHIR en OGC laten de server de voorwaarde verplicht stellen; mijn neiging is dat toe te staan en te laten declareren.
+
+Vastleggen per principe: aangenomen, aangenomen met aanpassing, of open met wie het uitwerkt.</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>Per besproken punt vastleggen: aangenomen, aangenomen met aanpassing, of nog open (met wie het uitwerkt).
+
+Schriftelijk af te handelen (reacties per mail aan Joost, ook van wie er vandaag niet was):
+- de vier stellingen over registratietijd en beschikbaarheid, met de analyse en de bijlage als onderbouwing
+- de naamgeving (registratietijd of systeemtijd)
+- tijdstempel of token voor het beschikbaarheidsmoment
+- de afbakening van bijhouden, in het bijzonder voor Rijk en Ruud (WOZ): kunnen zij ermee leven dat het handelingenrepertoire bij het informatiemodel en UBB ligt, met de API als drager van het gebeurtenistype?
+
+Volgende sessie, met Rijk en Ruud: de vier bijhoudprincipes getoetst aan de WOZ-keten en aan Bravo, en de raadpleegonderwerpen die nog niet aan bod zijn geweest (bevragen over een bereik, de tijdlijnrepresentatie, de toezegging over herhaalbaarheid, de verschilbevraging, massale verstrekking, sessiegaranties). Datum: cadans van drie weken geeft woensdag 4 november, 13:00 - 14:30, online. Checken op verhinderingen.
+
+Joost werkt de principetekst uit tot een document voor de werkgroep: begrippen en raadpleegprincipes bijgewerkt op basis van de analyse, de bijhoudkant als de vier principes van vandaag. Verslag, slides en analyse gaan op GitHub.
+
+Punten die in deze sessie zijn opgekomen (in te vullen):
+- ...</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.0/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter((function(e){return e!==t}))},c=function(e,t){return(a[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach((function(e){e(u)})),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach((e=>e.classList.add(`${u}slide`))),e.on("activate",(t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),x(e,!0)})),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)}))})),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",(({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}})),e.on("prev",(({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())}))},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout((()=>{r.add(_),o()}),e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},O=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}}))},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",(e=>e.style.display="none")),h||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>x(t,!1))),e.on("marp-inactive",(()=>x(t,!0))),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",L()&&S())))))}},D=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}}))};var N,B,q,K,F,j,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,(function(e){return"&"+K[e]+";"}))},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",j={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==F&&(r+=" "+(j[a]?j[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",(()=>{t=!0,r(J.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(J.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(J.nextContainer).addEventListener("click",(()=>e.next()));const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",(()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const i=document.querySelectorAll(".bespoke-marp-note");i.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(J.noteWrapper).appendChild(e)})),e.on("activate",(()=>i.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),l()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&l(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),v({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a((e=>({reference:(e.reference||0)+1})))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout((()=>{e.on("fragment",(e=>{r&&a((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}}));const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",s),i()})),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?a(e[0]):void 0}),ce),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&Number.parseFloat(a)>=0&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then((e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(de.set(e,t),t))),be=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ge("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map((e=>ye(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then((e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach((e=>i.sheet?.insertRule(e)));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}})),!1)};e.on("prev",r((t=>e.prev({...t,[$e]:!0})),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r((t=>e.next({...t,[$e]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[$e]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex((e=>g()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>
