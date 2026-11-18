@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 416" width="600" height="416" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="pijl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#535353"/>
+    </marker>
+  </defs>
+
+  <!-- banden met laaglabels in een eigen kolom links -->
+  <g font-size="13" fill="#535353" font-weight="700" letter-spacing="0.5">
+    <rect x="0" y="0" width="600" height="112" rx="10" fill="#f3f3f3"/>
+    <text x="14" y="52">BEKENDE</text>
+    <text x="14" y="70">AFNEMERS</text>
+
+    <rect x="0" y="152" width="600" height="112" rx="10" fill="#f3f3f3"/>
+    <text x="14" y="204">EXTRA</text>
+    <text x="14" y="222">CONTRACTVLAK</text>
+
+    <rect x="0" y="304" width="600" height="112" rx="10" fill="#f3f3f3"/>
+    <text x="14" y="356">BESTAANDE</text>
+    <text x="14" y="374">BRONNEN</text>
+  </g>
+
+  <!-- afnemers -->
+  <g font-size="17" text-anchor="middle" fill="#154273">
+    <rect x="150" y="28" width="130" height="56" rx="8" fill="#cce7f4"/>
+    <text x="215" y="62">Eigen portaal</text>
+    <rect x="302" y="28" width="130" height="56" rx="8" fill="#cce7f4"/>
+    <text x="367" y="62">Eigen app</text>
+    <rect x="454" y="28" width="130" height="56" rx="8" fill="#cce7f4"/>
+    <text x="519" y="62">Interne teams</text>
+  </g>
+
+  <!-- pijlen afnemers naar laag -->
+  <g stroke="#535353" stroke-width="2" fill="none" marker-end="url(#pijl)">
+    <line x1="215" y1="86" x2="215" y2="175"/>
+    <line x1="367" y1="86" x2="367" y2="175"/>
+    <line x1="519" y1="86" x2="519" y2="175"/>
+  </g>
+
+  <!-- GraphQL-laag -->
+  <rect x="150" y="177" width="434" height="62" rx="8" fill="#a90061"/>
+  <text x="367" y="204" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">GraphQL-laag</text>
+  <text x="367" y="227" font-size="15" fill="#ffffff" text-anchor="middle">backend-for-frontend of orkestratie</text>
+
+  <!-- pijlen laag naar bronnen -->
+  <g stroke="#535353" stroke-width="2" fill="none" marker-end="url(#pijl)">
+    <line x1="215" y1="241" x2="215" y2="328"/>
+    <line x1="367" y1="241" x2="367" y2="328"/>
+    <line x1="519" y1="241" x2="519" y2="328"/>
+  </g>
+
+  <!-- bronnen -->
+  <g font-size="17" text-anchor="middle">
+    <rect x="150" y="330" width="130" height="62" rx="8" fill="#ffffff" stroke="#154273" stroke-width="2"/>
+    <text x="215" y="357" fill="#154273" font-weight="700">REST API</text>
+    <text x="215" y="380" fill="#535353" font-size="14">ADR-conform</text>
+    <rect x="302" y="330" width="130" height="62" rx="8" fill="#ffffff" stroke="#154273" stroke-width="2"/>
+    <text x="367" y="357" fill="#154273" font-weight="700">OGC API</text>
+    <text x="367" y="380" fill="#535353" font-size="14">geo-standaard</text>
+    <rect x="454" y="330" width="130" height="62" rx="8" fill="#ffffff" stroke="#154273" stroke-width="2"/>
+    <text x="519" y="357" fill="#154273" font-weight="700">REST API</text>
+    <text x="519" y="380" fill="#535353" font-size="14">ADR-conform</text>
+  </g>
+</svg>

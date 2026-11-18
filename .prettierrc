@@ -9,5 +9,11 @@
   "arrowParens": "avoid",
   "proseWrap": "always",
   "htmlWhitespaceSensitivity": "css",
-  "embeddedLanguageFormatting": "auto"
+  "embeddedLanguageFormatting": "auto",
+  "overrides": [
+    {
+      "files": "shows/graphql-onder-de-loep/*.md",
+      "options": { "embeddedLanguageFormatting": "off" }
+    }
+  ]
 }

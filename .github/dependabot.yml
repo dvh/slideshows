@@ -6,3 +6,8 @@ updates:
     schedule:
       interval: daily
     versioning-strategy: increase
+    groups:
+      npm-minor-patch:
+        update-types:
+          - minor
+          - patch
