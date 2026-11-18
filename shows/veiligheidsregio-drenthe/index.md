@@ -151,6 +151,8 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
 ![bg right:30% 90%](./img/software-lock-in.svg)
 
+<!-- _class: list-text-small -->
+
 - Vendor lock-in
 - Prijsstijgingen
 - Geen invloed roadmap
@@ -161,7 +163,9 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
 ## Open source: hoe lost het dit op?
 
-![bg right:30% 60%](./img/emoji-opensource.svg)
+![bg right:40% 60%](./img/open-source-pakket.svg)
+
+<!-- _class: list-text-small -->
 
 - Vrij om zelf keuzes te maken
 - Open source product = meerdere leveranciers
@@ -223,6 +227,8 @@ Sluit aan op digitale soevereiniteit (eerdere slide).
 
 ## Valkuilen
 
+<!-- _class: invert -->
+
 - Zonder instructies kiest AI zelf
 - Je bouwt iets wat je niet kan onderhouden / niet begrijpt
 - Gevoelige gegevens, persoonsgegevens of interne documenten
@@ -236,7 +242,7 @@ Sluit aan op digitale soevereiniteit (eerdere slide).
 - Gebruikersonderzoek > UX-research > gewoon interviews afnemen
 - Goede technische standaarden/ best practices
 - Community building > andere veiligheidsregio's uitnodigen
-- Kritisch nadenken en keuzes maken
+- Kritisch nadenken en keuzes maken > nog steeds developers nodig (als architect)
 
 ## Advies
 
@@ -245,3 +251,30 @@ Sluit aan op digitale soevereiniteit (eerdere slide).
 - Koop open source producten en support in
 - Huur software-partijen in voor open ontwikkeling
 - Draag kosten gezamenlijk als regio's
+
+## Bedankt!
+
+<!-- _class: invert grid-paper -->
+
+<style scoped>
+.meetup { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 340px; text-align: center; }
+.meetup img { display: block; width: 300px; margin: 0 auto 16px; border-radius: 12px; }
+.meetup p { margin: 0; font-size: 0.7em; line-height: 1.3; }
+</style>
+
+Vragen?
+
+<!-- prettier-ignore -->
+- Slides op [github.io](https://developer-overheid-nl.github.io/slideshows/shows/veiligheidsregio-drenthe)
+- 📬 tom@ootes.io
+
+<div class="meetup">
+  <img src="./img/qr-meetup.svg" alt="QR-code naar de inschrijving voor de developer.overheid.nl meetup" />
+  <p><strong>Schrijf je in voor onze meetup!</strong><br>Locatie: Utrecht</p>
+</div>
+
+<!--
+
+Scan de QR-code om je in te schrijven voor de developer.overheid.nl meetup: https://opensourcewerken.nl/events/view/8dfe1365-3742-4832-8359-f2efed31126a/developeroverheidnl-meetup-samenbeterbouwen
+
+-->
