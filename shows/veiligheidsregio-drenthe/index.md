@@ -60,7 +60,7 @@ belangrijker.
 
 -->
 
-## Over mij
+## Over Tom
 
 <!-- _class: invert -->
 
@@ -88,6 +88,32 @@ hebben om developers op eenduidige manier software te laten bouwen.
 Mijn rol is developer advocate wat betekent dat ik me verdiep in wat developers
 nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
+-->
+
+## Over Jan
+
+<!-- _class: invert -->
+
+<div class="two-columns">
+  <ul>
+    <li>Jan Klopper</li>
+    <li>Developer.overheid.nl (2025)</li>
+    <li>OpenKAT architect en maintainer.</li>
+    <li>Security, Internet standaarden.</li>
+  </ul>
+  <div>
+    <img src="./img/jan.png" alt="Jan KLopper">
+  </div>
+</div>
+
+<!--
+Kort eerst iets over mijzelf.
+
+Zo'n 25 jaar 'in het vak', en daar in alles gezien van hardware, netwerken
+tot css en alles er tussen. De laatste paar jaar vooral in Crisis-ict rollen.
+Architect en maintainer van OpenKAT bij MinVWS, daarna developer overheid in
+de rol Implementatieadviseur internet standaarden, met een voorkeur voor 
+security.
 -->
 
 ## Agenda
