@@ -102,7 +102,7 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
     <li>Security, Internet standaarden.</li>
   </ul>
   <div>
-    <img src="./img/jan.png" alt="Jan KLopper">
+    <img src="./img/jan-klopper.webp" alt="Jan KLopper">
   </div>
 </div>
 
