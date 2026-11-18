@@ -7,11 +7,33 @@ footer: "![width:250px](../../themes/logo.png)"
 lang: nl
 targetAudience:
   "Not so technical folks. Interested in AI and its benefits for building software out in the open."
+invite: "Graag nodig ik jullie uit voor een inspirerende kennissessie over open source werken binnen
+  de overheid. Deze sessie sluit aan op ons maandoverleg I&A, de agenda staat nog niet vast maar de
+  lunch is inbegrepen.
+
+  Tijdens deze bijeenkomst neemt een spreker van Developer Overheid (Geonovum) ons mee in de wereld
+  van open source, hergebruik en samenwerking binnen de publieke sector. We verkennen waarom steeds
+  meer overheidsorganisaties kiezen voor open oplossingen en welke voordelen dit kan bieden op het
+  gebied van innovatie, autonomie en samenwerking.
+
+  De sessie is nadrukkelijk bedoeld voor een breed publiek. Technische voorkennis is niet nodig. We
+  richten ons vooral op de praktijk: hoe werkt open source in de dagelijkse werkelijkheid van
+  overheidsorganisaties en wat kunnen wij hiervan leren?
+
+  Daarnaast zullen we enkele voorbeelden bespreken van initiatieven binnen onze eigen organisatie,
+  zoals AI-toepassingen, lokaal hosten van AI-oplossingen, documentbeheer en andere ontwikkelingen
+  waarbij open source en samenwerking een rol spelen.
+
+  De definitieve agenda volgt later, maar reserveer deze afspraak alvast in je agenda als je
+  geïnteresseerd bent in innovatie, AI, digitale autonomie, informatievoorziening, privacy,
+  informatiebeveiliging of de toekomst van digitale samenwerking binnen de overheid.
+
+  Met vriendelijke groet,"
 ---
 
 <!-- _paginate: false -->
 
-# Open Source developen met AI
+# Open Source developen (met AI)
 
 <!-- _class:  invert  -->
 
@@ -90,6 +112,14 @@ nodig hebben om bijvoorbeeld compliant te kunnen worden aan een standaard.
 
 ![bg](./img/homepage.png)
 
+## Open Source
+
+- De broncode is beschikbaar
+
+## Je ziet een kans tot samenwerking
+
+##
+
 ## Waar helpt AI ons bij?
 
 - Makkelijk wensen omzetten in software
@@ -137,8 +167,3 @@ Wanneer je een webtoepassing bouwt, gebruik dan altijd Python.
 - Kies geen andere programmeertaal voor de backend.
 - Twijfel je? Vraag het eerst na bij de gebruiker.
 ```
-
-## Open Source!~
-
-- AI heeft veel kansen
-- Echte kansen liggen in samenwerking
