@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 620 620" width="620" height="620" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#e6eef6" stroke-width="1"/>
+    </pattern>
+    <marker id="pijl" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e17000"/>
+    </marker>
+    <g id="persoon">
+      <circle cx="0" cy="-10" r="11"/>
+      <path d="M-19 20a19 17 0 0 1 38 0z"/>
+    </g>
+  </defs>
+
+  <!-- grid-papier -->
+  <rect x="-10" y="-10" width="620" height="620" fill="url(#grid)"/>
+
+  <!-- zichtlijnen: iedereen kijkt mee in de code -->
+  <g stroke="#8fcae7" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round">
+    <line x1="110" y1="120" x2="222" y2="222"/>
+    <line x1="490" y1="120" x2="378" y2="222"/>
+    <line x1="505" y1="482" x2="378" y2="378"/>
+    <line x1="95" y1="482" x2="222" y2="378"/>
+  </g>
+
+  <!-- cyclus-pijlen (met de klok mee) -->
+  <g fill="none" stroke="#e17000" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#pijl)">
+    <path d="M384.5 118.7A200 200 0 0 1 481.3 215.5"/>
+    <path d="M481.3 384.5A200 200 0 0 1 384.5 481.3"/>
+    <path d="M215.5 481.3A200 200 0 0 1 118.7 384.5"/>
+    <path d="M118.7 215.5A200 200 0 0 1 215.5 118.7"/>
+  </g>
+
+  <!-- midden: openbare broncode -->
+  <circle cx="300" cy="300" r="98" fill="#154273"/>
+  <circle cx="300" cy="300" r="108" fill="none" stroke="#cce7f4" stroke-width="3" stroke-dasharray="4 6"/>
+  <text x="300" y="290" text-anchor="middle" font-family="'Liberation Mono', 'Courier New', monospace" font-size="40" font-weight="700" fill="#ffffff">&lt;/&gt;</text>
+  <text x="300" y="320" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff">Publieke</text>
+  <text x="300" y="344" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff">broncode</text>
+  <text x="300" y="366" text-anchor="middle" font-size="13" fill="#cce7f4">iedereen kijkt mee</text>
+
+  <!-- badge: openbaar, met open slot -->
+  <rect x="236" y="178" width="128" height="30" rx="15" fill="#39870c"/>
+  <g transform="translate(250 183)">
+    <rect x="0" y="8" width="16" height="12" rx="2" fill="#ffffff"/>
+    <path d="M4 8V4a5 5 0 0 1 10 0" fill="none" stroke="#ffffff" stroke-width="2.5" transform="translate(6 0)"/>
+  </g>
+  <text x="312" y="199" text-anchor="middle" font-family="'Liberation Mono', 'Courier New', monospace" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="1">OPENBAAR</text>
+
+  <!-- vier stappen -->
+  <g fill="#cce7f4">
+    <rect x="210" y="60" width="180" height="80" rx="10"/>
+    <rect x="410" y="260" width="180" height="80" rx="10"/>
+    <rect x="210" y="460" width="180" height="80" rx="10"/>
+    <rect x="10" y="260" width="180" height="80" rx="10"/>
+  </g>
+  <g fill="#154273">
+    <rect x="210" y="60" width="7" height="80" rx="3"/>
+    <rect x="410" y="260" width="7" height="80" rx="3"/>
+    <rect x="210" y="460" width="7" height="80" rx="3"/>
+    <rect x="10" y="260" width="7" height="80" rx="3"/>
+  </g>
+
+  <!-- nummers -->
+  <g fill="#e17000">
+    <circle cx="390" cy="60" r="15"/>
+    <circle cx="590" cy="260" r="15"/>
+    <circle cx="390" cy="460" r="15"/>
+    <circle cx="190" cy="260" r="15"/>
+  </g>
+  <g font-family="'Liberation Mono', 'Courier New', monospace" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="390" y="66">1</text>
+    <text x="590" y="266">2</text>
+    <text x="390" y="466">3</text>
+    <text x="190" y="266">4</text>
+  </g>
+
+  <g fill="#154273">
+    <g font-size="20" font-weight="700">
+      <text x="230" y="94">Issue</text>
+      <text x="430" y="294">Pull Request</text>
+      <text x="230" y="494">Review</text>
+      <text x="30" y="294">Verbetering</text>
+    </g>
+    <g font-size="14">
+      <text x="230" y="118">idee of probleem melden</text>
+      <text x="430" y="318">zo los ik het op</text>
+      <text x="230" y="518">samen nakijken</text>
+      <text x="30" y="318">nu voor iedereen</text>
+    </g>
+  </g>
+
+  <!-- mensen uit verschillende organisaties -->
+  <g fill="#154273">
+    <use href="#persoon" x="70" y="62"/>
+    <use href="#persoon" x="530" y="62"/>
+  </g>
+  <g fill="#39870c">
+    <use href="#persoon" x="530" y="508"/>
+    <use href="#persoon" x="70" y="508"/>
+  </g>
+  <g font-size="13" font-weight="600" fill="#535353" text-anchor="middle">
+    <text x="70" y="106">veiligheidsregio</text>
+    <text x="530" y="106">gemeente</text>
+    <text x="530" y="552">leverancier</text>
+    <text x="70" y="552">developer</text>
+  </g>
+</svg>
