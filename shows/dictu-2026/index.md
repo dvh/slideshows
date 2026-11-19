@@ -98,8 +98,7 @@ In my spare time I love reading about biology and nature.
 
 ## Digitale soevereiniteit: actueel
 
-![bg right:50%](./img/noodknop.jpg)
-![bg](./img/icc.jpg)
+![bg right:50%](./img/noodknop.jpg) ![bg](./img/icc.jpg)
 
 <!--
 The last 12 months the whole discussion around digital autonomy within the Netherlands has truly exploded. Specific public figures in the digital debate had been calling for action for years,
