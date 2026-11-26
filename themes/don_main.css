@@ -881,11 +881,12 @@ section.code-editor .hljs-punctuation {
    Schrijf de output als HTML in <pre class="terminal"> met de spans hieronder voor kleur:
    .user/.path (bash-prompt), .err, .ok, .dim, .rule, .link.
    Venstertitel aanpasbaar met <style scoped>section { --code-terminal-title: "..."; }</style>
-   Gebruik: <!-- _class: invert code-terminal --> */
+   Gebruik: <!-- _class: invert code-terminal -->. Een <pre class="terminal"> werkt ook los
+   op andere slides, bv. in een kolom van two-columns. */
 section.code-terminal {
   --code-terminal-title: "tom@developer.overheid.nl: ~/oss-register";
 }
-section.code-terminal pre.terminal {
+section pre.terminal {
   position: relative;
   margin: 0;
   padding: calc(46px + 16px) 22px 18px;
@@ -925,8 +926,8 @@ section.code-terminal.title-top pre.terminal {
   align-self: start;
   font-size: 14px;
 }
-section.code-terminal pre.terminal::before {
-  content: var(--code-terminal-title);
+section pre.terminal::before {
+  content: var(--code-terminal-title, "tom@developer.overheid.nl: ~");
   position: absolute;
   top: 0;
   left: 0;
@@ -939,30 +940,30 @@ section.code-terminal pre.terminal::before {
   line-height: 46px;
   text-align: center;
 }
-section.code-terminal pre.terminal :is(.user, .path) {
+section pre.terminal :is(.user, .path) {
   font-weight: bold;
 }
-section.code-terminal pre.terminal .user {
+section pre.terminal .user {
   color: #33da7a;
 }
-section.code-terminal pre.terminal .path {
+section pre.terminal .path {
   color: #5294e2;
 }
-section.code-terminal pre.terminal .err {
+section pre.terminal .err {
   color: #f66151;
   font-weight: bold;
 }
-section.code-terminal pre.terminal .ok {
+section pre.terminal .ok {
   color: #76d2b6;
 }
-section.code-terminal pre.terminal .dim {
+section pre.terminal .dim {
   color: #9a9996;
 }
-section.code-terminal pre.terminal .rule {
+section pre.terminal .rule {
   color: #ffffff;
   font-weight: bold;
 }
-section.code-terminal pre.terminal .link {
+section pre.terminal .link {
   color: #8fcae7;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -1185,4 +1186,237 @@ section.codeoverheid li:nth-child(3)::before {
 }
 section.codeoverheid li:nth-child(4)::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke='%23e060a0' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='20' cy='10' r='4'/%3E%3Ccircle cx='9' cy='29' r='4'/%3E%3Ccircle cx='31' cy='29' r='4'/%3E%3Cpath d='M18 14l-7 11M22 14l7 11M13 29h14'/%3E%3C/svg%3E");
+}
+
+/* Fullscreen-achtig browservenster met een (gehighlight) codebestand, net niet schermvullend
+   onder het Rijkslogo. Gebruik: <!-- _class: invert browser --> met
+   <div class="gh"> → .gh-bar (.gh-dots + .gh-url), .gh-fhead, .gh-code > .gh-lines.
+   Elke regel in .gh-lines is een <b>; highlight met <i class="k|s|v|o|t">.
+   Begin bij regel N met style="--from: N" op .gh-lines. */
+section.browser h2,
+section.browser footer {
+  display: none;
+}
+section.browser .gh {
+  --bg: #0f172a;
+  --line: #26344f;
+  --txt: #e2e8f0;
+  --mut: #94a3b8;
+  --acc: var(--don-lichtblauw-200);
+  position: absolute;
+  inset: 92px 24px 24px;
+  z-index: 10;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  background: var(--bg);
+  color: var(--txt);
+  overflow: hidden;
+  font-size: 17px;
+  text-align: left;
+}
+section.browser .gh * {
+  box-sizing: border-box;
+}
+section.browser .gh-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 42px;
+  padding: 0 16px;
+  background: #1e293b;
+  border-bottom: 1px solid var(--line);
+}
+section.browser .gh-dots {
+  display: flex;
+  gap: 7px;
+}
+section.browser .gh-dots i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d52b1e;
+}
+section.browser .gh-dots i:nth-child(2) {
+  background: #f9e11e;
+}
+section.browser .gh-dots i:nth-child(3) {
+  background: #39870c;
+}
+section.browser .gh-url {
+  flex: 1;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: var(--bg);
+  font-family: "Liberation Mono", monospace;
+  font-size: 16px;
+  color: var(--txt);
+  white-space: nowrap;
+  overflow: hidden;
+}
+section.browser .gh-url span {
+  color: var(--acc);
+}
+section.browser .gh-fhead {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 44px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+section.browser .gh-fhead b {
+  color: var(--acc);
+}
+section.browser .gh-fhead span {
+  margin-left: auto;
+  color: var(--mut);
+  font-size: 14px;
+}
+section.browser .gh-code {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+section.browser .gh-lines {
+  --from: 1;
+  --lh: 14px;
+  font-family: "Liberation Mono", monospace;
+  font-size: 12.5px;
+  line-height: var(--lh);
+  counter-reset: ln;
+  transform: translateY(calc((var(--from) - 1) * -1 * var(--lh)));
+}
+section.browser .gh-lines b {
+  display: block;
+  font-weight: 400;
+  white-space: pre;
+  color: var(--txt);
+  min-height: var(--lh);
+}
+section.browser .gh-lines b::before {
+  counter-increment: ln;
+  content: counter(ln);
+  display: inline-block;
+  width: 48px;
+  padding-right: 16px;
+  text-align: right;
+  color: #475569;
+}
+section.browser .gh-lines i {
+  font-style: normal;
+}
+section.browser .gh-lines .k {
+  color: #f092cd; /* roze */
+}
+section.browser .gh-lines .s {
+  color: #f9e11e;
+}
+section.browser .gh-lines .v {
+  color: #76d2b6;
+}
+section.browser .gh-lines .o {
+  color: #94a3b8;
+}
+section.browser .gh-lines .t {
+  color: #cbd5e1;
+}
+
+/* Screenshot bijna schermvullend onder het Rijkslogo, met afgeronde hoeken en schaduw.
+   De titel en footer worden verborgen (de h2 blijft nodig voor de slide-indeling).
+   Maak screenshots in verhouding ~2:1 (bv. viewport 1640x804), anders wordt er bovenaan uitgesneden.
+   Gebruik: <!-- _class: invert screenshot --> met één <img>. */
+section.screenshot h2,
+section.screenshot footer {
+  display: none;
+}
+section.screenshot img {
+  position: absolute;
+  inset: 92px 24px 24px;
+  width: calc(1280px - 48px);
+  height: calc(720px - 116px);
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+}
+
+/* Screenshot nagenoeg schermvullend, óók over het Rijkslogo heen (24px rand rondom).
+   Maak screenshots in verhouding ~1,83:1 (bv. viewport 1500x818), anders wordt er bovenaan uitgesneden.
+   Gebruik: <!-- _class: invert screenshot-full --> met één <img>. */
+section.screenshot-full h2,
+section.screenshot-full footer {
+  display: none;
+}
+section.screenshot-full img {
+  position: absolute;
+  inset: 24px;
+  z-index: 10;
+  width: calc(1280px - 48px);
+  height: calc(720px - 48px);
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+}
+
+/* Browservenster om een screenshot heen, zodat duidelijk is dat het een hele webpagina is.
+   Gebruik binnen screenshot-full: <div class="window" data-url="oss.developer.overheid.nl"><img ...></div>
+   Maak de screenshot vanaf de bovenkant van de pagina in verhouding ~1,95:1 (bv. viewport 1500x770). */
+section.screenshot-full .window {
+  position: absolute;
+  inset: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+section.screenshot-full .window::before {
+  content: "";
+  flex: none;
+  height: 42px;
+  border-bottom: 1px solid #26344f;
+  background:
+    radial-gradient(circle at 22px 21px, #d52b1e 6px, transparent 6.5px),
+    radial-gradient(circle at 41px 21px, #f9e11e 6px, transparent 6.5px),
+    radial-gradient(circle at 60px 21px, #39870c 6px, transparent 6.5px),
+    #1e293b;
+}
+section.screenshot-full .window::after {
+  content: attr(data-url);
+  position: absolute;
+  top: 7px;
+  left: 86px;
+  right: 16px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "Liberation Mono", monospace;
+  font-size: 15px;
+  line-height: 28px;
+}
+section.screenshot-full .window img {
+  position: static;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
 }

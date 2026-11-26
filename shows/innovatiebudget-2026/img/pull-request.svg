@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 560" role="img" aria-labelledby="title desc">
+  <title id="title">Samenwerken via een pull request</title>
+  <desc id="desc">Twee teams werken op eigen branches, bespreken de wijziging in een pull request en voegen hun werk samen in main.</desc>
+
+  <!-- Kleuren: Rijkshuisstijl community design tokens
+       lintblauw-700 #162945, lintblauw-400 #4F7196
+       lichtblauw-500 #8FCAE7, mintgroen-500 #76D2B6, donkergeel-500 #FFB612
+       cool-grey-50 #F8FAFC, cool-grey-900 #0F172A -->
+
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#4F7196" stroke-width="0.5" opacity="0.35"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F8FAFC" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#F8FAFC" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="panel">
+      <rect width="440" height="560" rx="24"/>
+    </clipPath>
+    <!-- Avatar: poppetje, gecentreerd op 0,0 -->
+    <g id="person">
+      <circle cx="0" cy="-4" r="5.5" fill="#0F172A"/>
+      <path d="M-10 10 a10 9 0 0 1 20 0 Z" fill="#0F172A"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#panel)">
+    <rect width="440" height="560" fill="#162945"/>
+    <rect width="440" height="560" fill="url(#grid)"/>
+
+    <!-- Git-graaf: twee teams, één main -->
+    <g fill="none" stroke-width="5" stroke-linecap="round">
+      <path d="M30 130 H410" stroke="#8FCAE7"/>
+      <path d="M80 70 H190 C220 70 220 130 250 130" stroke="#76D2B6"/>
+      <path d="M80 190 H290 C320 190 320 130 350 130" stroke="#FFB612"/>
+    </g>
+    <circle cx="250" cy="130" r="20" fill="url(#glow)"/>
+    <circle cx="350" cy="130" r="20" fill="url(#glow)"/>
+    <g stroke="#162945" stroke-width="3">
+      <circle cx="150" cy="70" r="8" fill="#76D2B6"/>
+      <circle cx="170" cy="190" r="8" fill="#FFB612"/>
+      <circle cx="230" cy="190" r="8" fill="#FFB612"/>
+      <circle cx="250" cy="130" r="9" fill="#F8FAFC"/>
+      <circle cx="350" cy="130" r="9" fill="#F8FAFC"/>
+    </g>
+
+    <!-- Wie werkt waar -->
+    <circle cx="80" cy="70" r="20" fill="#76D2B6"/>
+    <use href="#person" transform="translate(80 70)"/>
+    <text x="80" y="38" font-family="JetBrains Mono, Fira Code, Menlo, monospace" font-size="13" fill="#76D2B6" text-anchor="middle">wigo4it</text>
+
+    <circle cx="80" cy="190" r="20" fill="#FFB612"/>
+    <use href="#person" transform="translate(80 190)"/>
+    <text x="80" y="234" font-family="JetBrains Mono, Fira Code, Menlo, monospace" font-size="13" fill="#FFB612" text-anchor="middle">DON</text>
+
+    <text x="410" y="118" font-family="JetBrains Mono, Fira Code, Menlo, monospace" font-size="13" fill="#8FCAE7" text-anchor="end">main</text>
+
+    <!-- Het gesprek in de pull request -->
+    <g font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#F8FAFC">
+      <circle cx="44" cy="298" r="16" fill="#76D2B6"/>
+      <use href="#person" transform="translate(44 298) scale(0.8)"/>
+      <rect x="72" y="276" width="262" height="44" rx="14" fill="#76D2B6" fill-opacity="0.16" stroke="#76D2B6" stroke-width="1.5"/>
+      <text x="90" y="304">Voeg ADR-linter toe aan CI</text>
+
+      <circle cx="396" cy="370" r="16" fill="#FFB612"/>
+      <use href="#person" transform="translate(396 370) scale(0.8)"/>
+      <rect x="128" y="348" width="240" height="44" rx="14" fill="#FFB612" fill-opacity="0.16" stroke="#FFB612" stroke-width="1.5"/>
+      <text x="146" y="376">Top! Ook voor publiccode?</text>
+
+      <circle cx="44" cy="442" r="16" fill="#76D2B6"/>
+      <use href="#person" transform="translate(44 442) scale(0.8)"/>
+      <rect x="72" y="420" width="150" height="44" rx="14" fill="#76D2B6" fill-opacity="0.16" stroke="#76D2B6" stroke-width="1.5"/>
+      <text x="90" y="448">Toegevoegd ✓</text>
+    </g>
+
+    <!-- Resultaat -->
+    <rect x="128" y="496" width="184" height="40" rx="20" fill="#F8FAFC"/>
+    <g transform="translate(166 516)" fill="none" stroke="#162945" stroke-width="2.2" stroke-linecap="round">
+      <circle cx="-5" cy="-8" r="3"/>
+      <circle cx="-5" cy="8" r="3"/>
+      <circle cx="6" cy="2" r="3"/>
+      <path d="M-5 -5 V5 M-5 -4 C-5 2 0 2 3 2"/>
+    </g>
+    <text x="182" y="522" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#162945">Merged</text>
+  </g>
+</svg>

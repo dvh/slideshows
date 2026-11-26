@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Adres",
+  "description": "Beknopte versie van AdresUitgebreid uit de BAG Individuele Bevragingen API (Kadaster).",
+  "type": "object",
+  "properties": {
+    "openbareRuimteNaam": {
+      "type": "string",
+      "maxLength": 80,
+      "examples": ["Laan van Westenenk"]
+    },
+    "huisnummer": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99999,
+      "examples": [701]
+    },
+    "huisletter": {
+      "type": "string",
+      "pattern": "^[a-zA-Z]{1}$"
+    },
+    "huisnummertoevoeging": {
+      "type": "string",
+      "pattern": "^[0-9a-zA-Z]{1,4}$"
+    },
+    "postcode": {
+      "type": "string",
+      "pattern": "^[1-9]{1}[0-9]{3}[A-Z]{2}$",
+      "examples": ["7334DP"]
+    },
+    "woonplaatsNaam": {
+      "type": "string",
+      "maxLength": 80,
+      "examples": ["Apeldoorn"]
+    },
+    "nummeraanduidingIdentificatie": {
+      "description": "BAG-identificatie van de nummeraanduiding.",
+      "type": "string",
+      "pattern": "^[0-9]{4}20[0-9]{10}$",
+      "examples": ["0200200000075716"]
+    }
+  },
+  "required": [
+    "openbareRuimteNaam",
+    "huisnummer",
+    "woonplaatsNaam",
+    "nummeraanduidingIdentificatie"
+  ]
+}
