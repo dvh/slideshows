@@ -1,0 +1,178 @@
+{
+  "$id": "https://schemas.don.projects.digilab.network/schemas/api-register/digitaal-stelsel-omgevingswet-dso/geometrieen-opvragen-q3vie1gvg/geojsongeometry",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Geometrie in GeoJSON formaat (RFC 7946).",
+  "externalDocs": {
+    "description": "RFC 7946 - The GeoJSON Format",
+    "url": "https://tools.ietf.org/html/rfc7946"
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "Point"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "type": "array"
+          },
+          "minItems": 2,
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "LineString"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "type": "array"
+            },
+            "minItems": 4,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "Polygon"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "MultiPoint"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "type": "array"
+            },
+            "minItems": 2,
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "MultiLineString"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "coordinates": {
+          "items": {
+            "items": {
+              "items": {
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "type": "array"
+              },
+              "minItems": 4,
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "type": {
+          "enum": [
+            "MultiPolygon"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "GeoJSON Geometry",
+  "x-derived-from": [
+    "https://service.omgevingswet.overheid.nl/publiek/omgevingsdocumenten/api/geometrieopvragen/v1/openapi.json#/components/schemas/GeoJsonGeometry"
+  ]
+}

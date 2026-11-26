@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://developer.overheid.nl/schemas/aquo/waterkering.schema.json",
+  "title": "Waterkering",
+  "description": "Kunstmatige hoogte, natuurlijke hoogte of gedeelte daarvan, of hoge gronden met ondersteunende kunstwerken, die een waterkerende of mede een waterkerende functie hebben. Bron: Aquo-begrippenkader / IMWA Waterveiligheid (aquo.nl).",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unieke identificatie van de waterkering."
+    },
+    "naam": {
+      "type": "string",
+      "description": "De naam waaronder de waterkering bekend is."
+    },
+    "type": {
+      "type": "string",
+      "description": "Aquo-domeintabel 'Waterkeringtype'.",
+      "enum": [
+        "Dam",
+        "Dijk",
+        "Duin",
+        "Flexibele waterkering",
+        "Hoge gronden",
+        "Kistdam",
+        "Kunstwerk",
+        "Wandconstructie"
+      ]
+    },
+    "categorie": {
+      "type": "string",
+      "description": "Aquo-domeintabel 'WaterkeringCategorie'.",
+      "enum": [
+        "Primaire waterkering",
+        "Regionale waterkering",
+        "Boezemkade",
+        "Kering langs regionale rivieren en kanalen",
+        "Overige waterkering"
+      ]
+    },
+    "geometrie": {
+      "type": "object",
+      "description": "Hartlijn van de waterkering, als GeoJSON LineString (WGS84).",
+      "properties": {
+        "type": {
+          "const": "LineString"
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": ["type", "coordinates"]
+    }
+  },
+  "required": ["id", "type", "categorie"],
+  "additionalProperties": false
+}
