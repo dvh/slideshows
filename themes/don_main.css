@@ -139,6 +139,15 @@ section.invert h2 {
 section.invert a {
   color: var(--don-lichtblauw-200) !important;
 }
+/* Inline code in lopende tekst op een invert-slide: omgekeerd, Rijksblauw op wit (zoals code-list).
+   Codeblokken (pre) en eigen code-stijlen van specifiekere classes (pillars, browser) blijven ongemoeid.
+   Gebruik: automatisch, bv. `publiccode.yml` in een lijst op <!-- _class: invert --> */
+section.invert :is(p, li, td, th, blockquote) > code {
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #154273;
+}
 section.title {
   color: #ffffff !important;
 }
@@ -227,6 +236,18 @@ section.page-image-only h2 {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 2rem;
+}
+
+/* Kolommen bovenaan uitlijnen i.p.v. verticaal gecentreerd, bv. twee lijsten met een kopje.
+   Gebruik: <div class="two-columns columns-top"> */
+.two-columns.columns-top {
+  align-items: start;
+}
+/* Lijst zonder bullets, voor items die zelf al een teken hebben (✅, ➜).
+   Gebruik: <ul class="checklist"> */
+section ul.checklist {
+  padding-left: 0;
+  list-style: none;
 }
 
 .horizontal-list li:first-child::marker {
@@ -513,9 +534,11 @@ section .credit a {
   color: inherit !important;
 }
 
-/* Kleinere lijsttekst, bv. naast een grote afbeelding. Gebruik: <!-- _class: list-text-small --> */
+/* Kleinere lijsttekst, bv. naast een grote afbeelding. Gebruik: <!-- _class: list-text-small -->
+   Een alinea in een two-columns-kolom (bv. een kopje boven een lijst) krijgt dezelfde grootte. */
 section.list-text-small ul,
-section.list-text-small ol {
+section.list-text-small ol,
+section.list-text-small .two-columns p {
   font-size: 0.7em;
 }
 section.list-text-small li {
@@ -694,7 +717,7 @@ section.title-terminal h1 {
 /* Ubuntu's standaard bash-prompt: user@host groen, pad blauw. Het kleurwissel gaat via
    een gradient in ch-eenheden, dus de lengtes moeten kloppen met de tekst. */
 section.title-terminal h1::before {
-  content: "tom@developer.overheid.nl:~$ node";
+  content: "tom@developer.overheid.nl:~$";
   display: block;
   width: max-content;
   margin-bottom: 1.2rem;
@@ -875,6 +898,26 @@ section.code-editor :is(.hljs-number, .hljs-literal) {
 }
 section.code-editor .hljs-punctuation {
   color: #9a9996;
+}
+/* Markdown-kleuren (bv. een CHANGELOG.md): koppen geel, bullets grijs, links lichtblauw, code mintgroen.
+   Bestandsnaam zonder <style scoped> via een wrapper om het codeblok, bv.
+   <div style='--code-editor-file: "CHANGELOG.md"; --code-editor-status: "Markdown"'> (lege regels eromheen). */
+section.code-editor .hljs-section {
+  color: #f9e11e;
+  font-weight: bold;
+}
+section.code-editor .hljs-bullet {
+  color: #9a9996;
+}
+section.code-editor :is(.hljs-link, .hljs-symbol) {
+  color: #8fcae7;
+}
+section.code-editor .hljs-code {
+  color: #76d2b6;
+}
+section.code-editor .hljs-strong {
+  color: #f092cd;
+  font-weight: bold;
 }
 
 /* Terminalvenster met CLI-output, naast de titel (layout zoals code-editor).
@@ -1095,7 +1138,9 @@ section.codeoverheid {
   background-image:
     linear-gradient(180deg, transparent 0 63%, #fff 63% 100%),
     radial-gradient(rgba(66, 20, 95, 0.18) 1.5px, transparent 1.5px);
-  background-size: 100% 100%, 24px 24px;
+  background-size:
+    100% 100%,
+    24px 24px;
 }
 section.codeoverheid h2 {
   display: inline-block;
@@ -1327,6 +1372,116 @@ section.browser .gh-lines .t {
   color: #cbd5e1;
 }
 
+/* Gerenderde Markdown (bv. een README of CHANGELOG zoals GitHub hem toont) in plaats van .gh-code.
+   Met de extra class .gh-md-2col in twee kolommen; de h1 en de eerste alinea lopen dan over de volle breedte.
+   Schrijf de inhoud als HTML (geen ##-koppen: die splitsen de slide door headingDivider).
+   Gebruik: <div class="gh"> → .gh-bar, .gh-fhead, <div class="gh-md"> met h1/h2/h3/p/ul/table/pre. */
+section.browser .gh-md {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 48px;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.4;
+}
+section.browser .gh-md.gh-md-2col {
+  columns: 2;
+  column-gap: 56px;
+  column-rule: 1px solid var(--line);
+}
+section.browser .gh-md table {
+  margin: 8px 0 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+section.browser .gh-md tr {
+  background: transparent;
+}
+section.browser .gh-md :is(th, td) {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--txt);
+  text-align: left;
+}
+section.browser .gh-md th {
+  background: #1e293b;
+}
+section.browser .gh-md pre {
+  margin: 10px 0 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #1e293b;
+  color: var(--txt);
+  font-family: "Liberation Mono", monospace;
+  font-size: 18px;
+  line-height: 1.25;
+}
+section.browser .gh-md pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+section.browser .gh-md :is(h1, h2, h3) {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--txt) !important;
+  font-family: inherit;
+  letter-spacing: 0;
+  text-align: left !important;
+  break-after: avoid;
+}
+section.browser .gh-md :is(h1, h2, h3)::before {
+  content: none;
+}
+section.browser .gh-md h1 {
+  column-span: all;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-size: 26px;
+}
+section.browser .gh-md h1 + p {
+  column-span: all;
+  margin: 8px 0 4px;
+  color: var(--mut);
+}
+section.browser .gh-md h2 {
+  margin: 16px 0 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line);
+  font-size: 19px;
+}
+section.browser .gh-md h3 {
+  margin: 8px 0 0;
+  font-size: 15px;
+}
+section.browser .gh-md :is(p, ul) {
+  margin: 0;
+}
+section.browser .gh-md ul {
+  padding-left: 1.3em;
+  break-inside: avoid;
+}
+section.browser .gh-md a {
+  color: #8fcae7 !important;
+  text-decoration: none;
+}
+section.browser .gh-md code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--txt);
+  font-family: "Liberation Mono", monospace;
+  font-size: 0.85em;
+}
+section.browser .gh-md strong {
+  color: #f092cd;
+}
+
 /* Screenshot bijna schermvullend onder het Rijkslogo, met afgeronde hoeken en schaduw.
    De titel en footer worden verborgen (de h2 blijft nodig voor de slide-indeling).
    Maak screenshots in verhouding ~2:1 (bv. viewport 1640x804), anders wordt er bovenaan uitgesneden.
@@ -1373,7 +1528,9 @@ section.screenshot-full img {
 
 /* Browservenster om een screenshot heen, zodat duidelijk is dat het een hele webpagina is.
    Gebruik binnen screenshot-full: <div class="window" data-url="oss.developer.overheid.nl"><img ...></div>
-   Maak de screenshot vanaf de bovenkant van de pagina in verhouding ~1,95:1 (bv. viewport 1500x770). */
+   Maak de screenshot vanaf de bovenkant van de pagina in verhouding ~1,95:1 (bv. viewport 1500x770).
+   Klikbaar maken (om live door de site te lopen): gebruik een <a> in plaats van de <div>:
+   <a class="window" href="https://oss.developer.overheid.nl" data-url="oss.developer.overheid.nl"><img ...></a> */
 section.screenshot-full .window {
   position: absolute;
   inset: 24px;
@@ -1385,6 +1542,11 @@ section.screenshot-full .window {
   background: #ffffff;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
+section.screenshot-full a.window {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
 section.screenshot-full .window::before {
   content: "";
   flex: none;
@@ -1393,8 +1555,7 @@ section.screenshot-full .window::before {
   background:
     radial-gradient(circle at 22px 21px, #d52b1e 6px, transparent 6.5px),
     radial-gradient(circle at 41px 21px, #f9e11e 6px, transparent 6.5px),
-    radial-gradient(circle at 60px 21px, #39870c 6px, transparent 6.5px),
-    #1e293b;
+    radial-gradient(circle at 60px 21px, #39870c 6px, transparent 6.5px), #1e293b;
 }
 section.screenshot-full .window::after {
   content: attr(data-url);
@@ -1419,4 +1580,83 @@ section.screenshot-full .window img {
   height: auto;
   border-radius: 0;
   box-shadow: none;
+}
+
+/* Aftel-timer: één knop met mm:ss. Klik = start, nog eens = pauze, op 00:00 klik = opnieuw.
+   De klok staat rechts; zet de slide-class `timer` erop zodat de tekst links ervan blijft.
+   Het aftellen doet een klein script dat één keer in de deck moet staan (zie workshop-opensourcen).
+   Gebruik (met <!-- _class: timer -->): <button class="countdown" data-minutes="10">10:00</button> */
+section.timer {
+  padding-right: 470px;
+}
+section .countdown {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  min-width: 380px;
+  padding: 28px 36px 52px;
+  border: 0;
+  border-radius: 14px;
+  background: #0f172a;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  font-family: "Liberation Mono", monospace;
+  font-size: 110px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+/* Status onder de cijfers. */
+section .countdown::after {
+  content: "▶ klik om te starten";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  color: var(--don-lichtblauw-200);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+section .countdown.running::after {
+  content: "⏸ klik om te pauzeren";
+}
+section .countdown.done {
+  background: #d52b1e;
+  animation: countdown-done 1s steps(2) infinite;
+}
+section .countdown.done::after {
+  content: "⟲ tijd! klik om opnieuw te starten";
+  color: #ffffff;
+}
+@keyframes countdown-done {
+  50% {
+    background: #0f172a;
+  }
+}
+
+/* QR-code met bijschrift rechts op de slide, bv. naar de meetup op een vragen-slide.
+   Gebruik: <div class="meetup"><img src="./img/qr-meetup.png" alt="…"><p><strong>…</strong><br>…</p></div> */
+section .meetup {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  width: 340px;
+  transform: translateY(-50%);
+  text-align: center;
+}
+section .meetup img {
+  display: block;
+  width: 280px;
+  margin: 0 auto 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+section .meetup p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.3;
 }
