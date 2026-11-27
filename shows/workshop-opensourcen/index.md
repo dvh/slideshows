@@ -138,7 +138,7 @@ Ja, het voelde als developer dus gek om in die context ook te bouwen, omdat er n
 
 <!-- _class: timer -->
 
-Oefening, iedereen schrijft op:
+Oefening, schrijf op:
 
 - Waarom wil ik dit project zelf open sourcen?
 - Waarom is het nuttig voor jouw organisatie?
@@ -166,8 +166,6 @@ Oefening, schrijf op:
 
 <!-- _class: timer -->
 
-Derde oefening;
-
 - Verplaats je in je stakeholders, wie zijn dat?
 - Welke use cases kunnen die hebben?
 - Wat voor soort organisaties?
@@ -175,9 +173,11 @@ Derde oefening;
 
 <button class="countdown" data-minutes="3">03:00</button>
 
-## Pauze?
+## Pauze!
 
-🤔
+<!-- _class: grid-paper -->
+
+☕
 
 ## Aan de slag!
 
@@ -250,7 +250,7 @@ Handig: choosealicense.com en de EUPL-compatibiliteitschecker op interoperable-e
 
 ## EUPL-1.2
 
-<!-- _class: invert  -->
+<!-- _class: invert list-text-small -->
 
 - Ontwikkeld door de EC
   - Je kunt hier ook terecht voor juridische vragen
@@ -261,6 +261,17 @@ Handig: choosealicense.com en de EUPL-compatibiliteitschecker op interoperable-e
   - Iedereen mag de code gebruiken, aanpassen en delen
   - Maar aanpassingen die je verspreidt, blijven ook open (onder dezelfde licentie)
   - Ook als je de software alleen als online dienst aanbiedt
+
+![bg right:40% 70%](./img/eupl.svg)
+
+<div class="credit">
+
+[EUPL-logo][eupl-logo] door MarcBresson · [CC BY-SA 4.0][cc-by-sa]
+
+</div>
+
+[eupl-logo]: https://commons.wikimedia.org/wiki/File:Logo_EUPL.svg
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
 
 <!--
 De European Union Public Licence, versie 1.2: de licentie die de Europese Commissie zelf
